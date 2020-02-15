@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_14_072301) do
+ActiveRecord::Schema.define(version: 2020_02_15_083031) do
+
+  create_table "stations", force: :cascade do |t|
+    t.integer "station_id", null: false
+    t.string "name"
+    t.string "address"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

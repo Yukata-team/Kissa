@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'csv'
+
+CSV.foreach('db/data/station20191227free.csv') do |row|
+  station_id = row[STATION_CSVROW_STATION_CD],
+  name = row[STATION_CSVROW_NAME],
+  address = row[STATION_CSVROW_ADDRESS]
+
+  Station.find_or_crete_by(
+    :station_id => station_id,
+    :name => name,
+    :address => address
+  )
+end
