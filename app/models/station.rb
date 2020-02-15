@@ -1,3 +1,2 @@
 class Station < ApplicationRecord
-  
 end

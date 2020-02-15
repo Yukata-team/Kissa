@@ -9,13 +9,9 @@
 require 'csv'
 
 CSV.foreach('db/data/station20191227free.csv') do |row|
-  station_id = row[STATION_CSVROW_STATION_CD],
-  name = row[STATION_CSVROW_NAME],
-  address = row[STATION_CSVROW_ADDRESS]
-
-  Station.find_or_crete_by(
-    :station_id => station_id,
-    :name => name,
-    :address => address
+  Station.create(
+    :station_id => row[0],
+    :station_name =>  row[2],
+    :address => row[8]
   )
 end
