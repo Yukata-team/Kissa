@@ -1,0 +1,17 @@
+駅名から探す
+<%= search_form_for @q, url: "/shop/index" do |f| %>
+  <%= f.search_field :station_name_cont %>
+  <%= f.submit "検索" %>
+<% end %>
+
+<tbody>
+    <th><%= sort_link(@q, :total_point, "評価点順") %></th>
+    <br>
+  <% @shop.each do |shop| %>
+    <tr>
+      <td><%= shop.name %></td>
+      <td><%= shop.total_point %></td>
+    </tr>
+    <br>
+    <% end %>
+</tbody>
