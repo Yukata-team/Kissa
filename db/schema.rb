@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_16_041040) do
+ActiveRecord::Schema.define(version: 2020_02_17_160840) do
+
+  create_table "posts", force: :cascade do |t|
+    t.integer "cafe_id"
+    t.integer "user_id"
+    t.float "post_total_point"
+    t.float "congestion"
+    t.float "menu"
+    t.float "price"
+    t.float "wifi"
+    t.float "others"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "shops", force: :cascade do |t|
     t.string "name"
