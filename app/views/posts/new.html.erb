@@ -9,7 +9,7 @@
     </ul>
   </div>
   <% end %>
-  <h2>店舗名</h2>
+  <h2><%= @post.shop.name %></h2>
   <%= form_for @post, url: "/#{@post.shop_id}/posts/new" do |f| %>
   <div class="">
     <label for="">混み具合</label>
