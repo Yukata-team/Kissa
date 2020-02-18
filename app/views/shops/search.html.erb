@@ -1,0 +1,16 @@
+<h3>レビューしたいお店を検索してください</h3>
+<%= search_form_for @q, url: "/shops/search" do |f| %>
+  <%= f.search_field :station_name_cont %>
+  <%= f.submit "検索" %>
+<% end %>
+
+<tbody>
+    <th><%= sort_link(@q, :total_point, "評価点順") %></th>
+    <br>
+  <% @shop.each do |shop| %>
+    <tr>
+      <td><%= link_to shop.name, "/#{shop.id}/posts/new" %></td>
+    </tr>
+    <br>
+  <% end %>
+</tbody>

@@ -14,6 +14,11 @@ class ShopsController < ApplicationController
   def show
     @shop = Shop.find(params[:id])
   end
+  def search
+    @q = Shop.ransack(params[:q])
+    @shop = @q.result
+  end
+
   private
   def shop_params
     params.require(:shop).permit(:name, :station_name)

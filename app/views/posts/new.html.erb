@@ -1,0 +1,42 @@
+<div class="">
+  <% if @post.errors.any? %>
+  <div id="error_explanation">
+    <h3><%= @post.errors.count %> errors prohibited this obj from being saved</h3>
+    <ul>
+      <% @post.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <h2>店舗名</h2>
+  <%= form_for @post, url: "/#{@post.shop_id}/posts/new" do |f| %>
+  <div class="">
+    <label for="">混み具合</label>
+    <%= f.text_field :congestion %>
+  </div>
+  <div class="">
+    <label for="">メニュー</label>
+    <%= f.text_field :menu %>
+  </div>
+  <div class="">
+    <label for="">価格帯</label>
+    <%= f.text_field :price %>
+  </div>
+  <div class="">
+    <label for="">通信環境</label>
+    <%= f.text_field :wifi %>
+  </div>
+  <div class="">
+    <label for="">その他</label>
+    <%= f.text_field :others %>
+  </div>
+  <div class="">
+    <label for="">レビュー</label>
+    <%= f.text_area :review %>
+  </div>
+  <div class="">
+    <%= f.submit "投稿" %>
+  </div>
+  <% end %>
+</div>

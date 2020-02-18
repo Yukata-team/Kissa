@@ -15,7 +15,7 @@
       <h1><%= link_to "CafeLog", root_path %></h1>
       <ul>
         <% if user_signed_in? %>
-          <li><%= link_to "レビュー" %></li>
+          <li><%= link_to "レビュー", shops_search_path %></li>
           <li><%= link_to "店舗登録", new_shop_path %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
         <% else %>
