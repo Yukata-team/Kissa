@@ -1,4 +1,4 @@
-駅名から探す
+<h3>駅名から探す</h3>
 <%= search_form_for @q, url: "/shop/index" do |f| %>
   <%= f.search_field :station_name_cont %>
   <%= f.submit "検索" %>
@@ -9,7 +9,7 @@
     <br>
   <% @shop.each do |shop| %>
     <tr>
-      <td><%= shop.name %></td>
+      <td><%= link_to shop.name, shop_path(shop) %></td>
       <td><%= shop.total_point %></td>
     </tr>
     <br>
