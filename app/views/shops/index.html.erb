@@ -1,9 +1,8 @@
 <h3>駅名から探す</h3>
-<%= search_form_for @q, url: "/shop/index" do |f| %>
+<%= search_form_for @q, url: shops_path do |f| %>
   <%= f.search_field :station_name_cont %>
   <%= f.submit "検索" %>
 <% end %>
-
 <tbody>
     <th><%= sort_link(@q, :total_point, "評価点順") %></th>
     <br>

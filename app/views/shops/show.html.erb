@@ -1,6 +1,28 @@
 <div class="">
   <%= @shop.name %>
   <%= @shop.total_point %>
+  <div class="">
+    <div class="">
+      混み具合
+      <%= @shop.ave_congestion %>
+    </div>
+    <div class="">
+      メニュー
+      <%= @shop.ave_menu %>
+    </div>
+    <div class="">
+      価格帯
+      <%= @shop.ave_price %>
+    </div>
+    <div class="">
+      通信環境
+      <%= @shop.ave_wifi %>
+    </div>
+    <div class="">
+      その他   
+      <%= @shop.ave_others %>
+    </div>
+  </div>
 </div>
 <% @shop.posts.each do |post| %>
 <h4><%= post.user_id %>番さん</h4>

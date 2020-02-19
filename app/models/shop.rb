@@ -4,4 +4,7 @@ class Shop < ApplicationRecord
   def posts
     return Post.where(shop_id: self.id)
   end
+  def user
+    return User.find(self.id)
+  end
 end
