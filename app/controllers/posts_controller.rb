@@ -8,6 +8,7 @@ class PostsController < ApplicationController
     @post.shop_id = params[:id]
     @post.user_id = current_user.id
     @post.post_total_point = (@post.congestion + @post.menu + @post.price + @post.wifi + @post.others) / 5
+    byebug
     if @post.save
       redirect_to shops_search_path
     else

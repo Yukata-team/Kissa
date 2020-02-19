@@ -13,23 +13,43 @@
   <%= form_for @post, url: "/#{@post.shop_id}/posts/new" do |f| %>
   <div class="">
     <label for="">混み具合</label>
-    <%= f.text_field :congestion %>
+    <%= f.radio_button :congestion, 1.to_f %>1
+    <%= f.radio_button :congestion, 2.to_f %>2
+    <%= f.radio_button :congestion, 3.to_f %>3
+    <%= f.radio_button :congestion, 4.to_f %>4
+    <%= f.radio_button :congestion, 5.to_f %>5
   </div>
   <div class="">
     <label for="">メニュー</label>
-    <%= f.text_field :menu %>
+    <%= f.radio_button :menu, value: 1 %>1
+    <%= f.radio_button :menu, value: 2 %>2
+    <%= f.radio_button :menu, value: 3 %>3
+    <%= f.radio_button :menu, value: 4 %>4
+    <%= f.radio_button :menu, value: 5 %>5
   </div>
   <div class="">
     <label for="">価格帯</label>
-    <%= f.text_field :price %>
+    <%= f.radio_button :price, value: 1 %>1
+    <%= f.radio_button :price, value: 2 %>2
+    <%= f.radio_button :price, value: 3 %>3
+    <%= f.radio_button :price, value: 4 %>4
+    <%= f.radio_button :price, value: 5 %>5
   </div>
   <div class="">
     <label for="">通信環境</label>
-    <%= f.text_field :wifi %>
+    <%= f.radio_button :wifi, value: 1 %>1
+    <%= f.radio_button :wifi, value: 2 %>2
+    <%= f.radio_button :wifi, value: 3 %>3
+    <%= f.radio_button :wifi, value: 4 %>4
+    <%= f.radio_button :wifi, value: 5 %>5
   </div>
   <div class="">
     <label for="">その他</label>
-    <%= f.text_field :others %>
+    <%= f.radio_button :others, value: 1 %>1
+    <%= f.radio_button :others, value: 2 %>2
+    <%= f.radio_button :others, value: 3 %>3
+    <%= f.radio_button :others, value: 4 %>4
+    <%= f.radio_button :others, value: 5 %>5
   </div>
   <div class="">
     <label for="">レビュー</label>

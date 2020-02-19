@@ -14,8 +14,11 @@ class ShopsController < ApplicationController
   end
   def create
     @shop = Shop.new(shop_params)
-    @shop.save
-    redirect_to shop_path(@shop)
+    if @shop.save
+      redirect_to shop_path(@shop)
+    else
+      render :new
+    end
   end
   def show
     @shop = Shop.find(params[:id])
