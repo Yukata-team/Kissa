@@ -30,6 +30,7 @@ class ShopsController < ApplicationController
       @shop.ave_wifi = @shop.posts.average(:wifi).floor(2)
       @shop.ave_others = @shop.posts.average(:others).floor(2)
     end
+    # byebug
   end
   def search
     @q = Shop.ransack(params[:q])
