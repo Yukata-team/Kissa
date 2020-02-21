@@ -1,0 +1,37 @@
+<div class="">
+  <%= @user.name %>
+  <div class="">
+    <% @user.posts.each do |post| %>
+    店舗名
+    <%= post.shop.name %>
+    <table>
+      <tr>
+        <th>総合評価</th>
+        <td><%= post.post_total_point %></td>
+      </tr>
+      <tr>
+        <th>混み具合</th>
+        <td><%= post.congestion %></td>
+      </tr>
+      <tr>
+        <th>メニュ-</th>
+        <td><%= post.menu %></td>
+      </tr>
+        <th>価格帯</th>
+        <td><%= post.price %></td>
+      <tr>
+        <th>通信環境</th>
+        <td><%= post.wifi %></td>
+      </tr>
+      <tr>
+        <th>その他</th>
+        <td><%= post.others %></td>
+      </tr>
+      <tr>
+        <th>レビュ-</th>
+        <td><%= post.review %></td>
+      </tr>
+    </table>
+    <% end %>
+  </div>
+</div>

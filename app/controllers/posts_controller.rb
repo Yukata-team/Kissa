@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
+
   def new
     @post = Post.new
     @post.shop_id = params[:id]
   end
+
   def create
     @post = Post.new(post_params)
     @post.shop_id = params[:id]
@@ -14,8 +16,10 @@ class PostsController < ApplicationController
       render :new
     end
   end
+
   private
   def post_params
     params.require(:post).permit(:congestion, :menu, :price, :wifi, :others, :review)
   end
+  
 end
