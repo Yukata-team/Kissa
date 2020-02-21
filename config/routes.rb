@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   post '/:id/posts/new' => 'posts#create'
 
   devise_for :users
+  resources :users, only: [:index, :show, :edit, :update]
 end
