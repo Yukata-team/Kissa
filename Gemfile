@@ -69,3 +69,7 @@ gem 'devise-i18n-views'
 
 # 検索機能用
 gem 'ransack'
+
+# bootstrap
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'jquery-rails'

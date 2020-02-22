@@ -17,6 +17,10 @@
 /* h1, body{
     margin: 0;
 } */
+// bootstrap導入用
+@import "bootstrap-sprockets";
+@import "bootstrap";            
+
 *{
     margin: 0;
     padding: 0;

@@ -4332,3 +4332,248 @@ Processing by Devise::RegistrationsController#new as HTML
 Completed 200 OK in 53ms (Views: 52.1ms | ActiveRecord: 0.0ms)
 
 
+Started POST "/users" for ::1 at 2020-02-22 20:17:18 +0900
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LiXqLAC0GytfXMnMGJUT4gC8XqM+Sq25Omc1peVe8bT0/5QtOucYGAPPSyrahgwr3nxy3VWCG525kU7Whyriwg==", "user"=>{"email"=>"", "name"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.5ms)
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 445ms (Views: 250.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-22 20:17:45 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 44ms (Views: 42.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-02-22 20:17:52 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+M8xgT7BR3OucB8Zr9BTz/fupaCqXaMgGeRDWRlCDs2r4/Ve2qcFHeliJPWxVk9phsEgx117mlHiGroq96eVxQ==", "user"=>{"email"=>"yugo@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "yugo@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 144ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-02-22 20:17:52 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/shops" for ::1 at 2020-02-22 20:19:39 +0900
+Processing by ShopsController#index as HTML
+  [1m[36mShop Load (0.6ms)[0m  [1m[34mSELECT "shops".* FROM "shops"[0m
+  ↳ app/controllers/shops_controller.rb:6
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:7
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:8
+  Rendering shops/index.html.erb within layouts/application
+  Rendered shops/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 68ms (Views: 39.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/shops/1" for ::1 at 2020-02-22 20:19:45 +0900
+Processing by ShopsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShop Load (0.3ms)[0m  [1m[34mSELECT  "shops".* FROM "shops" WHERE "shops"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shops_controller.rb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:29
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("posts"."congestion") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:30
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("posts"."menu") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:31
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("posts"."price") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."wifi") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:33
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("posts"."others") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:34
+  Rendering shops/show.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/views/shops/show.html.erb:27
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shops/show.html.erb:28
+  Rendered shops/show.html.erb within layouts/application (25.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 76ms (Views: 58.7ms | ActiveRecord: 2.9ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-02-22 20:23:50 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kCiaNELR62q6MHXUn4JgtwpTUyOtb3h7Ts/edORvByBZI4DyDStNt1se+Esdk2tffa8z2zAxDgFNflaa5wyiIg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-22 20:23:50 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 46ms (Views: 42.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-22 20:24:36 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 37ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-22 20:24:37 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 57ms (Views: 54.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-02-22 20:24:47 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lTIb0KgHz4bq/Fb3wVHA5+1RhhFCQqafpYwTJ2HY0K3e4XqXOzXjmjPGvhT+TiBvf0hJ6gHFzj5b9r/znQ+Zzg==", "user"=>{"email"=>"yugo@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "yugo@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 151ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-02-22 20:24:48 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 51ms (Views: 47.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/shops" for ::1 at 2020-02-22 20:26:15 +0900
+Processing by ShopsController#index as HTML
+  [1m[36mShop Load (0.5ms)[0m  [1m[34mSELECT "shops".* FROM "shops"[0m
+  ↳ app/controllers/shops_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:7
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:8
+  Rendering shops/index.html.erb within layouts/application
+  Rendered shops/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 52ms (Views: 45.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/shops" for ::1 at 2020-02-22 20:28:33 +0900
+Processing by ShopsController#index as HTML
+  [1m[36mShop Load (0.3ms)[0m  [1m[34mSELECT "shops".* FROM "shops"[0m
+  ↳ app/controllers/shops_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:7
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:8
+  Rendering shops/index.html.erb within layouts/application
+  Rendered shops/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 57ms (Views: 50.1ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-02-22 20:28:36 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"easBh7rnG/aXHiHjzluIuFRK/SBOxA9clN0Q+1YXeu3Jy/Lh5U0rsAKjjlzMfrpQ395aHQ9vVqqjJHMYhipoDQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-22 20:28:36 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 43ms (Views: 39.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-22 20:28:42 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 61ms (Views: 59.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-02-22 20:28:48 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OByWXctMnShdXPcMplcJnJ8nWbwA0aQscOzj7A8N4HOCGRmWkOWb9nyRR66u6Plrt6qnAwoTTu4I/V9YdpHcFg==", "user"=>{"email"=>"yugo@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "yugo@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 134ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-02-22 20:28:49 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 35ms (Views: 32.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-02-22 20:39:59 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 48ms (Views: 43.6ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-02-22 20:40:02 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aW7dOwZSu9NabpQA6vv4Fq820zsdMufxRwI8Efqy7rugyhWpVUkzM1eJAD9KJ4BEwBWlWtWjdpIGcr34jWaUOQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-22 20:40:02 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
