@@ -12,7 +12,7 @@
   <body>
     <!-- この辺いじってメニューバーにして -->
     <header>
-      <h1><%= link_to "CafeLog", root_path %></h1>
+      <h1><%= link_to "CafeLog", root_path, class:"title" %></h1>
       <ul>
         <% if user_signed_in? %>
           <li><%= link_to "店舗検索", root_path %></li>
@@ -27,6 +27,8 @@
       </ul>
 
     </header>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
