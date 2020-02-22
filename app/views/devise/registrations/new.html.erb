@@ -1,9 +1,9 @@
+<%= render "devise/shared/error_messages", resource: resource %>
 <div class="input-form-box">
   <div class="input-forms">
     <h2>新規登録</h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
         <%= f.label :email %><br />
@@ -18,7 +18,7 @@
       <div class="field">
         <%= f.label :password %>
         <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <em>(<%= @minimum_password_length %> 文字以上)</em>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "new-password", class:"input-form"%>
       </div>

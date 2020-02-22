@@ -1,4 +1,4 @@
-<div class="input-form-box"> 
+<div class="input-form-box">
   <div class="input-forms">
     <h2>ログイン</h2>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -10,7 +10,7 @@
       <div class="field">
         <%= f.label :password %><br/>
         <%= f.password_field :password, autocomplete: "current-password", class:"input-form" %>
-          
+
       </div>
 
       <% if devise_mapping.rememberable? %>
