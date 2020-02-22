@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <!-- この辺いじってメニューバーにして -->
+    <!-- メニューバー -->
     <header>
       <h1><%= link_to "CafeLog", root_path, class:"title" %></h1>
       <ul>
@@ -28,6 +28,11 @@
 
     </header>
     <div class="container">
+      <% if flash[:notice] %>
+      <div id="notice">
+        <%= flash[:notice] %>
+      </div>
+      <% end %>
       <%= yield %>
     </div>
   </body>
