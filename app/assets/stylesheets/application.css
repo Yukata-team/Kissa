@@ -24,6 +24,7 @@
     color: beige;
     background-color: rgb(189, 144, 112);
     font-family: 'TsukuARdGothic-Regular','ヒラギノ角ゴシック','Hiragino Sans',YuGothic,'Yu Gothic',sans-serif;
+    font-size: 15px;
 }
 
 header{
@@ -38,6 +39,9 @@ header{
 header h1{
     display: inline-block;
     line-height: 120px;
+}
+header .title{
+    font-size: 30px;
 }
 header ul{
     float: right;
@@ -61,6 +65,7 @@ a{
 .input-form-box h2{
     margin: 0 auto;
     width: 100px;
+    font-size: 25px;
 }
 .input-form{
     padding: 0 10px;
@@ -68,7 +73,6 @@ a{
     height: 40px;
     background-color: white;
     color: black;
-    font-size: 17px;
     border: none;
 }
 .field{
@@ -81,7 +85,6 @@ a{
     height: 30px;
     width: 70px;
     box-shadow: 0px 2px;
-
 }
 .btn-sticky:hover{
     box-shadow: 0px 0px;
