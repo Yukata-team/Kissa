@@ -10236,3 +10236,803 @@ Refile::App: [2020-02-24 21:49:08 +0900] GET "/d13168cb091f50c1f57c5f2cdd55044f7
 
 Refile::App: [2020-02-24 21:49:08 +0900] GET "/5f2808e54dede2f9fdbe878d06ac3a9912c44df0/store/fill/200/200/5bdbbc0ed329b3f2d5f0fb10eb56f7afeab94b8fea622be2246534f210c5/image" 200 1304.9ms
 
+Started GET "/users/2" for ::1 at 2020-02-24 21:57:30 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 455ms (Views: 418.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/shops/new" for ::1 at 2020-02-24 22:10:37 +0900
+Processing by ShopsController#new as HTML
+  Rendering shops/new.html.erb within layouts/application
+  Rendered shops/new.html.erb within layouts/application (22.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 282ms (Views: 236.2ms | ActiveRecord: 1.6ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddBranchToShops (20200224131335)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "shops" ADD "branch" varchar[0m
+  ↳ db/migrate/20200224131335_add_branch_to_shops.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "shops" ADD "furigana" varchar[0m
+  ↳ db/migrate/20200224131335_add_branch_to_shops.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200224131335"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mShop Load (1.4ms)[0m  [1m[34mSELECT  "shops".* FROM "shops" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mShop Destroy (3.1ms)[0m  [1m[31mDELETE FROM "shops"[0m
+Started GET "/" for ::1 at 2020-02-24 22:49:32 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 382ms (Views: 372.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/shops/new" for ::1 at 2020-02-24 22:49:36 +0900
+Processing by ShopsController#new as HTML
+  Rendering shops/new.html.erb within layouts/application
+  Rendered shops/new.html.erb within layouts/application (11.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 104ms (Views: 68.6ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/shops" for ::1 at 2020-02-24 22:52:34 +0900
+Processing by ShopsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N7zrPcTgcKi35rbx4WClpS9OWuwSXuoWG8W0U8zaNA1wXcGfNVrp2HF9y7Wc3E9/f1TRK9o/rTN3yYa8cCIyBA==", "shop"=>{"name"=>"タリーズコーヒー", "branch"=>"金町店", "furigana"=>"タリーズコーヒーカナマチテン", "station_name"=>"金町", "shop_images_images"=>[#<ActionDispatch::Http::UploadedFile:0x00007ff193ace450 @tempfile=#<Tempfile:/var/folders/rx/0sg4m4g10k11plmp19qkfb1m0000gn/T/RackMultipart20200224-55610-rjtr2g.jpg>, @original_filename="coffee-2242213_1920 (1).jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"shop[shop_images_images][]\"; filename=\"coffee-2242213_1920 (1).jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"登録"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shops_controller.rb:19
+  [1m[36mShop Create (1.0ms)[0m  [1m[32mINSERT INTO "shops" ("name", "station_name", "created_at", "updated_at", "branch", "furigana") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "タリーズコーヒー"], ["station_name", "金町"], ["created_at", "2020-02-24 13:52:34.531477"], ["updated_at", "2020-02-24 13:52:34.531477"], ["branch", "金町店"], ["furigana", "タリーズコーヒーカナマチテン"]]
+  ↳ app/controllers/shops_controller.rb:19
+  [1m[36mShopImage Create (0.2ms)[0m  [1m[32mINSERT INTO "shop_images" ("shop_id", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shop_id", 1], ["image_id", "2e1d86ba4c940aa52df47554e0ff297905a9479caa55d8ea24789d0fd63a"], ["created_at", "2020-02-24 13:52:34.537066"], ["updated_at", "2020-02-24 13:52:34.537066"]]
+  ↳ app/controllers/shops_controller.rb:19
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/shops_controller.rb:19
+Redirected to http://localhost:3000/shops/1
+Completed 302 Found in 26ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/shops/1" for ::1 at 2020-02-24 22:52:34 +0900
+Processing by ShopsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT  "shops".* FROM "shops" WHERE "shops"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shops_controller.rb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."congestion") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:30
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."menu") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."price") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."wifi") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:33
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."others") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:34
+  Rendering shops/show.html.erb within layouts/application
+  [1m[36mShopImage Load (0.3ms)[0m  [1m[34mSELECT "shop_images".* FROM "shop_images" WHERE "shop_images"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/views/shops/show.html.erb:5
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/views/shops/show.html.erb:36
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shops/show.html.erb:37
+  Rendered shops/show.html.erb within layouts/application (21.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 117ms (Views: 96.9ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/attachments/41c3978106bf03869ed589efaa1cf385f964174f/store/fill/200/200/fafc3b6b9fb71d10b745aec6f57c8bcaecefa1240dd9cbfcd8386fde9ed3/image" for ::1 at 2020-02-24 22:52:34 +0900
+Started GET "/attachments/2166d87d8a89287b8b62d233e3ae8f3daec7b01f/store/fill/200/200/cf8ddba08f41a67261b58323117314df4966d20f262336dc5b1d7fbe6862/image" for ::1 at 2020-02-24 22:52:34 +0900
+Started GET "/attachments/8047bf7414b8009955051915342a43fe3adecf06/store/fill/200/200/2e1d86ba4c940aa52df47554e0ff297905a9479caa55d8ea24789d0fd63a/image" for ::1 at 2020-02-24 22:52:34 +0900
+Refile::App: [2020-02-24 22:52:35 +0900] GET "/41c3978106bf03869ed589efaa1cf385f964174f/store/fill/200/200/fafc3b6b9fb71d10b745aec6f57c8bcaecefa1240dd9cbfcd8386fde9ed3/image" 200 478.7ms
+
+Refile::App: [2020-02-24 22:52:35 +0900] GET "/8047bf7414b8009955051915342a43fe3adecf06/store/fill/200/200/2e1d86ba4c940aa52df47554e0ff297905a9479caa55d8ea24789d0fd63a/image" 200 553.0ms
+
+Refile::App: [2020-02-24 22:52:35 +0900] GET "/2166d87d8a89287b8b62d233e3ae8f3daec7b01f/store/fill/200/200/cf8ddba08f41a67261b58323117314df4966d20f262336dc5b1d7fbe6862/image" 200 1101.8ms
+
+  [1m[36mShop Load (1.2ms)[0m  [1m[34mSELECT  "shops".* FROM "shops" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mShopImage Load (1.3ms)[0m  [1m[34mSELECT  "shop_images".* FROM "shop_images" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mShopImage Destroy (2.8ms)[0m  [1m[31mDELETE FROM "shop_images"[0m
+  [1m[36mShop Load (0.3ms)[0m  [1m[34mSELECT  "shops".* FROM "shops" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mShop Destroy (2.9ms)[0m  [1m[31mDELETE FROM "shops"[0m
+Started GET "/shops/1" for ::1 at 2020-02-24 23:04:55 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ShopsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT  "shops".* FROM "shops" WHERE "shops"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shops_controller.rb:27
+Completed 404 Not Found in 53ms (ActiveRecord: 3.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Shop with 'id'=1):
+  
+app/controllers/shops_controller.rb:27:in `show'
+Started GET "/shops/new" for ::1 at 2020-02-24 23:05:03 +0900
+Processing by ShopsController#new as HTML
+  Rendering shops/new.html.erb within layouts/application
+  Rendered shops/new.html.erb within layouts/application (16.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 360ms (Views: 348.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-24 23:05:05 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 63ms (Views: 60.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/shops/search" for ::1 at 2020-02-24 23:05:11 +0900
+Processing by ShopsController#search as HTML
+  Rendering shops/search.html.erb within layouts/application
+  [1m[36mShop Load (0.4ms)[0m  [1m[34mSELECT "shops".* FROM "shops"[0m
+  ↳ app/views/shops/search.html.erb:10
+  Rendered shops/search.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 71ms (Views: 62.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-02-24 23:05:13 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 98ms (Views: 88.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/2" for ::1 at 2020-02-24 23:05:15 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 72ms (Views: 67.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-02-24 23:05:18 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 82ms (Views: 78.6ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-02-24 23:05:20 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MIei+80GhX/Us3XG37sQSkWUQlkvhP6HwJhVhEOnuncSzd3uBWy/kp9v3nryDH1eEWki+IJ5glxVNRj0JN+kvw=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 149ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-02-24 23:05:20 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 90ms (Views: 87.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for ::1 at 2020-02-24 23:05:27 +0900
+Processing by HomesController#about as HTML
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 60ms (Views: 58.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-24 23:05:51 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 78ms (Views: 73.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/shops" for ::1 at 2020-02-24 23:06:11 +0900
+Processing by ShopsController#index as HTML
+  [1m[36mShop Load (0.1ms)[0m  [1m[34mSELECT "shops".* FROM "shops"[0m
+  ↳ app/controllers/shops_controller.rb:6
+  Rendering shops/index.html.erb within layouts/application
+  Rendered shops/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 73ms (Views: 65.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2020-02-24 23:06:14 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 79ms (Views: 75.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-24 23:06:18 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (50.7ms)
+Completed 200 OK in 122ms (Views: 117.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-02-24 23:06:26 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lGgHzV22uZiiu0noEDiSLqYWuohjAN3c5YwZXPAz3M8Z5J/cvlh1eNTLKxNk4HIT9bJF1f7e8yZj68eUn6lIhg==", "user"=>{"email"=>"yugo@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "yugo@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 162ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-24 23:06:26 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 69ms (Views: 67.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/shops" for ::1 at 2020-02-24 23:07:23 +0900
+Processing by ShopsController#index as HTML
+  [1m[36mShop Load (0.3ms)[0m  [1m[34mSELECT "shops".* FROM "shops"[0m
+  ↳ app/controllers/shops_controller.rb:6
+  Rendering shops/index.html.erb within layouts/application
+  Rendered shops/index.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 70ms (Views: 66.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-24 23:17:10 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 221ms (Views: 218.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/shops" for ::1 at 2020-02-24 23:17:23 +0900
+Processing by ShopsController#index as HTML
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT "shops".* FROM "shops"[0m
+  ↳ app/controllers/shops_controller.rb:6
+  Rendering shops/index.html.erb within layouts/application
+  Rendered shops/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 69ms (Views: 65.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-24 23:21:09 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 76ms (Views: 69.9ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-02-24 23:21:15 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FSnIFxUHFoAH5aE5ekXZlQVZyBJF8q46Z1qcIgCVgzqOvmOHI7jRZ7/JiHdOeQ8uQEDopZcennFU1hkaqUsb6w=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-02-24 23:21:15 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 78ms (Views: 76.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-24 23:21:17 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 69ms (Views: 67.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-02-24 23:21:23 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iekkHcu71+SGwcy2flKxiMU2NXiklmxKwPO+LkpvgjZR3hHLxKyvuoGlLTHk8et5H8Rvjx7kofKGbrl4CQGGlQ==", "user"=>{"email"=>"yugo@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "yugo@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 151ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-24 23:21:23 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 62ms (Views: 59.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/shops/new" for ::1 at 2020-02-24 23:21:25 +0900
+Processing by ShopsController#new as HTML
+  Rendering shops/new.html.erb within layouts/application
+  Rendered shops/new.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 65ms (Views: 61.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/shops" for ::1 at 2020-02-24 23:22:14 +0900
+Processing by ShopsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CjyvfGAAG9Qi7k5BbDLJvbkZqBHMWho9idTBjO7wRT98dnNmJGt+IceD/t9jWyKetuwPV8msbuPLr6bILmfh/A==", "shop"=>{"name"=>"タリーズコーヒー", "branch"=>"金町店", "furigana"=>"タリーズコーヒーカナマチテン", "station_name"=>"金町", "shop_images_images"=>[#<ActionDispatch::Http::UploadedFile:0x00007fbb471557e8 @tempfile=#<Tempfile:/var/folders/rx/0sg4m4g10k11plmp19qkfb1m0000gn/T/RackMultipart20200224-55755-4zsf12.jpg>, @original_filename="coffee-2242213_1920 (1).jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"shop[shop_images_images][]\"; filename=\"coffee-2242213_1920 (1).jpg\"\r\nContent-Type: image/jpeg\r\n">]}, "commit"=>"登録"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shops_controller.rb:19
+  [1m[36mShop Create (1.0ms)[0m  [1m[32mINSERT INTO "shops" ("name", "station_name", "created_at", "updated_at", "branch", "furigana") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "タリーズコーヒー"], ["station_name", "金町"], ["created_at", "2020-02-24 14:22:14.474325"], ["updated_at", "2020-02-24 14:22:14.474325"], ["branch", "金町店"], ["furigana", "タリーズコーヒーカナマチテン"]]
+  ↳ app/controllers/shops_controller.rb:19
+  [1m[36mShopImage Create (0.2ms)[0m  [1m[32mINSERT INTO "shop_images" ("shop_id", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["shop_id", 1], ["image_id", "b207b388579cd8609264a1ac9a0a77cff2b9620cae7a0cdf8c7eb971a279"], ["created_at", "2020-02-24 14:22:14.479485"], ["updated_at", "2020-02-24 14:22:14.479485"]]
+  ↳ app/controllers/shops_controller.rb:19
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/shops_controller.rb:19
+Redirected to http://localhost:3000/shops/1
+Completed 302 Found in 29ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/shops/1" for ::1 at 2020-02-24 23:22:14 +0900
+Processing by ShopsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT  "shops".* FROM "shops" WHERE "shops"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shops_controller.rb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."congestion") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:30
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT AVG("posts"."menu") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:31
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("posts"."price") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:32
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("posts"."wifi") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:33
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."others") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:34
+  Rendering shops/show.html.erb within layouts/application
+  [1m[36mShopImage Load (0.2ms)[0m  [1m[34mSELECT "shop_images".* FROM "shop_images" WHERE "shop_images"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/views/shops/show.html.erb:6
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/views/shops/show.html.erb:37
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shops/show.html.erb:38
+  Rendered shops/show.html.erb within layouts/application (28.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 122ms (Views: 93.3ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/attachments/c673ffc95d715a686170a285dbe1b8a906dd8e71/store/fill/200/200/b207b388579cd8609264a1ac9a0a77cff2b9620cae7a0cdf8c7eb971a279/image" for ::1 at 2020-02-24 23:22:14 +0900
+Refile::App: [2020-02-24 23:22:15 +0900] GET "/c673ffc95d715a686170a285dbe1b8a906dd8e71/store/fill/200/200/b207b388579cd8609264a1ac9a0a77cff2b9620cae7a0cdf8c7eb971a279/image" 200 462.8ms
+
+Started GET "/" for ::1 at 2020-02-24 23:22:21 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 75ms (Views: 70.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/shops" for ::1 at 2020-02-24 23:22:23 +0900
+Processing by ShopsController#index as HTML
+  [1m[36mShop Load (0.7ms)[0m  [1m[34mSELECT "shops".* FROM "shops"[0m
+  ↳ app/controllers/shops_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:7
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:8
+  Rendering shops/index.html.erb within layouts/application
+  Rendered shops/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 79ms (Views: 70.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/shops?utf8=%E2%9C%93&q%5Bstation_name_cont%5D=%E9%87%91%E7%94%BA&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2020-02-24 23:22:32 +0900
+Processing by ShopsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"station_name_cont"=>"金町"}, "commit"=>"検索"}
+  [1m[36mShop Load (0.8ms)[0m  [1m[34mSELECT "shops".* FROM "shops" WHERE "shops"."station_name" LIKE '%金町%'[0m
+  ↳ app/controllers/shops_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:7
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:8
+  Rendering shops/index.html.erb within layouts/application
+  Rendered shops/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 106ms (Views: 95.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/shops/1" for ::1 at 2020-02-24 23:22:44 +0900
+Processing by ShopsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT  "shops".* FROM "shops" WHERE "shops"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shops_controller.rb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."congestion") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("posts"."menu") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("posts"."price") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("posts"."wifi") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:33
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."others") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:34
+  Rendering shops/show.html.erb within layouts/application
+  [1m[36mShopImage Load (0.1ms)[0m  [1m[34mSELECT "shop_images".* FROM "shop_images" WHERE "shop_images"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/views/shops/show.html.erb:6
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/views/shops/show.html.erb:37
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shops/show.html.erb:38
+  Rendered shops/show.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 86ms (Views: 75.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/shops/search" for ::1 at 2020-02-24 23:22:49 +0900
+Processing by ShopsController#search as HTML
+  Rendering shops/search.html.erb within layouts/application
+  [1m[36mShop Load (0.1ms)[0m  [1m[34mSELECT "shops".* FROM "shops"[0m
+  ↳ app/views/shops/search.html.erb:10
+  Rendered shops/search.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 69ms (Views: 65.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/1/posts/new" for ::1 at 2020-02-24 23:22:53 +0900
+Processing by PostsController#new as HTML
+  Parameters: {"id"=>"1"}
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mShop Load (0.1ms)[0m  [1m[34mSELECT  "shops".* FROM "shops" WHERE "shops"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/post.rb:15
+  Rendered posts/new.html.erb within layouts/application (83.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 135ms (Views: 130.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/1/posts/new" for ::1 at 2020-02-24 23:23:27 +0900
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SMLQihjd5ASG2GE6RMUp2aoGkS9UIoc6WOx6d6PvCdA2jSSn7ESMRbIi7xSaHgzo67QO/hLsbnBLmy2VOPWiwQ==", "post"=>{"congestion"=>"5.0", "menu"=>"4.0", "price"=>"3.0", "wifi"=>"4.0", "others"=>"4.0", "review"=>"店員の対応がとてもよい"}, "commit"=>"投稿", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:13
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT  "shops".* FROM "shops" WHERE "shops"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/post.rb:15
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:13
+  [1m[36mPost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = ? AND "posts"."shop_id" = ? LIMIT ?[0m  [["user_id", 2], ["shop_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:13
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("shop_id", "user_id", "post_total_point", "congestion", "menu", "price", "wifi", "others", "created_at", "updated_at", "review") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["shop_id", 1], ["user_id", 2], ["post_total_point", 4.0], ["congestion", 5], ["menu", 4], ["price", 3], ["wifi", 4], ["others", 4], ["created_at", "2020-02-24 14:23:27.656549"], ["updated_at", "2020-02-24 14:23:27.656549"], ["review", "店員の対応がとてもよい"]]
+  ↳ app/controllers/posts_controller.rb:13
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:13
+Redirected to http://localhost:3000/shops/search
+Completed 302 Found in 16ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/shops/search" for ::1 at 2020-02-24 23:23:27 +0900
+Processing by ShopsController#search as HTML
+  Rendering shops/search.html.erb within layouts/application
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT "shops".* FROM "shops"[0m
+  ↳ app/views/shops/search.html.erb:10
+  Rendered shops/search.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 76ms (Views: 72.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-02-24 23:23:32 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 85ms (Views: 82.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/shops" for ::1 at 2020-02-24 23:23:33 +0900
+Processing by ShopsController#index as HTML
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT "shops".* FROM "shops"[0m
+  ↳ app/controllers/shops_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:7
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:8
+  Rendering shops/index.html.erb within layouts/application
+  Rendered shops/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 91ms (Views: 81.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/shops/1" for ::1 at 2020-02-24 23:23:45 +0900
+Processing by ShopsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShop Load (0.3ms)[0m  [1m[34mSELECT  "shops".* FROM "shops" WHERE "shops"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shops_controller.rb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."congestion") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:30
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."menu") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:31
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."price") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."wifi") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:33
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."others") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:34
+  Rendering shops/show.html.erb within layouts/application
+  [1m[36mShopImage Load (0.2ms)[0m  [1m[34mSELECT "shop_images".* FROM "shop_images" WHERE "shop_images"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/views/shops/show.html.erb:6
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/views/shops/show.html.erb:37
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shops/show.html.erb:38
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shops/show.html.erb:38
+  Rendered shops/show.html.erb within layouts/application (9.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 121ms (Views: 104.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users/2" for ::1 at 2020-02-24 23:24:43 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:4
+  [1m[36mShop Load (0.1ms)[0m  [1m[34mSELECT  "shops".* FROM "shops" WHERE "shops"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/post.rb:15
+  Rendered users/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 60ms (Views: 54.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/shops/search" for ::1 at 2020-02-24 23:24:53 +0900
+Processing by ShopsController#search as HTML
+  Rendering shops/search.html.erb within layouts/application
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT "shops".* FROM "shops"[0m
+  ↳ app/views/shops/search.html.erb:10
+  Rendered shops/search.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 84ms (Views: 79.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2" for ::1 at 2020-02-24 23:24:56 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/yugo/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:4
+  [1m[36mShop Load (0.1ms)[0m  [1m[34mSELECT  "shops".* FROM "shops" WHERE "shops"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/post.rb:15
+  Rendered users/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 68ms (Views: 63.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/2/edit" for ::1 at 2020-02-24 23:25:08 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT  "shops".* FROM "shops" WHERE "shops"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/post.rb:15
+  Rendered posts/edit.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 78ms (Views: 71.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-02-24 23:30:17 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (7.0ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 185ms (Views: 173.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-02-24 23:31:39 +0900
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 153ms (Views: 149.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/shops" for ::1 at 2020-02-24 23:31:41 +0900
+Processing by ShopsController#index as HTML
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT "shops".* FROM "shops"[0m
+  ↳ app/controllers/shops_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:7
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:8
+  Rendering shops/index.html.erb within layouts/application
+  Rendered shops/index.html.erb within layouts/application (4.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 75ms (Views: 68.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/shops?utf8=%E2%9C%93&q%5Bstation_name_or_name_cont%5D=%E3%82%BF%E3%83%AA%E3%83%BC%E3%82%BA+&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2020-02-24 23:31:48 +0900
+Processing by ShopsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"station_name_or_name_cont"=>"タリーズ "}, "commit"=>"検索"}
+  [1m[36mShop Load (0.4ms)[0m  [1m[34mSELECT "shops".* FROM "shops" WHERE ("shops"."station_name" LIKE '%タリーズ %' OR "shops"."name" LIKE '%タリーズ %')[0m
+  ↳ app/controllers/shops_controller.rb:6
+  Rendering shops/index.html.erb within layouts/application
+  Rendered shops/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 76ms (Views: 67.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/shops?utf8=%E2%9C%93&q%5Bstation_name_or_name_cont%5D=%E9%87%91%E7%94%BA&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2020-02-24 23:32:07 +0900
+Processing by ShopsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"station_name_or_name_cont"=>"金町"}, "commit"=>"検索"}
+  [1m[36mShop Load (0.6ms)[0m  [1m[34mSELECT "shops".* FROM "shops" WHERE ("shops"."station_name" LIKE '%金町%' OR "shops"."name" LIKE '%金町%')[0m
+  ↳ app/controllers/shops_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:7
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:8
+  Rendering shops/index.html.erb within layouts/application
+  Rendered shops/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 87ms (Views: 74.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/shops?utf8=%E2%9C%93&q%5Bstation_name_or_name_cont%5D=%E9%87%91%E7%94%BA&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2020-02-24 23:33:27 +0900
+Processing by ShopsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"station_name_or_name_cont"=>"金町"}, "commit"=>"検索"}
+  [1m[36mShop Load (0.1ms)[0m  [1m[34mSELECT "shops".* FROM "shops" WHERE ("shops"."station_name" LIKE '%金町%' OR "shops"."name" LIKE '%金町%')[0m
+  ↳ app/controllers/shops_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:7
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:8
+  Rendering shops/index.html.erb within layouts/application
+  Rendered shops/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 104ms (Views: 99.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/shops?utf8=%E2%9C%93&q%5Bstation_name_or_name_cont%5D=%E9%87%91%E7%94%BA&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2020-02-24 23:33:28 +0900
+Processing by ShopsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"station_name_or_name_cont"=>"金町"}, "commit"=>"検索"}
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT "shops".* FROM "shops" WHERE ("shops"."station_name" LIKE '%金町%' OR "shops"."name" LIKE '%金町%')[0m
+  ↳ app/controllers/shops_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:7
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:8
+  Rendering shops/index.html.erb within layouts/application
+  Rendered shops/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 75ms (Views: 68.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/shops?utf8=%E2%9C%93&q%5Bstation_name_or_name_cont%5D=%E9%87%91%E7%94%BA&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2020-02-24 23:33:32 +0900
+Processing by ShopsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"station_name_or_name_cont"=>"金町"}, "commit"=>"検索"}
+  [1m[36mShop Load (0.1ms)[0m  [1m[34mSELECT "shops".* FROM "shops" WHERE ("shops"."station_name" LIKE '%金町%' OR "shops"."name" LIKE '%金町%')[0m
+  ↳ app/controllers/shops_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:7
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:8
+  Rendering shops/index.html.erb within layouts/application
+  Rendered shops/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 99ms (Views: 94.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/shops?utf8=%E2%9C%93&q%5Bstation_name_or_name_cont%5D=%E3%82%BF%E3%83%AA%E3%83%BC%E3%82%BA&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2020-02-24 23:33:43 +0900
+Processing by ShopsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"station_name_or_name_cont"=>"タリーズ"}, "commit"=>"検索"}
+  [1m[36mShop Load (0.6ms)[0m  [1m[34mSELECT "shops".* FROM "shops" WHERE ("shops"."station_name" LIKE '%タリーズ%' OR "shops"."name" LIKE '%タリーズ%')[0m
+  ↳ app/controllers/shops_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:7
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:8
+  Rendering shops/index.html.erb within layouts/application
+  Rendered shops/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 84ms (Views: 74.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/shops?utf8=%E2%9C%93&q%5Bstation_name_or_name_cont%5D=%E3%82%BF%E3%83%AA%E3%83%BC%E3%82%BA&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2020-02-24 23:33:44 +0900
+Processing by ShopsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"station_name_or_name_cont"=>"タリーズ"}, "commit"=>"検索"}
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT "shops".* FROM "shops" WHERE ("shops"."station_name" LIKE '%タリーズ%' OR "shops"."name" LIKE '%タリーズ%')[0m
+  ↳ app/controllers/shops_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:7
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("posts"."post_total_point") FROM "posts" WHERE "posts"."shop_id" = ?[0m  [["shop_id", 1]]
+  ↳ app/controllers/shops_controller.rb:8
+  Rendering shops/index.html.erb within layouts/application
+  Rendered shops/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 68ms (Views: 57.8ms | ActiveRecord: 0.4ms)
+
+
