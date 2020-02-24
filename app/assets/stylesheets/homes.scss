@@ -1,3 +1,26 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.main-window{
+    text-align: center;
+}
+.search-box{
+    display: inline-block;
+    height: calc(100vh - 120px);
+}
+.select-circle{
+    display: inline-block;
+    height: 500px;
+    width: 500px;
+    background-color: goldenrod;
+    border-radius: 250px;
+    text-align: center;
+    margin: 80px 50px;
+    font-size: 45px;
+    line-height: 450px;
+    transition: 1s;
+}
+.select-circle:hover{
+    height: 550px;
+    width: 550px;
+}
