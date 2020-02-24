@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
   get '/:id/posts/new' => 'posts#new'
   post '/:id/posts/new' => 'posts#create'
-  post '/posts/:id' => 'posts#destroy'
   resources :posts, only: [:edit, :update, :destroy]
 
   devise_for :users
