@@ -22,11 +22,12 @@
     padding: 0;
     box-sizing: border-box;
     color: beige;
-    background-color: rgb(189, 144, 112);
     font-family: 'TsukuARdGothic-Regular','ヒラギノ角ゴシック','Hiragino Sans',YuGothic,'Yu Gothic',sans-serif;
     font-size: 15px;
 }
-
+body{
+    background-color: rgb(189, 144, 112);
+}
 header{
     display: inline-block;
     position: fixed;
@@ -39,7 +40,7 @@ header{
 }
 header h1{
     display: inline-block;
-    line-height: 120px;
+    line-height: 114px;
 }
 header .title{
     font-size: 30px;
@@ -90,6 +91,7 @@ a{
     height: 30px;
     width: 70px;
     box-shadow: 0px 2px;
+    background-color: rgb(189, 144, 112);
 }
 .btn-sticky:hover{
     box-shadow: 0px 0px;
