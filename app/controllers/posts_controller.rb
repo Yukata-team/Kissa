@@ -21,6 +21,17 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      @post.post_total_point = (@post.congestion.to_f + @post.menu.to_f + @post.price.to_f + @post.wifi.to_f + @post.others.to_f) / 5
+      @post.save
+      redirect_to user_path(@post.user.id), notice: "変更を保存しました"
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
