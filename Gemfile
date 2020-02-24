@@ -73,3 +73,7 @@ gem 'ransack'
 # bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
+
+#　画像投稿用
+gem "refile", github: 'refile/refile', require: "refile/rails"
+gem "refile-mini_magick", github: 'refile/refile-mini_magick'
