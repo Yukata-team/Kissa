@@ -17,7 +17,7 @@ class ShopsController < ApplicationController
   def create
     @shop = Shop.new(shop_params)
     if @shop.save
-      redirect_to shop_path(@shop)
+      redirect_to shop_path(@shop), notice: "登録が完了しました"
     else
       render :new
     end
