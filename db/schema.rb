@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_24_093956) do
+ActiveRecord::Schema.define(version: 2020_02_24_131335) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "shop_id"
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 2020_02_24_093956) do
     t.float "ave_wifi"
     t.float "ave_others"
     t.string "image_id"
+    t.string "branch"
+    t.string "furigana"
   end
 
   create_table "stations", force: :cascade do |t|
