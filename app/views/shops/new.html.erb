@@ -9,6 +9,10 @@
     <%= f.text_field :station_name %>駅
   </div>
   <div class="">
+    <label for="">店舗やメニューの画像</label>
+    <%= f.attachment_field :shop_images_images, multiple: true %>
+  </div>
+  <div class="">
     <%= f.submit "登録" %>
   </div>
 <% end %>

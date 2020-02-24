@@ -1,6 +1,15 @@
 <div class="">
   <%= @shop.name %>
   <%= @shop.total_point %>
+  <div class="">    
+    <% if @shop.shop_images.present? %>
+      <% @shop.shop_images.each do |image| %>
+        <%= attachment_image_tag image, :image, :fill, 200, 200 %>
+        <% end %>
+    <% else %>
+      <%= image_tag 'no_image.jpg', size: '200x200' %>
+    <% end %>
+  </div>
   <div class="">
     <div class="">
       混み具合
