@@ -16,6 +16,7 @@ class ShopsController < ApplicationController
 
   def create
     @shop = Shop.new(shop_params)
+    @shop.user_id = current_user.id
     if @shop.save
       redirect_to shop_path(@shop), notice: "登録が完了しました"
     else
@@ -32,6 +33,19 @@ class ShopsController < ApplicationController
       @shop.ave_price = @shop.posts.average(:price).floor(2)
       @shop.ave_wifi = @shop.posts.average(:wifi).floor(2)
       @shop.ave_others = @shop.posts.average(:others).floor(2)
+    end
+  end
+
+  def edit
+    @shop = Shop.find(params[:id])
+  end
+
+  def update
+    @shop = Shop.find(params[:id])
+    if @shop.save
+      redirect_to user_path(@shop.user.id), notice: "変更を保存しました"
+    else
+      render :edit
     end
   end
 

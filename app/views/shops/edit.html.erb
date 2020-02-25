@@ -1,0 +1,33 @@
+<% if @shop.errors.any? %>
+<div id="error_explanation">
+  <h3><%= @shop.errors.count %> 個のエラー</h3>
+  <ul>
+    <% @shop.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<h1>店舗編集</h1>
+<%= form_for @shop do |f| %>
+<table>
+  <tr>
+    <th>店舗名</th> <td><%= f.text_field :name %></td>
+  </tr>
+  <tr>
+    <th>支店名</th> <td><%= f.text_field :branch %></td>
+  </tr>
+  <tr>
+    <th>フリガナ</th> <td><%= f.text_field :furigana %></td>
+  </tr>
+  <tr>
+    <th>最寄駅</th> <td><%= f.text_field :station_name %></td>
+  </tr>
+  <tr>
+    <th>店舗やメニューの画像</th> <td><%= f.attachment_field :shop_images_images, multiple: true %></td>
+  </tr>
+</table>
+<div class="">
+  <%= f.submit "保存" %>
+</div>
+<% end %>

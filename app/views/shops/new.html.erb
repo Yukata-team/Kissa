@@ -1,3 +1,13 @@
+<% if @shop.errors.any? %>
+<div id="error_explanation">
+  <h3><%= @shop.errors.count %> 個のエラー</h3>
+  <ul>
+    <% @shop.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 <h1>店舗登録</h1>
 <%= form_for @shop do |f| %>
   <div class="">
