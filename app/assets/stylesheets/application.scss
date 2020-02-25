@@ -13,9 +13,6 @@
  *= require_tree .
  *= require_self
  */
-/* h1, body{
-    margin: 0;
-} */
 *{
     margin: 0;
     padding: 0;
@@ -26,6 +23,9 @@
 }
 body{
     background-color: rgb(189, 144, 112);
+}
+h3{
+    font-size: 40px;
 }
 header{
     display: inline-block;
@@ -59,16 +59,14 @@ a{
     margin: 120px 50px 0 50px;
 }
 .flash {
-  padding: 10px 0;
-  color: white;
-  background: rgba(0, 0, 0, 0.5);
-  text-align: center;
-  position: absolute;
-  top: 64px;
-  z-index: 10;
-  width: 100%;
-  border-radius: 0 0 2px 2px;
-  font-size: 14px;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    padding: 7px 0;
+    text-align: center;
+    color: beige;
+    background: rgba(0, 0, 0, 0.5);
 }
 .input-form-box{
     margin: 0 auto;
