@@ -1,6 +1,7 @@
 class Shop < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :shop_images, dependent: :destroy
+  belongs_to :user
   accepts_attachments_for :shop_images, attachment: :image
   validates :name, presence: true, length: {maximum: 30}
   validates :station_name, presence: true, length: {maximum: 20}

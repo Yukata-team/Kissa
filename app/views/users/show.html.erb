@@ -1,9 +1,9 @@
 <div class="">
-  <%= @user.name %>
+  <h3><%= @user.name %></h3>
   <div class="">
     <% @user.posts.each do |post| %>
-    店舗名
-    <%= link_to post.shop.name %>
+    <h4>店舗名</h4>
+    <%= post.shop.name %>
     <table>
       <tr>
         <th>総合評価</th>
@@ -37,7 +37,30 @@
         <%= link_to "編集", edit_post_path(post.id) %>
         <%= link_to "削除", post_path(post), method: :delete, data: {confirm: "本当に削除しますか？"} %>
       <% end %>
-    </div>    
+    </div>
+    <% end %>
+    <% @user.shops.each do |shop| %>
+      <h4>登録した店舗</h4>
+      <table>
+        <tr>
+          <th>店舗名</th> <td><%= shop.name %></td>
+        </tr>
+        <tr>
+          <th>支店名</th> <td><%= shop.branch %></td>
+        </tr>
+        <tr>
+          <th>フリガナ</th> <td><%= shop.furigana %></td>
+        </tr>
+        <tr>
+          <th>最寄駅</th> <td><%= shop.station_name %></td>
+        </tr>
+      </table>
+      <div class="">
+        <% if shop.user.id == current_user.id %>
+          <%= link_to "編集", edit_shop_path(shop.id) %>
+          <%= link_to "削除", shop_path(shop), method: :delete, data: {confirm: "本当に削除しますか？"} %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>
