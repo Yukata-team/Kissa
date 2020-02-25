@@ -1,4 +1,19 @@
 <div class="">
+  <div class="">
+    <% if @user.profile_image.present? %>
+      <%= attachment_image_tag @user, :image, :fill, 80, 80 %>
+    <% else %>
+      <%= image_tag 'no_image.jpg', size: '80x80' %>
+    <% end %>
+    <%= form_for @user do |f| %>
+      <div class="">
+        <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+      </div>
+      <div class="">        
+        <%= f.submit "保存" %>
+      </div>
+    <% end %>
+  </div>
   <h3><%= @user.name %></h3>
   <% if @user.id == current_user.id %>
     <div class="">

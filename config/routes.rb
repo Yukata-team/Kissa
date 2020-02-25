@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   resources :posts, only: [:edit, :update, :destroy]
 
   devise_for :users
-  resources :users, only: [:index, :show, :edit, :update]
+  resources :users, only: [:index, :show]
+  patch '/users/:id' => 'users#image_update'
 end
