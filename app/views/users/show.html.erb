@@ -1,5 +1,10 @@
 <div class="">
   <h3><%= @user.name %></h3>
+  <% if @user.id == current_user.id %>
+    <div class="">
+      <%= link_to "編集", edit_user_registration_path %>
+    </div>
+  <% end %>
   <div class="">
     <% @user.posts.each do |post| %>
     <h4>店舗名</h4>

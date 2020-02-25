@@ -49,6 +49,12 @@ class ShopsController < ApplicationController
     end
   end
 
+  def destroy
+    @shop = Shop.find(params[:id])
+    @shop.destroy
+    redirect_to user_path(@shop.user.id), notice: "店舗情報を削除しました"
+  end
+
   def search
     @q = Shop.ransack(params[:q])
     @shop = @q.result
