@@ -60,13 +60,30 @@ a{
 }
 .flash {
     position: fixed;
-    top: 0px;
+    top: 0;
     left: 0;
     width: 100%;
     padding: 7px 0;
     text-align: center;
     color: beige;
     background: rgba(0, 0, 0, 0.5);
+    animation-duration: 7s;
+    animation-name: slide-in-out;
+    animation-fill-mode: forwards;
+}
+@keyframes slide-in-out{
+    from{
+        top: -37px;
+    }
+    20%{
+        top: 0;
+    }
+    80%{
+        top: 0;
+    }
+    to{
+        top: -37px;
+    }
 }
 .input-form-box{
     margin: 0 auto;
