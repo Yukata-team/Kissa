@@ -55,6 +55,12 @@ li{
 a{
     text-decoration: none;
 }
+header a{
+    transition: 0.5s;
+}
+header a:hover{
+    opacity: 0.7;
+}
 .container{
     margin: 120px 50px 0 50px;
 }
