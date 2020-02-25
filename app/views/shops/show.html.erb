@@ -5,34 +5,29 @@
   <div class="">
     <% if @shop.shop_images.present? %>
       <% @shop.shop_images.each do |image| %>
-        <%= attachment_image_tag image, :image, :fill, 200, 200 %>
+        <%= attachment_image_tag image, :image, :fill, 300, 200 %>
         <% end %>
     <% else %>
-      <%= image_tag 'no_image.png', size: '200x200' %>
+      <%= image_tag 'no_image.png', size: '300x200' %>
     <% end %>
   </div>
-  <div class="">
-    <div class="">
-      混み具合
-      <%= @shop.ave_congestion %>
-    </div>
-    <div class="">
-      メニュー
-      <%= @shop.ave_menu %>
-    </div>
-    <div class="">
-      価格帯
-      <%= @shop.ave_price %>
-    </div>
-    <div class="">
-      通信環境
-      <%= @shop.ave_wifi %>
-    </div>
-    <div class="">
-      その他
-      <%= @shop.ave_others %>
-    </div>
-  </div>
+  <table class="">
+    <tr class="">
+      <th>混み具合</th> <td><%= @shop.ave_congestion %></td>
+    </tr>
+    <tr class="">
+      <th>メニュー</th> <td><%= @shop.ave_menu %></td>
+    </tr>
+    <tr class="">
+      <th>価格帯</th> <td><%= @shop.ave_price %></td>
+    </tr>
+    <tr class="">
+      <th>通信環境</th> <td><%= @shop.ave_wifi %></td>
+    </tr>
+    <tr class="">            
+      <th>その他</th> <td><%= @shop.ave_others %></td>
+    </tr>
+  </table>
 </div>
 <% @shop.posts.each do |post| %>
 <h4><%= post.user.name %></h4>
