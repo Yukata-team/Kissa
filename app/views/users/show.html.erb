@@ -33,9 +33,11 @@
       </tr>
     </table>
     <div class="">
-      <%= link_to "編集", edit_post_path(post.id) %>
-      <%= link_to "削除", post_path(post), method: :delete, data: {confirm: "本当に削除しますか？"} %>
-    </div>
+      <% if post.user.id == current_user.id %>
+        <%= link_to "編集", edit_post_path(post.id) %>
+        <%= link_to "削除", post_path(post), method: :delete, data: {confirm: "本当に削除しますか？"} %>
+      <% end %>
+    </div>    
     <% end %>
   </div>
 </div>
