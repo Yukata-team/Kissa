@@ -9,16 +9,18 @@
       <div class="">
         <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
       </div>
-      <div class="">        
+      <div class="">
         <%= f.submit "保存" %>
       </div>
     <% end %>
   </div>
   <h3><%= @user.name %></h3>
-  <% if @user.id == current_user.id %>
-    <div class="">
-      <%= link_to "編集", edit_user_registration_path %>
-    </div>
+  <% if current_user != nil %>
+    <% if @user.id == current_user.id %>
+      <div class="">
+        <%= link_to "編集", edit_user_registration_path %>
+      </div>
+    <% end %>
   <% end %>
   <div class="">
     <% @user.posts.each do |post| %>

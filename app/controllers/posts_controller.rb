@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :ensure_correct_user, only: [:edit, :destroy]
 
   def new
     @post = Post.new
@@ -36,6 +37,14 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to user_path(@post.user.id), notice: "レビューを削除しました"
+  end
+
+  def ensure_correct_user
+    @post = Post.find(params[:id])
+    if @post.user.id != current_user.id
+      flash[:alert] = "権限がありません"
+      redirect_to user_path(current_user.id)
+    end
   end
 
   private
