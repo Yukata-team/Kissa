@@ -10,6 +10,7 @@
   <% @shop.each do |shop| %>
     <tr>
       <td><%= link_to shop.name, "/#{shop.id}/posts/new" %></td>
+      <td><%= link_to shop.branch, "/#{shop.id}/posts/new" %></td>
     </tr>
     <br>
   <% end %>
