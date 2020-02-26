@@ -12,22 +12,22 @@
 <%= form_for @shop do |f| %>
   <table>
     <tr>
-      <th>店舗名</th> <td><%= f.text_field :name %></td>
+      <th>店舗名</th> <td><%= f.text_field :name, class:"input-form" %></td>
     </tr>
     <tr>
-      <th>支店名</th> <td><%= f.text_field :branch %></td>
+      <th>支店名</th> <td><%= f.text_field :branch, class:"input-form" %></td>
     </tr>
     <tr>
-      <th>フリガナ</th> <td><%= f.text_field :furigana %></td>
+      <th>フリガナ</th> <td><%= f.text_field :furigana, class:"input-form" %></td>
     </tr>
     <tr>
-      <th>最寄駅</th> <td><%= f.text_field :station_name %></td>
+      <th>最寄駅</th> <td><%= f.text_field :station_name, class:"input-form" %></td>
     </tr>
     <tr>
       <th>店舗やメニューの画像</th> <td><%= f.attachment_field :shop_images_images, multiple: true %></td>
     </tr>
   </table>
   <div class="">
-    <%= f.submit "登録" %>
+    <%= f.submit "登録", class:"btn-sticky" %>
   </div>
 <% end %>
