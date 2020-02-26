@@ -1,4 +1,6 @@
 class ShopsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :ensure_correct_user, only: [:edit, :destroy]
 
   def index
     @q = Shop.ransack(params[:q])
@@ -58,6 +60,14 @@ class ShopsController < ApplicationController
   def search
     @q = Shop.ransack(params[:q])
     @shop = @q.result
+  end
+
+  def ensure_correct_user
+    @shop = Shop.find(params[:id])
+    if @shop.user.id != current_user.id
+      flash[:alert] = "権限がありません"
+      redirect_to user_path(current_user.id)
+    end
   end
 
   private
