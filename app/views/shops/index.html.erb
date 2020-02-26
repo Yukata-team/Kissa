@@ -11,8 +11,8 @@
       <td>
         <%= link_to shop.name, shop_path(shop) %>
         <%= link_to shop.branch, shop_path(shop) %>
+        <%= shop.total_point %>
       </td>
-      <td><%= shop.total_point %></td>
     </tr>
     <br>
   <% end %>
