@@ -1,7 +1,7 @@
 <h3>レビューしたいお店を検索してください</h3>
 <%= search_form_for @q, url: "/shops/search" do |f| %>
   <%= f.search_field :station_name_or_name_cont, class:"input-form" %>
-  <%= f.submit "検索", class:"btn-sticky" %>
+  <%= f.submit "検索" %>
 <% end %>
 
 <tbody>
@@ -9,8 +9,9 @@
     <br>
   <% @shop.each do |shop| %>
     <tr>
-      <td><%= link_to shop.name, "/#{shop.id}/posts/new" %></td>
-      <td><%= link_to shop.branch, "/#{shop.id}/posts/new" %></td>
+      <%= link_to "/#{shop.id}/posts/new" do %>
+      <td><%= shop.name %></td> <td><%= shop.branch %></td>
+      <% end %>
     </tr>
     <br>
   <% end %>
