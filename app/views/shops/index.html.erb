@@ -1,21 +1,20 @@
-<h3>駅名から探す</h3>
-<%= search_form_for @q, url: shops_path do |f| %>
-  <div class="field">
-    <%= f.search_field :station_name_or_name_cont, class:"input-form" %>
+<div class="narrow-window">
+  <h3>駅名から探す</h3>
+  <div class="search-field">
+    <%= search_form_for @q, url: shops_path do |f| %>
+        <%= f.search_field :station_name_or_name_cont, class:"input-form" %><%= f.submit "検索", class:"btn-sticky" %>
+    <% end %>
   </div>
-  <%= f.submit "検索", class:"btn-sticky" %>
-<% end %>
-<tbody>
-    <th><%= sort_link(@q, :total_point, "評価点順") %></th>
-    <br>
-  <% @shop.each do |shop| %>
-    <tr>
-      <td>
+  <div class="order-select">
+    <%= sort_link(@q, :total_point, "評価点順") %>
+  </div>
+  <div class="candidate-lists">
+    <% @shop.each do |shop| %>
+      <div class="candidate-list">
         <%= link_to shop.name, shop_path(shop) %>
         <%= link_to shop.branch, shop_path(shop) %>
         <%= shop.total_point %>
-      </td>
-    </tr>
-    <br>
-  <% end %>
-</tbody>
+      </div>
+    <% end %>
+  </div>
+</div>

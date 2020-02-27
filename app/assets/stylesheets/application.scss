@@ -64,6 +64,10 @@ header a:hover{
 .container{
     margin: 120px 50px 0 50px;
 }
+.narrow-window{
+    width: 700px;
+    margin: 0 auto;
+}
 .flash {
     position: fixed;
     top: 0;
@@ -115,6 +119,28 @@ header a:hover{
 }
 .field{
     margin: 40px 0;
+}
+.search-field{
+    .input-form{
+        width: 400px;
+    }
+    .btn-sticky{
+        height: 38px;
+        margin-left: 7px;
+        border: solid 1px white;
+    }
+}
+.order-select{
+    display: inline-block;
+    float: right;
+}
+.candidate-lists{
+    display: inline-block;
+}
+.candidate-list{
+    width: 400px;
+    border: solid 1px white;
+    border-top: none;
 }
 .actions{
     margin: 10px;
