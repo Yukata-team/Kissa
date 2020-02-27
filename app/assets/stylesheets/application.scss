@@ -138,9 +138,15 @@ header a:hover{
     display: inline-block;
 }
 .candidate-list{
+    display: block;
     width: 400px;
+    height: 30px;
+    padding: 2px 5px;
     border: solid 1px white;
     border-top: none;
+}
+.candidate-list:hover{
+    background-color: rgba(218, 165, 32, 0.6);
 }
 .actions{
     margin: 10px;
