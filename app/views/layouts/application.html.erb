@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CafeLog</title>
+    <title>CaféLog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,7 +12,7 @@
   <body>
     <!-- メニューバー -->
     <header>
-      <h1><%= link_to "CafeLog", root_path, class:"title" %></h1>
+      <h1><%= link_to "CaféLog", root_path, class:"title" %></h1>
       <ul>
         <% if user_signed_in? %>
           <li><%= link_to "店舗検索", root_path %></li>
