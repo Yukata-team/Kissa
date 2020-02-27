@@ -1,18 +1,22 @@
-<h3>レビューしたいお店を検索してください</h3>
-<%= search_form_for @q, url: "/shops/search" do |f| %>
-  <%= f.search_field :station_name_or_name_cont, class:"input-form" %>
-  <%= f.submit "検索" %>
-<% end %>
-
-<tbody>
-    <th><%= sort_link(@q, :total_point, "評価点順") %></th>
-    <br>
-  <% @shop.each do |shop| %>
-    <tr>
-      <%= link_to "/#{shop.id}/posts/new" do %>
-      <td><%= shop.name %></td> <td><%= shop.branch %></td>
+<div class="narrow-window">
+  <h3>レビューする店舗を検索</h3>
+  <div class="search-area">
+    <div class="search-field">
+      <%= search_form_for @q, url: "/shops/search" do |f| %>
+        <%= f.search_field :station_name_or_name_cont, class:"input-form" %>
+        <%= f.submit "検索", class:"btn-sticky" %>
       <% end %>
-    </tr>
-    <br>
-  <% end %>
-</tbody>
+    </div>
+    <div class="order-select">
+      <%= sort_link(@q, :total_point, "評価点順") %>
+    </div>
+    <div class="candidate-lists">
+      <% @shop.each do |shop| %>
+        <%= link_to shop_path(shop), class:"candidate-list" do %>
+          <%= shop.name %><%= shop.branch %>
+          <%= shop.total_point %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
