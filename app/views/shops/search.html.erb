@@ -13,7 +13,7 @@
   </div>
   <div class="candidate-lists">
     <% @shop.each do |shop| %>
-      <%= link_to shop_path(shop), class:"candidate-list" do %>
+      <%= link_to "/#{shop.id}/posts/new", class:"candidate-list" do %>
         <%= shop.name %><%= shop.branch %>
         <%= shop.total_point %>
       <% end %>
