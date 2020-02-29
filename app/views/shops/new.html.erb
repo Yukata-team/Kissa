@@ -11,30 +11,36 @@
   </ul>
 </div>
 <% end %>
-<div class="narrow-window">
-  <%= form_for @shop do |f| %>
-    <table>
-      <tr>
-        <th>店舗名</th> <td><%= f.text_field :name, class:"input-form" %></td>
-      </tr>
-      <tr>
-        <th>支店名</th> <td><%= f.text_field :branch, class:"input-form" %></td>
-      </tr>
-      <tr>
-        <th>フリガナ</th> <td><%= f.text_field :furigana, class:"input-form" %></td>
-      </tr>
-      <tr>
-        <th>最寄駅</th> <td><%= f.text_field :station_name, class:"input-form" %></td>
-      </tr>
-      <tr>
-        <th>略称、別称</th> <td><%= f.text_field :other_name, class:"input-form" %></td>
-      </tr>
-      <tr>
-        <th>店舗やメニューの画像</th> <td><%= f.attachment_field :shop_images_images, multiple: true %></td>
-      </tr>
-    </table>
-    <div class="">
-      <%= f.submit "登録", class:"btn-sticky" %>
+<div class="input-form-box">
+  <div class="input-forms">
+    <%= form_for @shop do |f| %>
+    <div class="field">
+      店舗名
+      <%= f.text_field :name, class:"input-form" %>
     </div>
-  <% end %>
+    <div class="field">
+      支店名
+      <%= f.text_field :branch, class:"input-form" %>
+    </div>
+    <div class="field">
+      フリガナ
+      <%= f.text_field :furigana, class:"input-form" %>
+    </div>
+    <div class="field">
+      最寄駅
+      <%= f.text_field :station_name, class:"input-form" %>
+    </div>
+    <div class="field">
+      略称、別称
+      <%= f.text_field :other_name, class:"input-form" %>
+    </div>
+    <div class="field">
+      店舗やメニューの画像
+      <%= f.attachment_field :shop_images_images, multiple: true %>
+    </div>
+      <div class="actions">
+        <%= f.submit "登録", class:"btn-sticky" %>
+      </div>
+    <% end %>
+  </div>
 </div>
