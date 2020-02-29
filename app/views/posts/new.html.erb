@@ -15,56 +15,51 @@
     <tr class="">
       <th>混み具合</th>
       <td>
-        <%= f.radio_button :congestion, 1.to_f %>1
-        <%= f.radio_button :congestion, 2.to_f %>2
-        <%= f.radio_button :congestion, 3.to_f %>3
-        <%= f.radio_button :congestion, 4.to_f %>4
-        <%= f.radio_button :congestion, 5.to_f %>5
+        <% (1..5).each do |n| %>
+          <%= f.radio_button :congestion, n.to_f %>
+          <%= f.label(:congestion, n) %>
+        <% end %>
       </td>
     </tr>
     <tr class="">
       <th>メニュー</th>
       <td>
-        <%= f.radio_button :menu, 1.to_f %>1
-        <%= f.radio_button :menu, 2.to_f %>2
-        <%= f.radio_button :menu, 3.to_f %>3
-        <%= f.radio_button :menu, 4.to_f %>4
-        <%= f.radio_button :menu, 5.to_f %>5
+        <% (1..5).each do |n| %>
+          <%= f.radio_button :menu, n.to_f %>
+          <%= f.label(:menu, n) %>
+        <% end %>
       </td>
     </tr>
     <tr class="">
       <th>価格帯</th>
       <td>
-        <%= f.radio_button :price, 1.to_f %>1
-        <%= f.radio_button :price, 2.to_f %>2
-        <%= f.radio_button :price, 3.to_f %>3
-        <%= f.radio_button :price, 4.to_f %>4
-        <%= f.radio_button :price, 5.to_f %>5
+        <% (1..5).each do |n| %>
+          <%= f.radio_button :price, n.to_f %>
+          <%= f.label(:price, n) %>
+        <% end %>
       </td>
     </tr>
     <tr class="">
       <th>通信環境</th>
       <td>
-        <%= f.radio_button :wifi, 1.to_f %>1
-        <%= f.radio_button :wifi, 2.to_f %>2
-        <%= f.radio_button :wifi, 3.to_f %>3
-        <%= f.radio_button :wifi, 4.to_f %>4
-        <%= f.radio_button :wifi, 5.to_f %>5
+        <% (1..5).each do |n| %>
+          <%= f.radio_button :wifi, n.to_f %>
+          <%= f.label(:wifi, n) %>
+        <% end %>
       </td>
     </tr>
     <tr class="">
       <th>その他</th>
       <td>
-        <%= f.radio_button :others, 1.to_f %>1
-        <%= f.radio_button :others, 2.to_f %>2
-        <%= f.radio_button :others, 3.to_f %>3
-        <%= f.radio_button :others, 4.to_f %>4
-        <%= f.radio_button :others, 5.to_f %>5
+        <% (1..5).each do |n| %>
+          <%= f.radio_button :others, n.to_f %>
+          <%= f.label(:others, n) %>
+        <% end %>
       </td>
     </tr>
     <tr class="">
       <th>レビュー</th>
-      <td><%= f.text_area :review, class:"input-form" %></td>    
+      <td><%= f.text_area :review, class:"input-form" %></td>
     </tr>
     <tr class="">
   </table>
