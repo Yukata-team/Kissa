@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      post: 投稿
+    attributes:
+      post:
+        congestion: 混み具合
+        menu: メニュー
+        price: 価格帯
+        wifi: 通信環境
+        others: その他

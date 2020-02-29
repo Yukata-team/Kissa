@@ -63,6 +63,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # ログイン機能用
 gem 'devise'
+
 # deviseの日本語化用
 gem 'devise-i18n'
 gem 'devise-i18n-views'
@@ -77,3 +78,6 @@ gem 'jquery-rails'
 #　画像投稿用
 gem "refile", github: 'refile/refile', require: "refile/rails"
 gem "refile-mini_magick", github: 'refile/refile-mini_magick'
+
+#　日本語化
+gem 'rails-i18n'
