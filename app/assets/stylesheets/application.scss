@@ -99,6 +99,12 @@ header a:hover{
         top: -37px;
     }
 }
+.page-title h1{
+    display: inline;
+    padding-bottom: 10px;
+    font-size: 50px;
+    border-bottom: solid 1px beige;
+}
 .input-form-box{
     margin: 0 auto;
     padding: 80px 0;
@@ -164,4 +170,7 @@ header a:hover{
 .links{
     margin-top: 40px;
     border-top: 10px;
+}
+.field_with_errors{
+    display: inline;
 }
