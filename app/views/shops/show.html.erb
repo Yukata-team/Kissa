@@ -5,11 +5,15 @@
   <div class="">
     <% if @shop.shop_images.present? %>
       <% @shop.shop_images.each do |image| %>
-        <%= attachment_image_tag image, :image, :fill, 300, 200 %>
+        <%= attachment_image_tag image, :image, :fill, 400, 300 %>
         <% end %>
     <% else %>
-      <%= image_tag 'no_image.png', size: '300x200' %>
+      <%= image_tag 'no_image.png', size: '400x300' %>
     <% end %>
+  </div>
+  <div class="">
+    評価数
+    <%= @post_count %>
   </div>
   <table class="">
     <tr class="">
@@ -24,7 +28,7 @@
     <tr class="">
       <th>通信環境</th> <td><%= @shop.ave_wifi %></td>
     </tr>
-    <tr class="">            
+    <tr class="">
       <th>その他</th> <td><%= @shop.ave_others %></td>
     </tr>
   </table>

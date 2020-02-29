@@ -36,6 +36,12 @@ class ShopsController < ApplicationController
       @shop.ave_wifi = @shop.posts.average(:wifi).floor(2)
       @shop.ave_others = @shop.posts.average(:others).floor(2)
     end
+    @post_count = 0
+    @shop.posts.each do |post|
+      if post.shop_id == @shop.id
+        @post_count = @post_count + 1
+      end
+    end
   end
 
   def edit
