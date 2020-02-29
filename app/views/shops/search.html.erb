@@ -2,8 +2,8 @@
   <h1>レビュー</h1>
 </div>
 <div class="narrow-window">
-  <h3>レビューする店舗を検索</h3>
   <div class="search-area">
+    <h3>レビューする店舗を検索</h3>
     <div class="search-field">
       <%= search_form_for @q, url: "/shops/search" do |f| %>
         <%= f.search_field :station_name_or_name_cont, class:"input-form" %>
