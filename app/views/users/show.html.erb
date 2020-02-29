@@ -76,6 +76,9 @@
         <tr>
           <th>最寄駅</th> <td><%= shop.station_name %></td>
         </tr>
+        <tr>
+          <th>略称、別称</th> <td><%= shop.other_name %></td>
+        </tr>
       </table>
       <div class="">
         <% if shop.user.id == current_user.id %>

@@ -24,6 +24,9 @@
     <th>最寄駅</th> <td><%= f.text_field :station_name, class:"input-form" %></td>
   </tr>
   <tr>
+    <th>略称、別称</th> <td><%= f.text_field :other_name, class:"input-form" %></td>
+  </tr>
+  <tr>
     <th>店舗やメニューの画像</th> <td><%= f.attachment_field :shop_images_images, multiple: true %></td>
   </tr>
 </table>

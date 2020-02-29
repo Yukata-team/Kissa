@@ -44,7 +44,7 @@ class ShopsController < ApplicationController
 
   def update
     @shop = Shop.find(params[:id])
-    if @shop.save
+    if @shop.update(shop_params)
       redirect_to user_path(@shop.user.id), notice: "変更を保存しました"
     else
       render :edit
@@ -72,6 +72,6 @@ class ShopsController < ApplicationController
 
   private
   def shop_params
-    params.require(:shop).permit(:name, :branch, :furigana, :station_name, shop_images_images: [])
+    params.require(:shop).permit(:name, :branch, :furigana, :station_name, :other_name, shop_images_images: [])
   end
 end
