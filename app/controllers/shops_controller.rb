@@ -4,7 +4,7 @@ class ShopsController < ApplicationController
 
   def index
     @q = Shop.ransack(params[:q])
-    @shop = @q.result
+    @shop = @q.result.order(total_point: "ASC")
     @shop.each do |shop|
       if shop.posts.average(:post_total_point) != nil
         shop.total_point = shop.posts.average(:post_total_point).floor(2)
@@ -75,6 +75,13 @@ class ShopsController < ApplicationController
       redirect_to user_path(current_user.id)
     end
   end
+
+  # def average
+  #   if @shop.posts.average(:post_total_point) != nil
+  #     @shop.total_point = @shop.posts.average(:post_total_point).floor(2)
+  #     @shop.save
+  #   end
+  # end
 
   private
   def shop_params

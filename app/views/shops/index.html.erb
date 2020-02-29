@@ -9,17 +9,19 @@
           <%= f.submit "検索", class:"btn-sticky" %>
       <% end %>
     </div>
-    <div class="candidate-lists">
-      <% @shop.each do |shop| %>
-        <%= link_to shop_path(shop), class:"candidate-list" do %>
-          <%= shop.name %><%= shop.branch %>
-          <% if shop.total_point %>
-            <div class="list-shop-point">
-              <span class="point"><%= shop.total_point%></span>
-            </div>            
+    <% if request.url.match(/commit/) %>
+      <div class="candidate-lists">
+        <% @shop.each do |shop| %>
+          <%= link_to shop_path(shop), class:"candidate-list" do %>
+            <%= shop.name %><%= shop.branch %>
+            <% if shop.total_point %>
+              <div class="list-shop-point">
+                <span class="point"><%= shop.total_point%></span>
+              </div>
+            <% end %>
           <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>

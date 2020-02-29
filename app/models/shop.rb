@@ -12,7 +12,9 @@ class Shop < ApplicationRecord
   def posts
     return Post.where(shop_id: self.id)
   end
+
   def post
     return Post.find_by(shop_id: self.id)
   end
+
 end

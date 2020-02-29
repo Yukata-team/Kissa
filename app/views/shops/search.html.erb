@@ -6,7 +6,7 @@
     <h3>レビューする店舗を検索</h3>
     <div class="search-field">
       <%= search_form_for @q, url: "/shops/search" do |f| %>
-        <%= f.search_field :station_name_or_name_cont, class:"input-form" %>
+        <%= f.search_field :station_name_or_name_or_other_name_cont, class:"input-form" %>
         <%= f.submit "検索", class:"btn-sticky" %>
       <% end %>
     </div>
