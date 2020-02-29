@@ -154,6 +154,15 @@ header a:hover{
     padding: 2px 5px;
     border: solid 1px white;
     border-top: none;
+    .list-shop-point{
+        width: 40px;
+        float: right;
+        .point::before{
+            font-family: "Font Awesome 5 Free";
+            content: '\f005';
+            font-weight: 900;
+        }
+    }
 }
 .candidate-list:hover{
     background-color: rgba(218, 165, 32, 0.6);
