@@ -1,3 +1,6 @@
+<div class="page-title">
+  <h1>店舗登録</h1>
+</div>
 <% if @shop.errors.any? %>
 <div id="error_explanation">
   <h3><%= @shop.errors.count %> 個のエラー</h3>
@@ -8,29 +11,30 @@
   </ul>
 </div>
 <% end %>
-<h1>店舗登録</h1>
-<%= form_for @shop do |f| %>
-  <table>
-    <tr>
-      <th>店舗名</th> <td><%= f.text_field :name, class:"input-form" %></td>
-    </tr>
-    <tr>
-      <th>支店名</th> <td><%= f.text_field :branch, class:"input-form" %></td>
-    </tr>
-    <tr>
-      <th>フリガナ</th> <td><%= f.text_field :furigana, class:"input-form" %></td>
-    </tr>
-    <tr>
-      <th>最寄駅</th> <td><%= f.text_field :station_name, class:"input-form" %></td>
-    </tr>
-    <tr>
-      <th>略称、別称</th> <td><%= f.text_field :other_name, class:"input-form" %></td>
-    </tr>
-    <tr>
-      <th>店舗やメニューの画像</th> <td><%= f.attachment_field :shop_images_images, multiple: true %></td>
-    </tr>
-  </table>
-  <div class="">
-    <%= f.submit "登録", class:"btn-sticky" %>
-  </div>
-<% end %>
+<div class="narrow-window">
+  <%= form_for @shop do |f| %>
+    <table>
+      <tr>
+        <th>店舗名</th> <td><%= f.text_field :name, class:"input-form" %></td>
+      </tr>
+      <tr>
+        <th>支店名</th> <td><%= f.text_field :branch, class:"input-form" %></td>
+      </tr>
+      <tr>
+        <th>フリガナ</th> <td><%= f.text_field :furigana, class:"input-form" %></td>
+      </tr>
+      <tr>
+        <th>最寄駅</th> <td><%= f.text_field :station_name, class:"input-form" %></td>
+      </tr>
+      <tr>
+        <th>略称、別称</th> <td><%= f.text_field :other_name, class:"input-form" %></td>
+      </tr>
+      <tr>
+        <th>店舗やメニューの画像</th> <td><%= f.attachment_field :shop_images_images, multiple: true %></td>
+      </tr>
+    </table>
+    <div class="">
+      <%= f.submit "登録", class:"btn-sticky" %>
+    </div>
+  <% end %>
+</div>
