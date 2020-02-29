@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def image_update
     @user = current_user
-    @user.save(user_image_params)
+    @user.update(user_image_params)
     redirect_to user_path(@user), notice: "プロフィール画像を変更しました"
   end
 

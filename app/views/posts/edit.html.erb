@@ -11,50 +11,78 @@
   <% end %>
   <h2><%= @post.shop.name %></h2>
   <%= form_for @post, url: post_path(@post.id) do |f| %>
-  <div class="">
-    <label for="">混み具合</label>
-    <%= f.radio_button :congestion, 1.to_f %>1
-    <%= f.radio_button :congestion, 2.to_f %>2
-    <%= f.radio_button :congestion, 3.to_f %>3
-    <%= f.radio_button :congestion, 4.to_f %>4
-    <%= f.radio_button :congestion, 5.to_f %>5
-  </div>
-  <div class="">
-    <label for="">メニュー</label>
-    <%= f.radio_button :menu, 1.to_f %>1
-    <%= f.radio_button :menu, 2.to_f %>2
-    <%= f.radio_button :menu, 3.to_f %>3
-    <%= f.radio_button :menu, 4.to_f %>4
-    <%= f.radio_button :menu, 5.to_f %>5
-  </div>
-  <div class="">
-    <label for="">価格帯</label>
-    <%= f.radio_button :price, 1.to_f %>1
-    <%= f.radio_button :price, 2.to_f %>2
-    <%= f.radio_button :price, 3.to_f %>3
-    <%= f.radio_button :price, 4.to_f %>4
-    <%= f.radio_button :price, 5.to_f %>5
-  </div>
-  <div class="">
-    <label for="">通信環境</label>
-    <%= f.radio_button :wifi, 1.to_f %>1
-    <%= f.radio_button :wifi, 2.to_f %>2
-    <%= f.radio_button :wifi, 3.to_f %>3
-    <%= f.radio_button :wifi, 4.to_f %>4
-    <%= f.radio_button :wifi, 5.to_f %>5
-  </div>
-  <div class="">
-    <label for="">その他</label>
-    <%= f.radio_button :others, 1.to_f %>1
-    <%= f.radio_button :others, 2.to_f %>2
-    <%= f.radio_button :others, 3.to_f %>3
-    <%= f.radio_button :others, 4.to_f %>4
-    <%= f.radio_button :others, 5.to_f %>5
-  </div>
-  <div class="">
-    <label for="">レビュー</label>
-    <%= f.text_area :review %>
-  </div>
+  <table>
+    <tr class="">
+      <th>混み具合</th>
+      <td>
+        <% (1..5).each do |n| %>
+          <% if @post.congestion == n %>
+            <%= f.radio_button :congestion, n.to_f, checked: true %>
+          <% else %>
+            <%= f.radio_button :congestion, n.to_f %>
+          <% end %>
+          <%= f.label(:congestion, n) %>
+        <% end %>
+      </td>
+    </tr>
+    <tr class="">
+      <th>メニュー</th>
+      <td>
+        <% (1..5).each do |n| %>
+          <% if @post.menu == n %>
+            <%= f.radio_button :menu, n.to_f, checked: true %>
+          <% else %>
+            <%= f.radio_button :menu, n.to_f %>
+          <% end %>
+          <%= f.label(:menu, n) %>
+        <% end %>
+      </td>
+    </tr>
+    <tr class="">
+      <th>価格帯</th>
+      <td>
+        <% (1..5).each do |n| %>
+          <% if @post.price == n %>
+            <%= f.radio_button :price, n.to_f, checked: true %>
+          <% else %>
+            <%= f.radio_button :price, n.to_f %>
+          <% end %>
+          <%= f.label(:price, n) %>
+        <% end %>
+      </td>
+    </tr>
+    <tr class="">
+      <th>通信環境</th>
+      <td>
+        <% (1..5).each do |n| %>
+          <% if @post.wifi == n %>
+            <%= f.radio_button :wifi, n.to_f, checked: true %>
+          <% else %>
+            <%= f.radio_button :wifi, n.to_f %>
+          <% end %>
+          <%= f.label(:wifi, n) %>
+        <% end %>
+      </td>
+    </tr>
+    <tr class="">
+      <th>その他</th>
+      <td>
+        <% (1..5).each do |n| %>
+          <% if @post.others == n %>
+            <%= f.radio_button :others, n.to_f, checked: true %>
+          <% else %>
+            <%= f.radio_button :others, n.to_f %>
+          <% end %>
+          <%= f.label(:others, n) %>
+        <% end %>
+      </td>
+    </tr>
+    <tr class="">
+      <th>レビュー</th>
+      <td><%= f.text_area :review, class:"input-form" %></td>
+    </tr>
+    <tr class="">
+  </table>
   <div class="">
     <%= f.submit "投稿" %>
   </div>
