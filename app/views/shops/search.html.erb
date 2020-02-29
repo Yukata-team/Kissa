@@ -8,9 +8,6 @@
       <% end %>
     </div>
   <% if request.url.match(/commit/) %>
-  <div class="order-select">
-    <%= sort_link(@q, :total_point, "評価点順") %>
-  </div>
   <div class="candidate-lists">
     <% @shop.each do |shop| %>
       <%= link_to "/#{shop.id}/posts/new", class:"candidate-list" do %>
