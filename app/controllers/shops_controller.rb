@@ -3,8 +3,14 @@ class ShopsController < ApplicationController
   before_action :ensure_correct_user, only: [:edit, :destroy]
 
   def index
-    @q = Shop.ransack(search_params)
-    @shop = @q.result
+    if params[:q].present?
+      @q = Shop.ransack(search_params)
+      # @q = Shop.ransack(params[:q])
+      @shop = @q.result
+    else
+      @q = Shop.ransack()
+      @shop = Shop.all
+    end
     average
   end
 
@@ -87,7 +93,7 @@ class ShopsController < ApplicationController
   end
 
   def search_params
-    params.require(:q).permit(:sorts)
+    params.require(:q).permit(:sorts, :station_name_or_name_or_other_name_cont)
   end
 
 end
