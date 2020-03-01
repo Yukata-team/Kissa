@@ -5,7 +5,6 @@ class ShopsController < ApplicationController
   def index
     if params[:q].present?
       @q = Shop.ransack(search_params)
-      # @q = Shop.ransack(params[:q])
       @shop = @q.result
     else
       @q = Shop.ransack()

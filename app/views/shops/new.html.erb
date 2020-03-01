@@ -15,27 +15,27 @@
   <div class="input-forms">
     <%= form_for @shop do |f| %>
     <div class="field">
-      店舗名
+      <%= f.label "店舗名" %>
       <%= f.text_field :name, class:"input-form", placeholder:"例：スターバックスコーヒー" %>
     </div>
     <div class="field">
-      支店名
+      <%= f.label "支店名" %>
       <%= f.text_field :branch, class:"input-form", placeholder:"例：京橋店" %>
     </div>
     <div class="field">
-      フリガナ
+      <%= f.label "フリガナ" %>
       <%= f.text_field :furigana, class:"input-form", placeholder:"例：スターバックスコーヒーキョウバシテン" %>
     </div>
     <div class="field">
-      最寄駅
+      <%= f.label "最寄駅" %>
       <%= f.text_field :station_name, class:"input-form", placeholder:"例：京橋" %>
     </div>
     <div class="field">
-      略称、別称
+      <%= f.label "略称、別称" %>
       <%= f.text_field :other_name, class:"input-form", placeholder:"例：スタバ" %>
     </div>
     <div class="field">
-      店舗やメニューの画像
+      <%= f.label "店舗やメニューの画像" %>
       <%= f.attachment_field :shop_images_images, multiple: true %>
     </div>
       <div class="actions">
