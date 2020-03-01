@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/about' => 'homes#about'
 
   get '/shops/search' => 'shops#search'
+  post '/shops/average' => 'shops#average'
   resources :shops
 
   get '/:id/posts/new' => 'posts#new'
@@ -10,6 +11,5 @@ Rails.application.routes.draw do
   resources :posts, only: [:edit, :update, :destroy]
 
   devise_for :users
-  resources :users, only: [:index, :show]
-  patch '/users/:id' => 'users#image_update'
+  resources :users, only: [:index, :show, :edit, :update]
 end
