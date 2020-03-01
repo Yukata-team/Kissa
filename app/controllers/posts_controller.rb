@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   before_action :ensure_correct_user, only: [:edit, :destroy]
-  # after_action :average, only: [:create, :update]
 
   def new
     @post = Post.new

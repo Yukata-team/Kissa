@@ -29,6 +29,7 @@ ja:
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"
         name: "名前"
+        profile_image: "プロフィール画像"
     models:
       user: "ユーザ"
   devise:

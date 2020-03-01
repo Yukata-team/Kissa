@@ -4,10 +4,15 @@ class ShopsController < ApplicationController
 
   def index
     @q = Shop.ransack(params[:q])
-    @shop = @q.result.order(total_point: "ASC")
+    @shop = @q.result.order(total_point: "DESC")
+    average
+  end
+
+  def average
     @shop.each do |shop|
       if shop.posts.average(:post_total_point) != nil
         shop.total_point = shop.posts.average(:post_total_point).floor(2)
+        shop.save
       end
     end
   end
@@ -76,15 +81,9 @@ class ShopsController < ApplicationController
     end
   end
 
-  # def average
-  #   if @shop.posts.average(:post_total_point) != nil
-  #     @shop.total_point = @shop.posts.average(:post_total_point).floor(2)
-  #     @shop.save
-  #   end
-  # end
-
   private
   def shop_params
     params.require(:shop).permit(:name, :branch, :furigana, :station_name, :other_name, shop_images_images: [])
   end
+
 end
