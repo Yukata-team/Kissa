@@ -5,8 +5,11 @@
   <div class="search-area">
     <div class="search-field">
       <%= search_form_for @q, url: shops_path do |f| %>
-          <%= f.search_field :station_name_or_name_or_other_name_cont, class:"input-form" %>
-          <%= f.submit "検索", class:"btn-sticky" %>
+      <div class="">
+        <%= f.select :sorts, {"評価点順": "total_point desc", "登録順": "id desc"} %>
+      </div>
+        <%= f.search_field :station_name_or_name_or_other_name_cont, class:"input-form" %>
+        <%= f.submit "検索", class:"btn-sticky" %>
       <% end %>
     </div>
     <% if request.url.match(/commit/) %>
