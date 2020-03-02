@@ -1,0 +1,47 @@
+<% if shop.errors.any? %>
+<div id="error_explanation">
+  <h3><%= shop.errors.count %> 個のエラー</h3>
+  <ul>
+    <% shop.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div class="input-form-box">
+  <div class="input-forms">
+    <%= form_for shop do |f| %>
+    <div class="field">
+      <%= f.label "店舗名(必須)" %>
+      <%= f.text_field :name, class:"input-form", placeholder:"例：スターバックスコーヒー" %>
+    </div>
+    <div class="field">
+      <%= f.label "支店名(必須)" %>
+      <%= f.text_field :branch, class:"input-form", placeholder:"例：京橋店" %>
+    </div>
+    <div class="field">
+      <%= f.label "フリガナ" %>
+      <%= f.text_field :furigana, class:"input-form", placeholder:"例：スターバックスコーヒーキョウバシテン" %>
+    </div>
+    <div class="field">
+      <%= f.label "最寄駅" %>
+      <%= f.text_field :station_name, class:"input-form", placeholder:"例：京橋" %>
+    </div>
+    <div class="field">
+      <%= f.label "略称、別称" %>
+      <%= f.text_field :other_name, class:"input-form", placeholder:"例：スタバ" %>
+    </div>
+    <div class="field">
+      <%= f.label "営業時間、定休日" %><br>
+      <%= f.text_area :business_hour, class:"input-form", placeholder:"例：月~土[7:00~22:00] 日祝[9:00~21:00]" %>
+    </div>
+    <div class="field">
+      <%= f.label "店舗やメニューの画像" %>
+      <%= f.attachment_field :shop_images_images, multiple: true %>
+    </div>
+    <div class="actions">
+      <%= f.submit "登録", class:"btn-sticky" %>
+    </div>
+    <% end %>
+  </div>
+</div>
