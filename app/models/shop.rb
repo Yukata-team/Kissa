@@ -4,7 +4,7 @@ class Shop < ApplicationRecord
   belongs_to :user
   accepts_attachments_for :shop_images, attachment: :image
   validates :name, presence: true, length: {maximum: 30}
-  validates :station_name, presence: true, length: {maximum: 20}
+  validates :station_name, length: {maximum: 20}
   validates :branch, length: {maximum: 30}
   validates :furigana, presence: true, length: {maximum: 30}
   attachment :image
