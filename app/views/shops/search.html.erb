@@ -5,20 +5,27 @@
   <div class="search-area">
     <h3>レビューする店舗を検索</h3>
     <div class="search-field">
-      <%= search_form_for @q, url: "/shops/search" do |f| %>
+    <%= search_form_for @q, url: "/shops/search" do |f| %>
+      <div class="">
+        <%= f.select :sorts, {"評価点順": "total_point desc", "登録順": "id desc"} %>
+      </div>
         <%= f.search_field :station_name_or_name_or_other_name_cont, class:"input-form" %>
         <%= f.submit "検索", class:"btn-sticky" %>
+    <% end %>
+    </div>
+    <% if request.url.match(/commit/) %>
+    <div class="candidate-lists">
+      <% @shop.each do |shop| %>
+        <%= link_to "/#{shop.id}/posts/new", class:"candidate-list" do %>
+          <%= shop.name %><%= shop.branch %>
+          <% if shop.total_point %>
+          <div class="list-shop-point">
+            <span class="point"><%= shop.total_point%></span>
+          </div>
+          <% end %>
+        <% end %>
       <% end %>
     </div>
-  <% if request.url.match(/commit/) %>
-  <div class="candidate-lists">
-    <% @shop.each do |shop| %>
-      <%= link_to "/#{shop.id}/posts/new", class:"candidate-list" do %>
-        <%= shop.name %><%= shop.branch %>
-        <%= shop.total_point %>
-      <% end %>
     <% end %>
-  </div>
-  <% end %>
   </div>
 </div>
