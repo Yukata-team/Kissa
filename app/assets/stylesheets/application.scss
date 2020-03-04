@@ -131,6 +131,14 @@ header a:hover{
     color: black;
     border: none;
 }
+.input-area{
+  padding: 0 10px;
+  width: 100%;
+  height: 120px;
+  background-color: white;
+  color: black;
+  border: none;
+}
 .field{
     margin: 40px 0;
 }
@@ -151,10 +159,11 @@ header a:hover{
 }
 .candidate-list{
     display: block;
-    width: 400px;
+    width: 480px;
     height: 100px;
     padding: 2px 5px;
     border: solid 1px white;
+    margin-bottom: 10px;
     // border-top: none;
     .list-shop-point{
         width: 40px;
@@ -188,4 +197,7 @@ header a:hover{
 }
 .field_with_errors{
     display: inline;
+}
+.edit-picture{
+    padding-top: 10px;
 }

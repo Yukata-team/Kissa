@@ -6,7 +6,7 @@
     <% if @shop.shop_images.present? %>
       <% @shop.shop_images.each do |image| %>
         <%= attachment_image_tag image, :image, :fill, 400, 300 %>
-        <% end %>
+      <% end %>
     <% else %>
       <%= image_tag 'no_image.png', size: '400x300' %>
     <% end %>
@@ -34,7 +34,11 @@
   </table>
 </div>
 <div class="">
+  <h4>営業時間</h4>
   <p><%= @shop.business_hour %></p>
+</div>
+<div class="">
+  <%= link_to "編集", edit_shop_path(@shop.id) %>
 </div>
 <% @shop.posts.each do |post| %>
 <h4><%= post.user.name %></h4>

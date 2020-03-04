@@ -17,6 +17,7 @@
     <div class="candidate-lists">
       <% @shop.each do |shop| %>
         <%= link_to "/#{shop.id}/posts/new", class:"candidate-list" do %>
+          <%= attachment_image_tag shop, :head_image, :fill, 120, 90 %>
           <%= shop.name %><%= shop.branch %>
           <% if shop.total_point %>
           <div class="list-shop-point">

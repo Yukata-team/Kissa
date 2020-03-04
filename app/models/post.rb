@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   belongs_to :user
   validates :shop_id, presence: true
   validates :user_id, presence: true
-  validates :user_id, uniqueness: { scope: :shop_id} 
+  validates :user_id, uniqueness: { scope: :shop_id}
   validates :congestion, presence: true
   validates :menu, presence: true
   validates :price, presence: true
