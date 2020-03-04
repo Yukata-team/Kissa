@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_090621) do
+ActiveRecord::Schema.define(version: 2020_03_04_031532) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "shop_id"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2020_03_02_090621) do
     t.integer "user_id"
     t.string "other_name"
     t.text "business_hour"
+    t.string "head_image_id"
   end
 
   create_table "stations", force: :cascade do |t|

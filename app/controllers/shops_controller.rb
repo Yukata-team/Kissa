@@ -1,6 +1,6 @@
 class ShopsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :ensure_correct_user, only: [:edit, :destroy]
+  before_action :ensure_correct_user, only: [:destroy]
 
   def index
     if params[:q].present?
@@ -94,7 +94,7 @@ class ShopsController < ApplicationController
 
   private
   def shop_params
-    params.require(:shop).permit(:name, :branch, :furigana, :station_name, :other_name, shop_images_images: [])
+    params.require(:shop).permit(:name, :branch, :furigana, :station_name, :other_name, :business_hour, :head_image, shop_images_images: [])
   end
 
   def search_params

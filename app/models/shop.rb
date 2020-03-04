@@ -8,6 +8,7 @@ class Shop < ApplicationRecord
   validates :branch, length: {maximum: 30}
   validates :furigana, presence: true, length: {maximum: 30}
   attachment :image
+  attachment :head_image
 
   def posts
     return Post.where(shop_id: self.id)

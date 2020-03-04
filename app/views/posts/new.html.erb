@@ -2,6 +2,9 @@
   <div class="page-title">
     <h1>レビューを書く</h1>
   </div>
+  <% end %>
+  <h2><%= @post.shop.name %></h2>
+  <div class="left-box">
   <div class="narrow-window">
     <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -70,5 +73,8 @@
       <%= f.submit "投稿", class:"btn-sticky" %>
     </div>
     <% end %>
+  </div>
+  <div class="right-box">
+    <%= image_tag 'review.png', size: '210x250' %>
   </div>
 </div>

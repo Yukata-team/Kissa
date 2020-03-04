@@ -146,14 +146,16 @@ header a:hover{
 }
 .candidate-lists{
     display: inline-block;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 .candidate-list{
     display: block;
     width: 400px;
-    height: 30px;
+    height: 100px;
     padding: 2px 5px;
     border: solid 1px white;
-    border-top: none;
+    // border-top: none;
     .list-shop-point{
         width: 40px;
         float: right;
