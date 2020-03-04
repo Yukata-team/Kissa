@@ -1,16 +1,22 @@
-<div class="">
-  <% if @post.errors.any? %>
-  <div id="error_explanation">
-    <h3><%= @post.errors.count %> 個のエラー</h3>
-    <ul>
-      <% @post.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-      <% end %>
-    </ul>
+<div class="review-page">
+  <div class="page-title">
+    <h1>レビューを書く</h1>
   </div>
   <% end %>
   <h2><%= @post.shop.name %></h2>
   <div class="left-box">
+  <div class="narrow-window">
+    <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= @post.errors.count %> 個のエラー</h3>
+      <ul>
+        <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+    <h3><%= @post.shop.name %><%= @post.shop.branch %>店</h3>
     <%= form_for @post, url: "/#{@post.shop_id}/posts/new" do |f| %>
     <table>
       <tr class="">
