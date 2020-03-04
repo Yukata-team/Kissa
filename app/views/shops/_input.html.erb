@@ -36,8 +36,12 @@
       <%= f.text_area :business_hour, class:"input-form", placeholder:"例：月~土[7:00~22:00] 日祝[9:00~21:00]" %>
     </div>
     <div class="field">
-      <%= f.label "店舗やメニューの画像" %>
+      <%= f.label "店舗やメニューの画像(複数選択可)" %>
       <%= f.attachment_field :shop_images_images, multiple: true %>
+    </div>
+    <div class="field">
+      <%= f.label "検索結果に表示するお店の画像(1枚)" %>
+      <%= f.attachment_field :head_image %>
     </div>
     <div class="actions">
       <%= f.submit "登録", class:"btn-sticky" %>

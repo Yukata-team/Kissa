@@ -10,60 +10,65 @@
   </div>
   <% end %>
   <h2><%= @post.shop.name %></h2>
-  <%= form_for @post, url: "/#{@post.shop_id}/posts/new" do |f| %>
-  <table>
-    <tr class="">
-      <th>混み具合</th>
-      <td>
-        <% (1..5).each do |n| %>
-          <%= f.radio_button :congestion, n.to_f %>
-          <%= f.label(:congestion, n) %>
-        <% end %>
-      </td>
-    </tr>
-    <tr class="">
-      <th>メニュー</th>
-      <td>
-        <% (1..5).each do |n| %>
-          <%= f.radio_button :menu, n.to_f %>
-          <%= f.label(:menu, n) %>
-        <% end %>
-      </td>
-    </tr>
-    <tr class="">
-      <th>価格帯</th>
-      <td>
-        <% (1..5).each do |n| %>
-          <%= f.radio_button :price, n.to_f %>
-          <%= f.label(:price, n) %>
-        <% end %>
-      </td>
-    </tr>
-    <tr class="">
-      <th>通信環境</th>
-      <td>
-        <% (1..5).each do |n| %>
-          <%= f.radio_button :wifi, n.to_f %>
-          <%= f.label(:wifi, n) %>
-        <% end %>
-      </td>
-    </tr>
-    <tr class="">
-      <th>その他</th>
-      <td>
-        <% (1..5).each do |n| %>
-          <%= f.radio_button :others, n.to_f %>
-          <%= f.label(:others, n) %>
-        <% end %>
-      </td>
-    </tr>
-    <tr class="">
-      <th>レビュー</th>
-      <td><%= f.text_area :review, class:"input-form" %></td>
-    </tr>
-    <tr class="">
-  </table>
-    <%= f.submit "投稿", class:"btn-sticky" %>
+  <div class="left-box">
+    <%= form_for @post, url: "/#{@post.shop_id}/posts/new" do |f| %>
+    <table>
+      <tr class="">
+        <th>混み具合</th>
+        <td>
+          <% (1..5).each do |n| %>
+            <%= f.radio_button :congestion, n.to_f %>
+            <%= f.label(:congestion, n) %>
+          <% end %>
+        </td>
+      </tr>
+      <tr class="">
+        <th>メニュー</th>
+        <td>
+          <% (1..5).each do |n| %>
+            <%= f.radio_button :menu, n.to_f %>
+            <%= f.label(:menu, n) %>
+          <% end %>
+        </td>
+      </tr>
+      <tr class="">
+        <th>価格帯</th>
+        <td>
+          <% (1..5).each do |n| %>
+            <%= f.radio_button :price, n.to_f %>
+            <%= f.label(:price, n) %>
+          <% end %>
+        </td>
+      </tr>
+      <tr class="">
+        <th>通信環境</th>
+        <td>
+          <% (1..5).each do |n| %>
+            <%= f.radio_button :wifi, n.to_f %>
+            <%= f.label(:wifi, n) %>
+          <% end %>
+        </td>
+      </tr>
+      <tr class="">
+        <th>その他</th>
+        <td>
+          <% (1..5).each do |n| %>
+            <%= f.radio_button :others, n.to_f %>
+            <%= f.label(:others, n) %>
+          <% end %>
+        </td>
+      </tr>
+      <tr class="">
+        <th>レビュー</th>
+        <td><%= f.text_area :review, class:"input-form" %></td>
+      </tr>
+      <tr class="">
+    </table>
+      <%= f.submit "投稿", class:"btn-sticky" %>
+    </div>
+    <% end %>
   </div>
-  <% end %>
+  <div class="right-box">
+    <%= image_tag 'review.png', size: '210x250' %>
+  </div>
 </div>

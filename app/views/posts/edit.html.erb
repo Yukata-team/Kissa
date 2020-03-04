@@ -10,81 +10,86 @@
   </div>
   <% end %>
   <h2><%= @post.shop.name %></h2>
-  <%= form_for @post, url: post_path(@post.id) do |f| %>
-  <table>
-    <tr class="">
-      <th>混み具合</th>
-      <td>
-        <% (1..5).each do |n| %>
-          <% if @post.congestion == n %>
-            <%= f.radio_button :congestion, n.to_f, checked: true %>
-          <% else %>
-            <%= f.radio_button :congestion, n.to_f %>
+  <div class="left-box">
+    <%= form_for @post, url: post_path(@post.id) do |f| %>
+    <table>
+      <tr class="">
+        <th>混み具合</th>
+        <td>
+          <% (1..5).each do |n| %>
+            <% if @post.congestion == n %>
+              <%= f.radio_button :congestion, n.to_f, checked: true %>
+            <% else %>
+              <%= f.radio_button :congestion, n.to_f %>
+            <% end %>
+            <%= f.label(:congestion, n) %>
           <% end %>
-          <%= f.label(:congestion, n) %>
-        <% end %>
-      </td>
-    </tr>
-    <tr class="">
-      <th>メニュー</th>
-      <td>
-        <% (1..5).each do |n| %>
-          <% if @post.menu == n %>
-            <%= f.radio_button :menu, n.to_f, checked: true %>
-          <% else %>
-            <%= f.radio_button :menu, n.to_f %>
+        </td>
+      </tr>
+      <tr class="">
+        <th>メニュー</th>
+        <td>
+          <% (1..5).each do |n| %>
+            <% if @post.menu == n %>
+              <%= f.radio_button :menu, n.to_f, checked: true %>
+            <% else %>
+              <%= f.radio_button :menu, n.to_f %>
+            <% end %>
+            <%= f.label(:menu, n) %>
           <% end %>
-          <%= f.label(:menu, n) %>
-        <% end %>
-      </td>
-    </tr>
-    <tr class="">
-      <th>価格帯</th>
-      <td>
-        <% (1..5).each do |n| %>
-          <% if @post.price == n %>
-            <%= f.radio_button :price, n.to_f, checked: true %>
-          <% else %>
-            <%= f.radio_button :price, n.to_f %>
+        </td>
+      </tr>
+      <tr class="">
+        <th>価格帯</th>
+        <td>
+          <% (1..5).each do |n| %>
+            <% if @post.price == n %>
+              <%= f.radio_button :price, n.to_f, checked: true %>
+            <% else %>
+              <%= f.radio_button :price, n.to_f %>
+            <% end %>
+            <%= f.label(:price, n) %>
           <% end %>
-          <%= f.label(:price, n) %>
-        <% end %>
-      </td>
-    </tr>
-    <tr class="">
-      <th>通信環境</th>
-      <td>
-        <% (1..5).each do |n| %>
-          <% if @post.wifi == n %>
-            <%= f.radio_button :wifi, n.to_f, checked: true %>
-          <% else %>
-            <%= f.radio_button :wifi, n.to_f %>
+        </td>
+      </tr>
+      <tr class="">
+        <th>通信環境</th>
+        <td>
+          <% (1..5).each do |n| %>
+            <% if @post.wifi == n %>
+              <%= f.radio_button :wifi, n.to_f, checked: true %>
+            <% else %>
+              <%= f.radio_button :wifi, n.to_f %>
+            <% end %>
+            <%= f.label(:wifi, n) %>
           <% end %>
-          <%= f.label(:wifi, n) %>
-        <% end %>
-      </td>
-    </tr>
-    <tr class="">
-      <th>その他</th>
-      <td>
-        <% (1..5).each do |n| %>
-          <% if @post.others == n %>
-            <%= f.radio_button :others, n.to_f, checked: true %>
-          <% else %>
-            <%= f.radio_button :others, n.to_f %>
+        </td>
+      </tr>
+      <tr class="">
+        <th>その他</th>
+        <td>
+          <% (1..5).each do |n| %>
+            <% if @post.others == n %>
+              <%= f.radio_button :others, n.to_f, checked: true %>
+            <% else %>
+              <%= f.radio_button :others, n.to_f %>
+            <% end %>
+            <%= f.label(:others, n) %>
           <% end %>
-          <%= f.label(:others, n) %>
-        <% end %>
-      </td>
-    </tr>
-    <tr class="">
-      <th>レビュー</th>
-      <td><%= f.text_area :review, class:"input-form" %></td>
-    </tr>
-    <tr class="">
-  </table>
-  <div class="">
-    <%= f.submit "投稿" %>
+        </td>
+      </tr>
+      <tr class="">
+        <th>レビュー</th>
+        <td><%= f.text_area :review, class:"input-form" %></td>
+      </tr>
+      <tr class="">
+    </table>
+    <div class="">
+      <%= f.submit "投稿" %>
+    </div>
+    <% end %>
   </div>
-  <% end %>
+  <div class="right-box">
+    <%= image_tag 'review.png', size: '210x250' %>
+  </div>
 </div>
