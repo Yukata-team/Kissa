@@ -37,6 +37,18 @@
               <div class="reviewed-shop-point">
                 <p>総合評価</p>
                 <p><%= post.post_total_point %></p>
+                <div id="star-rate-post-<%= post.id %>"></div>
+                <script>
+                $('#star-rate-post-<%= post.id %>').raty({
+                  size: 36,
+                  starOff:  '<%= asset_path('star-off.png') %>',
+                  starOn : '<%= asset_path('star-on.png') %>',
+                  starHalf: '<%= asset_path('star-half.png') %>',
+                  half: true,
+                  readOnly: true,
+                  score: <%= post.post_total_point %>,
+                });
+                </script>
               </div>
             <% end %>
           </div>
