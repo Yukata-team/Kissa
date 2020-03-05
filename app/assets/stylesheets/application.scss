@@ -143,6 +143,10 @@ header a:hover{
     margin: 40px 0;
 }
 .search-field{
+    #q_sorts{
+        color: black;
+        padding: 2px;
+    }
     .input-form{
         width: 400px;
     }
@@ -160,13 +164,28 @@ header a:hover{
 .candidate-list{
     display: block;
     width: 480px;
-    height: 100px;
-    padding: 2px 5px;
-    border: solid 1px white;
+    height: 120px;
+    line-height: 120px;
+    padding: 12px 10px;
     margin-bottom: 10px;
-    // border-top: none;
+    border: solid 1px white;
+    .list-img{
+        border: 3px solid beige;
+        :hover{
+            filter: blur(6px);
+        }
+    }
+    .shop-name{
+        display: inline-block;
+        vertical-align: top;
+        line-height: 96px;
+        padding-left: 10px;
+        font-size: 20px;
+    }
     .list-shop-point{
-        width: 40px;
+        vertical-align: top;
+        line-height: 96px;
+        padding-right: 30px;
         float: right;
         .point::before{
             font-family: "Font Awesome 5 Free";
