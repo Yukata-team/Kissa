@@ -1,86 +1,99 @@
-<div class="page-title">
-  <h1>マイページ</h1>
-</div>
-<div class="">
-  <div class="">
-    <% if @user.profile_image.present? %>
-      <%= attachment_image_tag @user, :profile_image, :fill, 80, 80 %>
-    <% else %>
-      <%= image_tag 'no_image.jpg', size: '80x80' %>
-    <% end %>
+<div class="my-page">
+  <div class="page-title">
+    <h1>マイページ</h1>
   </div>
-  <h3><%= @user.name %></h3>
-  <% if current_user != nil %>
-    <% if @user.id == current_user.id %>
-      <div class="">
-        <%= link_to "編集", edit_user_path %>
-      </div>
-    <% end %>
-  <% end %>
-  <div class="">
-    <% @user.posts.each do |post| %>
-    <h4>店舗名</h4>
-    <%= post.shop.name %>
-    <table>
-      <tr>
-        <th>総合評価</th>
-        <td><%= post.post_total_point %></td>
-      </tr>
-      <tr>
-        <th>混み具合</th>
-        <td><%= post.congestion %></td>
-      </tr>
-      <tr>
-        <th>メニュ-</th>
-        <td><%= post.menu %></td>
-      </tr>
-        <th>価格帯</th>
-        <td><%= post.price %></td>
-      <tr>
-        <th>通信環境</th>
-        <td><%= post.wifi %></td>
-      </tr>
-      <tr>
-        <th>その他</th>
-        <td><%= post.others %></td>
-      </tr>
-      <tr>
-        <th>レビュ-</th>
-        <td><%= post.review %></td>
-      </tr>
-    </table>
-    <div class="">
-      <% if post.user.id == current_user.id %>
-        <%= link_to "編集", edit_post_path(post.id) %>
-        <%= link_to "削除", post_path(post), method: :delete, data: {confirm: "本当に削除しますか？"} %>
-      <% end %>
-    </div>
-    <% end %>
-    <% @user.shops.each do |shop| %>
-      <h4>登録した店舗</h4>
-      <table>
-        <tr>
-          <th>店舗名</th> <td><%= shop.name %></td>
-        </tr>
-        <tr>
-          <th>支店名</th> <td><%= shop.branch %></td>
-        </tr>
-        <tr>
-          <th>フリガナ</th> <td><%= shop.furigana %></td>
-        </tr>
-        <tr>
-          <th>最寄駅</th> <td><%= shop.station_name %></td>
-        </tr>
-        <tr>
-          <th>略称、別称</th> <td><%= shop.other_name %></td>
-        </tr>
-      </table>
-      <div class="">
-        <% if shop.user.id == current_user.id %>
-          <%= link_to "編集", edit_shop_path(shop.id) %>
-          <%= link_to "削除", shop_path(shop), method: :delete, data: {confirm: "本当に削除しますか？"} %>
+  <div class="narrow-window">
+    <div class="my-info">
+        <% if @user.profile_image.present? %>
+          <%= attachment_image_tag @user, :profile_image, :fill, 80, 80 %>
+        <% else %>
+          <%= image_tag 'no_image.jpg', size: '80x80' %>
+        <% end %>
+      <div class="my-info-bottom">
+
+        <div class="my-name">
+          <h3><%= @user.name %></h3>
+        </div>
+        <% if current_user != nil %>
+          <% if @user.id == current_user.id %>
+            <div class="my-info-edit-link">
+              <%= link_to "プロフィールの編集", edit_user_path %>
+            </div>
+          <% end %>
         <% end %>
       </div>
-    <% end %>
+    </div>
+    <div class="shop-lists">
+      <div class="reviewed-shops-title">
+        <h4>レビューした店舗</h4>
+      </div>
+      <% @user.posts.each do |post| %>
+      <div class="reviewed-shop">
+        <div class="reviewed-shop-main-info">
+          <div class="reviewed-shop-name">
+            <h5><%= post.shop.name %></h5>
+          </div>
+          <div class="reviewed-shop-point">
+            <p>総合評価</p>
+            <p><%= post.post_total_point %></p>
+          </div>
+        </div>
+        <div class="reviewed-shop-sub-info">
+          <div class="sub-info">
+            <p>混み具合</p><p><%= post.congestion %></p>
+          </div>
+          <div class="sub-info">
+            <p>メニュ-</p><p><%= post.menu %></p>
+          </div>
+          <div class="sub-info">
+            <p>価格帯</p><p><%= post.price %></p>
+          </div>
+          <div class="sub-info">
+            <p>通信環境</p><p><%= post.wifi %></p>
+          </div>
+          <div class="sub-info">
+            <p>その他</p><p><%= post.others %></p>
+          </div>
+          <div class="sub-info">
+            <p>レビュ-</p><p><%= post.review %></p>
+          </div>
+        </div>
+      </div>
+      <div class="reviewed-edit-delete">
+        <% if post.user.id == current_user.id %>
+          <%= link_to "編集", edit_post_path(post.id) %>
+          <%= link_to "削除", post_path(post), method: :delete, data: {confirm: "本当に削除しますか？"} %>
+        <% end %>
+      </div>
+      <% end %>
+      <div class="registered-shops-title">
+        <h4>登録した店舗</h4>
+      </div>
+      <% @user.shops.each do |shop| %>
+        <table>
+          <tr>
+            <th>店舗名</th> <td><%= shop.name %></td>
+          </tr>
+          <tr>
+            <th>支店名</th> <td><%= shop.branch %></td>
+          </tr>
+          <tr>
+            <th>フリガナ</th> <td><%= shop.furigana %></td>
+          </tr>
+          <tr>
+            <th>最寄駅</th> <td><%= shop.station_name %></td>
+          </tr>
+          <tr>
+            <th>略称、別称</th> <td><%= shop.other_name %></td>
+          </tr>
+        </table>
+        <div class="">
+          <% if shop.user.id == current_user.id %>
+            <%= link_to "編集", edit_shop_path(shop.id) %>
+            <%= link_to "削除", shop_path(shop), method: :delete, data: {confirm: "本当に削除しますか？"} %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
