@@ -1,3 +1,58 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.my-info{
+    text-align: center;
+    margin-bottom: 100px;
+}
+img{
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+}
+.my-info-bottom{
+    margin: 0 auto;
+}
+.my-name{
+    h3{
+        font-size: 80px;
+    }
+}
+.my-info-edit-link{
+    a{
+        float: right;
+    }
+}
+.reviewed-shops-title{
+    height: 100px;
+    // padding-left: 30px;
+    line-height: 100px;
+    border-top: 1px solid beige;
+    border-bottom: 1px solid beige;
+    text-align: center;
+    h4{
+        font-size: 30px;
+    }
+}
+.reviewed-shop{
+    height: 100px;
+}
+.reviewed-shop-main-info{
+    display: inline-block;
+    vertical-align: top;
+}
+.reviewed-shop-sub-info{
+    display: inline-block;
+    vertical-align: top;
+}
+.registered-shops-title{
+    height: 100px;
+    // padding-left: 30px;
+    line-height: 100px;
+    border-top: 1px solid beige;
+    border-bottom: 1px solid beige;
+    text-align: center;
+    h4{
+        font-size: 30px;
+    }
+}
