@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get '/:id/posts/new' => 'posts#new'
   post '/:id/posts/new' => 'posts#create'
-  resources :posts, only: [:edit, :update, :destroy]
+  resources :posts, only: [:show, :edit, :update, :destroy]
 
   devise_for :users
   resources :users, only: [:index, :show, :edit, :update]

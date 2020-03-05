@@ -30,33 +30,37 @@
         <% @user.posts.each do |post| %>
         <div class="reviewed-shop">
           <div class="reviewed-shop-main-info">
-            <div class="reviewed-shop-name">
-              <h5><%= post.shop.name %><br><%= post.shop.branch %></h5>
-            </div>
-            <div class="reviewed-shop-point">
-              <p>総合評価</p>
-              <p><%= post.post_total_point %></p>
-            </div>
+            <%= link_to shop_path(post.shop_id) do %>
+              <div class="reviewed-shop-name">
+                <h5><%= post.shop.name %><br><%= post.shop.branch %></h5>
+              </div>
+              <div class="reviewed-shop-point">
+                <p>総合評価</p>
+                <p><%= post.post_total_point %></p>
+              </div>
+            <% end %>
           </div>
           <div class="reviewed-shop-sub-info">
-            <div class="sub-info">
-              <p>混み具合:<%= post.congestion %></p>
-            </div>
-            <div class="sub-info">
-              <p>メニュー:<%= post.menu %></p>
-            </div>
-            <div class="sub-info">
-              <p>価格帯:<%= post.price %></p>
-            </div>
-            <div class="sub-info">
-              <p>通信環境:<%= post.wifi %></p>
-            </div>
-            <div class="sub-info">
-              <p>その他:<%= post.others %></p>
-            </div>
-            <div class="sub-info">
-              <p>レビュー:<%= post.review.truncate(15) %></p>
-            </div>
+            <%= link_to post_path(post.id) do %>
+              <div class="sub-info">
+                <p>混み具合:<%= post.congestion %></p>
+              </div>
+              <div class="sub-info">
+                <p>メニュー:<%= post.menu %></p>
+              </div>
+              <div class="sub-info">
+                <p>価格帯:<%= post.price %></p>
+              </div>
+              <div class="sub-info">
+                <p>通信環境:<%= post.wifi %></p>
+              </div>
+              <div class="sub-info">
+                <p>その他:<%= post.others %></p>
+              </div>
+              <div class="sub-info">
+                <p>レビュー:<%= post.review.truncate(15) %></p>
+              </div>
+            <% end %>
           </div>
           <div class="reviewed-edit-delete">
             <% if post.user.id == current_user.id %>
