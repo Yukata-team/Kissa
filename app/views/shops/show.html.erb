@@ -2,6 +2,18 @@
   <%= @shop.name %>
   <%= @shop.branch %>
   <%= @shop.total_point %>
+  <div id="star-rate-shop-<%= @shop.id %>"></div>
+  <script>
+  $('#star-rate-shop-<%= @shop.id %>').raty({
+    size: 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    readOnly: true,
+    score: <%= @shop.total_point %>,
+  });
+  </script>
   <div class="">
     <% if @shop.shop_images.present? %>
       <% @shop.shop_images.each do |image| %>
@@ -46,6 +58,18 @@
   <tr>
     <th>総合評価</th>
     <td><%= post.post_total_point %></td>
+    <div id="star-rate-<%= post.id %>"></div>
+    <script>
+    $('#star-rate-<%= post.id %>').raty({
+      size: 36,
+      starOff:  '<%= asset_path('star-off.png') %>',
+      starOn : '<%= asset_path('star-on.png') %>',
+      starHalf: '<%= asset_path('star-half.png') %>',
+      half: true,
+      readOnly: true,
+      score: <%= post.post_total_point %>,
+    });
+    </script>
   </tr>
   <tr>
     <th>混み具合</th>
