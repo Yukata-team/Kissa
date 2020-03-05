@@ -20,46 +20,91 @@
       <tr class="">
         <th>混み具合</th>
         <td>
-          <% (1..5).each do |n| %>
-            <%= f.radio_button :congestion, n.to_f %>
-            <%= f.label(:congestion, n) %>
-          <% end %>
+          <div class="form-group row congestion">
+            <%= f.hidden_field :congestion, class: :review_star %>
+          </div>
+          <script>
+            $('.congestion').raty({
+              size     : 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              scoreName: 'post[congestion]',
+              half: true,
+            });
+          </script>
         </td>
       </tr>
       <tr class="">
         <th>メニュー</th>
         <td>
-          <% (1..5).each do |n| %>
-            <%= f.radio_button :menu, n.to_f %>
-            <%= f.label(:menu, n) %>
-          <% end %>
+          <div class="form-group row menu">
+            <%= f.hidden_field :menu, class: :review_star %>
+          </div>
+          <script>
+            $('.menu').raty({
+              size     : 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              scoreName: 'post[menu]',
+              half: true,
+            });
+          </script>
         </td>
       </tr>
       <tr class="">
         <th>価格帯</th>
         <td>
-          <% (1..5).each do |n| %>
-            <%= f.radio_button :price, n.to_f %>
-            <%= f.label(:price, n) %>
-          <% end %>
+          <div class="form-group row price">
+            <%= f.hidden_field :price, class: :review_star %>
+          </div>
+          <script>
+            $('.price').raty({
+              size     : 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              scoreName: 'post[price]',
+              half: true,
+            });
+          </script>
         </td>
       </tr>
       <tr class="">
         <th>通信環境</th>
         <td>
-          <% (1..5).each do |n| %>
-            <%= f.radio_button :wifi, n.to_f %>
-            <%= f.label(:wifi, n) %>
-          <% end %>
+          <div class="form-group row wifi">
+            <%= f.hidden_field :wifi, class: :review_star %>
+          </div>
+          <script>
+            $('.wifi').raty({
+              size     : 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              scoreName: 'post[wifi]',
+              half: true,
+            });
+          </script>
         </td>
       </tr>
       <tr class="">
         <th>その他</th>
         <td>
-          <% (1..5).each do |n| %>
-            <%= f.radio_button :others, n.to_f %>
-            <%= f.label(:others, n) %>
-          <% end %>
+          <div class="form-group row others">
+            <%= f.hidden_field :others, class: :review_star %>
+          </div>
+          <script>
+            $('.others').raty({
+              size     : 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              scoreName: 'post[others]',
+              half: true,
+            });
+          </script>
         </td>
       </tr>
       <tr class="">
@@ -69,8 +114,8 @@
       <tr class="">
     </table>
       <%= f.submit "投稿", class:"btn-sticky" %>
-    </div>
     <% end %>
+  </div>
   </div>
   <div class="right-box">
     <%= image_tag 'review.png', size: '210x250' %>
