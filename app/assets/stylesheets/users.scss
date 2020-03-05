@@ -23,36 +23,52 @@ img{
         float: right;
     }
 }
-.reviewed-shops-title{
+.reviewed-shops, .registered-shops{
+    margin-bottom: 30px;
+}
+.reviewed-shops-title, .registered-shops-title{
     height: 100px;
-    // padding-left: 30px;
     line-height: 100px;
-    border-top: 1px solid beige;
-    border-bottom: 1px solid beige;
+    border-top: 3px solid beige;
+    border-bottom: 3px solid beige;
     text-align: center;
     h4{
         font-size: 30px;
     }
 }
-.reviewed-shop{
-    height: 100px;
-}
-.reviewed-shop-main-info{
-    display: inline-block;
-    vertical-align: top;
-}
-.reviewed-shop-sub-info{
-    display: inline-block;
-    vertical-align: top;
-}
-.registered-shops-title{
-    height: 100px;
-    // padding-left: 30px;
-    line-height: 100px;
-    border-top: 1px solid beige;
+.reviewed-shop, .registered-shop{
+    height: 200px;
     border-bottom: 1px solid beige;
-    text-align: center;
-    h4{
-        font-size: 30px;
+    padding: 30px 30px 0 30px;
+}
+.reviewed-shop-main-info, .registered-shop-main-info{
+    display: inline-block;
+    vertical-align: top;
+    border-right: 1px solid rgba(245, 245, 220, 0.329);
+    width: 300px;
+    height: calc(100% - 30px);
+    .reviewed-shop-name, .registered-shop-name{
+        h5{
+            font-size: 25px;
+        }
     }
 }
+.reviewed-shop-sub-info, .registered-shop-sub-info{
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 20px;
+}
+.reviewed-edit-delete, .registered-edit-delete{
+    height: 30px;
+    text-align: right;
+}
+// .registered-shops-title{
+//     height: 100px;
+//     line-height: 100px;
+//     border-top: 3px solid beige;
+//     border-bottom: 3px solid beige;
+//     text-align: center;
+//     h4{
+//         font-size: 30px;
+//     }
+// }
