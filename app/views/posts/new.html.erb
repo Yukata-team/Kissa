@@ -2,7 +2,6 @@
   <div class="page-title">
     <h1>レビューを書く</h1>
   </div>
-  <h2><%= @post.shop.name %></h2>
   <div class="left-box">
   <div class="narrow-window">
     <% if @post.errors.any? %>
@@ -15,7 +14,7 @@
       </ul>
     </div>
     <% end %>
-    <h3><%= @post.shop.name %><%= @post.shop.branch %>店</h3>
+    <h3><%= @post.shop.name %><%= @post.shop.branch %></h3>
     <%= form_for @post, url: "/#{@post.shop_id}/posts/new" do |f| %>
     <table>
       <tr class="">
