@@ -60,7 +60,7 @@
       <div class="table-right">
         <p><%= @shop.ave_menu %></p>
       </div>
-    </div>      
+    </div>
     <div class="table-line">
       <div class="table-left">
         <p>価格帯</p>
@@ -111,5 +111,17 @@
       <p>witten by <span class="written-name"><%= post.user.name %></span></p>
       <% end %>
     </div>
+    <!-- 投稿一覧 -->
+    <% @shop.posts.each do |post| %>
+      <%= post.user.name %>
+      <%= post.post_total_point %>
+      混み具合<%= post.congestion %>
+      メニュー<%= post.menu %>
+      価格帯<%= post.price %>
+      通信環境<%= post.wifi %>
+      その他<%= post.others %>
+      レビュー<%= post.review.truncate(15) %>
+    <% end %>
+    <!-- 投稿一覧 -->
   </div>
 </div>
