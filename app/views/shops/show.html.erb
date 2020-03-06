@@ -48,6 +48,18 @@
       </div>
       <div class="table-right">
         <p><%= @shop.ave_congestion %></p>
+        <div class="star" id="star-rate-shop-congestion-<%= @shop.id %>"></div>
+        <script>
+        $('#star-rate-shop-congestion-<%= @shop.id %>').raty({
+          size: 36,
+          starOff:  '<%= asset_path('star-off.png') %>',
+          starOn : '<%= asset_path('star-on.png') %>',
+          starHalf: '<%= asset_path('star-half.png') %>',
+          half: true,
+          readOnly: true,
+          score: <%= @shop.ave_congestion %>,
+        });
+        </script>
       </div>
     </div>
     <div class="table-line">
@@ -59,6 +71,18 @@
       </div>
       <div class="table-right">
         <p><%= @shop.ave_menu %></p>
+        <div class="star" id="star-rate-shop-menu-<%= @shop.id %>"></div>
+        <script>
+        $('#star-rate-shop-menu-<%= @shop.id %>').raty({
+          size: 36,
+          starOff:  '<%= asset_path('star-off.png') %>',
+          starOn : '<%= asset_path('star-on.png') %>',
+          starHalf: '<%= asset_path('star-half.png') %>',
+          half: true,
+          readOnly: true,
+          score: <%= @shop.ave_menu %>,
+        });
+        </script>
       </div>
     </div>
     <div class="table-line">
@@ -70,6 +94,18 @@
       </div>
       <div class="table-right">
         <p><%= @shop.ave_price %></p>
+        <div class="star" id="star-rate-shop-price-<%= @shop.id %>"></div>
+        <script>
+        $('#star-rate-shop-price-<%= @shop.id %>').raty({
+          size: 36,
+          starOff:  '<%= asset_path('star-off.png') %>',
+          starOn : '<%= asset_path('star-on.png') %>',
+          starHalf: '<%= asset_path('star-half.png') %>',
+          half: true,
+          readOnly: true,
+          score: <%= @shop.ave_price %>,
+        });
+        </script>
       </div>
     </div>
     <div class="table-line">
@@ -81,6 +117,18 @@
       </div>
       <div class="table-right">
         <p><%= @shop.ave_wifi %></p>
+        <div class="star" id="star-rate-shop-wifi-<%= @shop.id %>"></div>
+        <script>
+        $('#star-rate-shop-wifi-<%= @shop.id %>').raty({
+          size: 36,
+          starOff:  '<%= asset_path('star-off.png') %>',
+          starOn : '<%= asset_path('star-on.png') %>',
+          starHalf: '<%= asset_path('star-half.png') %>',
+          half: true,
+          readOnly: true,
+          score: <%= @shop.ave_wifi %>,
+        });
+        </script>
       </div>
     </div>
     <div class="table-line">
@@ -92,6 +140,18 @@
       </div>
       <div class="table-right">
         <p><%= @shop.ave_others %></p>
+        <div class="star" id="star-rate-shop-others-<%= @shop.id %>"></div>
+        <script>
+        $('#star-rate-shop-others-<%= @shop.id %>').raty({
+          size: 36,
+          starOff:  '<%= asset_path('star-off.png') %>',
+          starOn : '<%= asset_path('star-on.png') %>',
+          starHalf: '<%= asset_path('star-half.png') %>',
+          half: true,
+          readOnly: true,
+          score: <%= @shop.ave_others %>,
+        });
+        </script>
       </div>
     </div>
     <div class="table-line">
