@@ -30,13 +30,24 @@
   <div class="shop-info-details">
     <div class="table-line">
       <div class="table-left">
-        <p>評価数</p>
+        <p>営業時間</p>
       </div>
       <div class="table-center">
         <p>:</p>
       </div>
       <div class="table-right">
-        <p><%= @post_count %>人</p>
+        <p><%= @shop.business_hour %></p>
+      </div>
+    </div>
+    <div class="table-line">
+      <div class="table-left">
+        <p>最寄駅</p>
+      </div>
+      <div class="table-center">
+        <p>:</p>
+      </div>
+      <div class="table-right">
+        <p><%= @shop.station_name %></p>
       </div>
     </div>
     <div class="table-line">
@@ -47,7 +58,6 @@
         <p>:</p>
       </div>
       <div class="table-right">
-        <p><%= @shop.ave_congestion %></p>
         <div class="star" id="star-rate-shop-congestion-<%= @shop.id %>"></div>
         <script>
         $('#star-rate-shop-congestion-<%= @shop.id %>').raty({
@@ -60,6 +70,7 @@
           score: <%= @shop.ave_congestion %>,
         });
         </script>
+        <p><%= @shop.ave_congestion %></p>
       </div>
     </div>
     <div class="table-line">
@@ -70,7 +81,6 @@
         <p>:</p>
       </div>
       <div class="table-right">
-        <p><%= @shop.ave_menu %></p>
         <div class="star" id="star-rate-shop-menu-<%= @shop.id %>"></div>
         <script>
         $('#star-rate-shop-menu-<%= @shop.id %>').raty({
@@ -83,6 +93,7 @@
           score: <%= @shop.ave_menu %>,
         });
         </script>
+        <p><%= @shop.ave_menu %></p>
       </div>
     </div>
     <div class="table-line">
@@ -93,7 +104,6 @@
         <p>:</p>
       </div>
       <div class="table-right">
-        <p><%= @shop.ave_price %></p>
         <div class="star" id="star-rate-shop-price-<%= @shop.id %>"></div>
         <script>
         $('#star-rate-shop-price-<%= @shop.id %>').raty({
@@ -106,6 +116,7 @@
           score: <%= @shop.ave_price %>,
         });
         </script>
+        <p><%= @shop.ave_price %></p>
       </div>
     </div>
     <div class="table-line">
@@ -116,7 +127,6 @@
         <p>:</p>
       </div>
       <div class="table-right">
-        <p><%= @shop.ave_wifi %></p>
         <div class="star" id="star-rate-shop-wifi-<%= @shop.id %>"></div>
         <script>
         $('#star-rate-shop-wifi-<%= @shop.id %>').raty({
@@ -129,6 +139,7 @@
           score: <%= @shop.ave_wifi %>,
         });
         </script>
+        <p><%= @shop.ave_wifi %></p>
       </div>
     </div>
     <div class="table-line">
@@ -139,7 +150,6 @@
         <p>:</p>
       </div>
       <div class="table-right">
-        <p><%= @shop.ave_others %></p>
         <div class="star" id="star-rate-shop-others-<%= @shop.id %>"></div>
         <script>
         $('#star-rate-shop-others-<%= @shop.id %>').raty({
@@ -152,17 +162,18 @@
           score: <%= @shop.ave_others %>,
         });
         </script>
+        <p><%= @shop.ave_others %></p>
       </div>
     </div>
     <div class="table-line">
       <div class="table-left">
-        <p>営業時間</p>
+        <p>評価数</p>
       </div>
       <div class="table-center">
         <p>:</p>
       </div>
       <div class="table-right">
-        <p><%= @shop.business_hour %></p>
+        <p><%= @post_count %>人</p>
       </div>
     </div>
     <div class="shop-edit-name">
@@ -172,16 +183,91 @@
       <% end %>
     </div>
     <!-- 投稿一覧 -->
-    <% @shop.posts.each do |post| %>
-      <%= post.user.name %>
-      <%= post.post_total_point %>
-      混み具合<%= post.congestion %>
-      メニュー<%= post.menu %>
-      価格帯<%= post.price %>
-      通信環境<%= post.wifi %>
-      その他<%= post.others %>
-      レビュー<%= post.review.truncate(15) %>
-    <% end %>
+    <div class="reviews-list">
+      <h3>レビュー</h3>
+      <% @shop.posts.each do |post| %>
+        <div class="review">
+          <div class="review-name">
+            <h4><%= post.user.name %></h4>
+          </div>
+          <div class="star" id="star-rate-post-<%= post.id %>"></div>
+          <script>
+          $('#star-rate-post-<%= @shop.post.id %>').raty({
+            size: 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            half: true,
+            readOnly: true,
+            score: <%= post.post_total_point %>,
+          });
+          </script>
+          <div class="review-total-point">
+            <p><%= post.post_total_point %></p>
+          </div>
+          <div class="review-point-details">
+            <div class="point-line">
+              <div class="point-left">
+                <p>混み具合</p>
+              </div>
+              <div class="point-center">
+              <p>:</p>
+              </div>
+              <div class="point-right">
+                <p><%= post.congestion %></p>
+              </div>
+            </div>
+            <div class="point-line">
+              <div class="point-left">
+                <p>メニュー</p>
+              </div>
+              <div class="point-center">
+              <p>:</p>
+              </div>
+              <div class="point-right">
+                <p><%= post.menu %></p>
+              </div>
+            </div>
+            <div class="point-line">
+              <div class="point-left">
+                <p>価格帯</p>
+              </div>
+              <div class="point-center">
+              <p>:</p>
+              </div>
+              <div class="point-right">
+                <p><%= post.price %></p>
+              </div>
+            </div>
+            <div class="point-line">
+              <div class="point-left">
+                <p>通信環境</p>
+              </div>
+              <div class="point-center">
+              <p>:</p>
+              </div>
+              <div class="point-right">
+                <p><%= post.wifi %></p>
+              </div>
+            </div>
+            <div class="point-line">
+              <div class="point-left">
+                <p>その他</p>
+              </div>
+              <div class="point-center">
+              <p>:</p>
+              </div>
+              <div class="point-right">
+                <p><%= post.others %></p>
+              </div>
+            </div>
+          </div>
+          <div class="review-text">
+            <p><%= post.review %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
     <!-- 投稿一覧 -->
   </div>
 </div>

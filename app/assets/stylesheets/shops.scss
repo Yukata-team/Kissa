@@ -11,13 +11,18 @@
 }
 .shop-info-page{
     .shop-main-info{
-        margin: 70px 0;
+        margin: 70px 100px;
+        padding: 20px;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
         text-align: center;
         h2{
             font-size: 40px;
         }
         .star{
             display: inline;
+            vertical-align: top;
+            line-height: 30px;
         }
         .star-number{
             display: inline;
@@ -45,17 +50,70 @@
         }
         .table-right{
             display: inline-block;
+            p{
+                display: inline-block;
+            }
+            .star{
+                display: inline-block;
+                vertical-align: top;
+                line-height: 30px;
+            }
         }
         .shop-edit-name{
-            float: right;
+            display: block;
+            text-align: right;
+            a{
+                margin-right: 100px;
+            }
         }
         .written-name{
             font-size: 20px;
             font-weight: bold;
         }
+        .reviews-list{
+            h3{
+                font-size: 35px;
+            }
+            margin: 50px 0;
+            .review{
+                padding: 20px;
+                border: 1px solid;
+                .review-name{
+                    display: inline-block;
+                    h4{
+                        font-size: 20px;
+                    }
+                }
+                .star{
+                    display: inline-block;
+                }
+                .review-total-point{
+                    display: inline-block;
+                    vertical-align: top;
+                    line-height: 30px;    
+                }
+                .review-point-details{
+                    padding-bottom: 5px;
+                    .point-left{
+                        display: inline-block;
+                        width: 80px;
+                    }
+                    .point-center{
+                        display: inline-block;
+                    }
+                    .point-right{
+                        display: inline-block;
+                    }
+                }
+                .review-text{
+                    padding-top: 5px;
+                    border-top: 1px solid rgba(245, 245, 220, 0.363);
+                }
+            }
+        }
     }
     a{
-        transition: 1s;
+        transition: 0.5s;
     }
     a:hover{
         opacity: 0.7;
