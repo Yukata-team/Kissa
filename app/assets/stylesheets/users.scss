@@ -1,74 +1,108 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.my-info{
-    text-align: center;
-    margin-bottom: 100px;
-    img{
-        width: 150px;
-        height: 150px;
-        border-radius: 150px;
-    }
-}
-.my-info-bottom{
-    margin: 0 auto;
-}
-.my-name{
-    h3{
-        font-size: 80px;
-    }
-}
-.my-info-edit-link{
+.my-page{
+    margin-bottom: 400px;
     a{
-        float: right;
+        transition: 0.5s;
     }
-}
-.reviewed-shops, .registered-shops{
-    margin-bottom: 30px;
-}
-.reviewed-shops-title, .registered-shops-title{
-    height: 100px;
-    line-height: 100px;
-    border-top: 3px solid beige;
-    border-bottom: 3px solid beige;
-    text-align: center;
-    h4{
-        font-size: 30px;
+    a:hover{
+        opacity: 0.7;
     }
-}
-.reviewed-shop, .registered-shop{
-    height: 200px;
-    border-bottom: 1px solid beige;
-    padding: 30px 30px 0 30px;
-}
-.reviewed-shop-main-info, .registered-shop-main-info{
-    display: inline-block;
-    vertical-align: top;
-    border-right: 1px solid rgba(245, 245, 220, 0.329);
-    width: 300px;
-    height: calc(100% - 30px);
-    .reviewed-shop-name, .registered-shop-name{
-        h5{
-            font-size: 25px;
+    .my-info{
+        text-align: center;
+        margin-bottom: 100px;
+        img{
+            width: 150px;
+            height: 150px;
+            border-radius: 150px;
+        }
+    }
+    .my-info-bottom{
+        margin: 0 auto;
+    }
+    .my-name{
+        h3{
+            font-size: 80px;
+        }
+    }
+    .my-info-edit-link{
+        a{
+            float: right;
+        }
+    }
+    .reviewed-shops, .registered-shops{
+        margin-bottom: 30px;
+        .reviewed-shops-title, .registered-shops-title{
+            display: block;
+            height: 100px;
+            line-height: 100px;
+            border-top: 3px solid beige;
+            border-bottom: 3px solid beige;
+            text-align: center;
+            h4{
+                font-size: 30px;
+                transition: 0.5s;
+            }
+            :hover{
+                opacity: 0.7;
+            }
+        }
+        input{
+            display: none;
+        }
+        .reviewed-shops-list, .registered-shops-list{
+            height: 0;
+            padding: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+        .reviewed-shop-checkbox:checked + .reviewed-shops-list{
+            height: auto;
+            opacity: 1;
+        }
+        .registered-shop-checkbox:checked + .registered-shops-list{
+            height: auto;
+            opacity: 1;
+        }
+        .reviewed-shops-list, .registered-shops-list{
+            .reviewed-shop, .registered-shop{
+                height: 200px;
+                border-bottom: 1px solid beige;
+                padding: 30px 30px 0 30px;
+            }
+            .reviewed-shop-main-info, .registered-shop-main-info{
+                display: inline-block;
+                vertical-align: top;
+                border-right: 1px solid rgba(245, 245, 220, 0.329);
+                width: 300px;
+                height: calc(100% - 30px);
+                .reviewed-shop-name, .registered-shop-name{
+                    h5{
+                        font-size: 25px;
+                    }
+                }
+            }
+            .reviewed-shop-sub-info, .registered-shop-sub-info{
+                display: inline-block;
+                vertical-align: top;
+                padding-left: 20px;
+                .sub-info{
+                    .sub-info-left{
+                        display: inline-block;
+                        width: 80px;
+                    }
+                    .sub-info-center{
+                        display: inline-block;
+                        width: 20px;
+                    }
+                }
+            }
+            .reviewed-edit-delete, .registered-edit-delete{
+                height: 30px;
+                text-align: right;
+            }
         }
     }
 }
-.reviewed-shop-sub-info, .registered-shop-sub-info{
-    display: inline-block;
-    vertical-align: top;
-    padding-left: 20px;
-}
-.reviewed-edit-delete, .registered-edit-delete{
-    height: 30px;
-    text-align: right;
-}
-// .registered-shops-title{
-//     height: 100px;
-//     line-height: 100px;
-//     border-top: 3px solid beige;
-//     border-bottom: 3px solid beige;
-//     text-align: center;
-//     h4{
-//         font-size: 30px;
-//     }
-// }
