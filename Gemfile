@@ -81,3 +81,5 @@ gem "refile-mini_magick", github: 'refile/refile-mini_magick'
 
 #　日本語化
 gem 'rails-i18n'
+
+gem 'jquery-turbolinks'
