@@ -45,6 +45,8 @@ class ShopsController < ApplicationController
       @shop.ave_price = @shop.posts.average(:price).floor(2)
       @shop.ave_wifi = @shop.posts.average(:wifi).floor(2)
       @shop.ave_others = @shop.posts.average(:others).floor(2)
+    else
+      @shop.total_point = nil
     end
     @post_count = 0
     @shop.posts.each do |post|
