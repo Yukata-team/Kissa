@@ -29,7 +29,7 @@
         </label>
         <input type="checkbox" id="label1" class="reviewed-shop-checkbox"/>
         <div class="reviewed-shops-list">
-          <% @user.posts.each do |post| %>
+          <% @user.posts.order(created_at: :desc).each do |post| %>
           <div class="reviewed-shop">
             <div class="reviewed-shop-main-info">
               <%= link_to shop_path(post.shop_id) do %>
@@ -93,7 +93,7 @@
         </label>
         <input type="checkbox" id="label2" class="registered-shop-checkbox" />
         <div class="registered-shops-list">
-          <% @user.shops.each do |shop| %>
+          <% @user.shops.order(created_at: :desc).each do |shop| %>
             <div class="registered-shop">
               <div class="registered-shop-main-info">
                 <div class="registered-shop-name">
