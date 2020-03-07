@@ -18,4 +18,8 @@ class Shop < ApplicationRecord
     return Post.find_by(shop_id: self.id)
   end
 
+  def user
+    return User.find(self.user_id)
+  end
+
 end

@@ -8,8 +8,6 @@ Rails.application.routes.draw do
     resources :shop_images, only: [:index, :create, :destroy]
   end
 
-  # get '/shops/:id/shop_images' => 'shop_images#index'
-
   get '/:id/posts/new' => 'posts#new'
   post '/:id/posts/new' => 'posts#create'
   resources :posts, only: [:show, :edit, :update, :destroy]

@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     @post.post_total_point = (@post.congestion.to_f + @post.menu.to_f + @post.price.to_f + @post.wifi.to_f + @post.others.to_f) / 5
     if @post.save
-      redirect_to shops_search_path, notice: "レビューを投稿しました"
+      redirect_to post_path(@post.id), notice: "レビューを投稿しました"
     else
       render :new
     end

@@ -3,7 +3,7 @@
     <h1>店舗情報</h1>
   </div>
   <div class="shop-main-info">
-    <h2><%= @shop.name %><%= @shop.branch %></h2>
+    <h2><%= @shop.name %><br><%= @shop.branch %></h2>
     <div class="star" id="star-rate-shop-<%= @shop.id %>"></div>
     <p class="star-number"><%= @shop.total_point %></p>
     <script>
@@ -179,14 +179,16 @@
       </div>
     </div>
     <div class="shop-edit-name">
-      <%= link_to "編集", edit_shop_path(@shop.id) %>
-      <% @shop.posts.each do |post| %>
-      <p>witten by <span class="written-name"><%= post.user.name %></span></p>
+      <% if current_user != nil %>
+        <%= link_to "編集", edit_shop_path(@shop.id) %>
       <% end %>
     </div>
     <!-- 投稿一覧 -->
     <div class="reviews-list">
       <h3>レビュー</h3>
+      <% if current_user != nil %>
+        <%= link_to "レビューを書く", "/#{@shop.id}/posts/new" %>
+      <% end %>
       <% @shop.posts.each do |post| %>
         <div class="review">
           <div class="review-name">
@@ -194,7 +196,7 @@
           </div>
           <div class="star" id="star-rate-post-<%= post.id %>"></div>
           <script>
-          $('#star-rate-post-<%= @shop.post.id %>').raty({
+          $('#star-rate-post-<%= post.id %>').raty({
             size: 36,
             starOff:  '<%= asset_path('star-off.png') %>',
             starOn : '<%= asset_path('star-on.png') %>',
