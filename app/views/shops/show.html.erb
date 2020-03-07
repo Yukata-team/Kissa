@@ -186,6 +186,9 @@
     <!-- 投稿一覧 -->
     <div class="reviews-list">
       <h3>レビュー</h3>
+      <% if current_user != nil %>
+        <%= link_to "レビューを書く", "/#{@shop.id}/posts/new" %>
+      <% end %>
       <% @shop.posts.each do |post| %>
         <div class="review">
           <div class="review-name">
@@ -193,7 +196,7 @@
           </div>
           <div class="star" id="star-rate-post-<%= post.id %>"></div>
           <script>
-          $('#star-rate-post-<%= @shop.post.id %>').raty({
+          $('#star-rate-post-<%= post.id %>').raty({
             size: 36,
             starOff:  '<%= asset_path('star-off.png') %>',
             starOn : '<%= asset_path('star-on.png') %>',
