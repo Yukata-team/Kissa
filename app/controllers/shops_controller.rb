@@ -1,6 +1,7 @@
 class ShopsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :ensure_correct_user, only: [:destroy]
+  before_action :checked_shop, only: [:index]
 
   def index
     if params[:q].present?
@@ -54,6 +55,7 @@ class ShopsController < ApplicationController
         @post_count = @post_count + 1
       end
     end
+    session[:checked_shop_id] = @shop.id
   end
 
   def edit
@@ -91,6 +93,12 @@ class ShopsController < ApplicationController
     if @shop.user.id != current_user.id
       flash[:alert] = "権限がありません"
       redirect_to user_path(current_user.id)
+    end
+  end
+
+  def checked_shop
+    if session[:checked_shop_id] != nil
+      @checked_shop = Shop.find(session[:checked_shop_id])
     end
   end
 
