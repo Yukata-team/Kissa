@@ -1,0 +1,8 @@
+<% if @shop_images.present? %>
+  <% @shop_images.each do |image| %>
+    <%= attachment_image_tag image, :image, :fill, 400, 300 %>
+    <%= link_to "削除", "/shops/#{image.shop_id}/shop_images/#{image.id}", method: :delete %>
+  <% end %>
+<% else %>
+  <%= image_tag 'no_image.png', size: '400x300' %>
+<% end %>
