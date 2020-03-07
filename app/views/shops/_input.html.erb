@@ -36,17 +36,18 @@
         <%= f.label "営業時間、定休日" %><br>
         <%= f.text_area :business_hour, class:"input-area", placeholder:"例：月~土[7:00~22:00] 日祝[9:00~21:00]" %>
       </div>
-      <div class="field">
-        <%= f.label "店舗やメニューの画像(複数選択可)" %>
-        <%= f.attachment_field :shop_images_images, multiple: true %>
-        <% if shop.shop_images.present? %>
+      <% if shop.shop_images.present? %>
+      <% else %>
+        <div class="field">
+          <%= f.label "店舗やメニューの画像(複数選択可)" %>
+          <%= f.attachment_field :shop_images_images, multiple: true %>
           <div class="edit-picture">
             <% shop.shop_images.each do |image| %>
               <%= attachment_image_tag image, :image, :fill, 80, 60 %>
             <% end %>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
       <div class="field">
         <%= f.label "検索結果に表示するお店の画像(1枚)" %>
         <%= f.attachment_field :head_image %>

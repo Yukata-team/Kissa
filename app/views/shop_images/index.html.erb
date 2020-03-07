@@ -6,3 +6,18 @@
 <% else %>
   <%= image_tag 'no_image.png', size: '400x300' %>
 <% end %>
+<% if @new_shop_images.errors.any? %>
+<div id="error_explanation">
+  <h3><%= @new_shop_images.errors.count %> 個のエラー</h3>
+  <ul>
+    <% @new_shop_images.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<%= form_for @new_shop_images, url: shop_shop_images_path do |f| %>
+  <%= f.label "写真を追加する" %>
+  <%= f.attachment_field :image %>
+  <%= f.submit "保存" %>
+<% end %>

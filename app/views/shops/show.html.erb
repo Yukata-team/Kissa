@@ -3,7 +3,7 @@
     <h1>店舗情報</h1>
   </div>
   <div class="shop-main-info">
-    <h2><%= @shop.name %><%= @shop.branch %></h2>
+    <h2><%= @shop.name %><br><%= @shop.branch %></h2>
     <div class="star" id="star-rate-shop-<%= @shop.id %>"></div>
     <p class="star-number"><%= @shop.total_point %></p>
     <script>
@@ -179,9 +179,8 @@
       </div>
     </div>
     <div class="shop-edit-name">
-      <%= link_to "編集", edit_shop_path(@shop.id) %>
-      <% @shop.posts.each do |post| %>
-      <p>witten by <span class="written-name"><%= post.user.name %></span></p>
+      <% if current_user != nil %>
+        <%= link_to "編集", edit_shop_path(@shop.id) %>
       <% end %>
     </div>
     <!-- 投稿一覧 -->

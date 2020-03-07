@@ -77,10 +77,12 @@
               <% end %>
             </div>
             <div class="reviewed-edit-delete">
+              <% if current_user != nil %>
               <% if post.user.id == current_user.id %>
                 <%= link_to "編集", edit_post_path(post.id) %>
                 |
                 <%= link_to "削除", post_path(post), method: :delete, data: {confirm: "本当に削除しますか？"} %>
+              <% end %>
               <% end %>
             </div>
           </div>
@@ -112,10 +114,12 @@
                 </div>
               </div>
               <div class="registered-edit-delete">
+                <% if current_user != nil %>
                 <% if shop.user.id == current_user.id %>
                   <%= link_to "編集", edit_shop_path(shop.id) %>
                   |
                   <%= link_to "削除", shop_path(shop), method: :delete, data: {confirm: "本当に削除しますか？"} %>
+                <% end %>
                 <% end %>
               </div>
             </div>
