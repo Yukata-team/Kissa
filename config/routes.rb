@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   get '/shops/search' => 'shops#search'
   post '/shops/average' => 'shops#average'
-  resources :shops
+  resources :shops do
+    resources :shop_images, only: [:index, :create, :destroy]
+  end
+
+  # get '/shops/:id/shop_images' => 'shop_images#index'
 
   get '/:id/posts/new' => 'posts#new'
   post '/:id/posts/new' => 'posts#create'

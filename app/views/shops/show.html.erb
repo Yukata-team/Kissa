@@ -19,12 +19,14 @@
     </script>
   </div>
   <div class="shop-imgs">
-    <% if @shop.shop_images.present? %>
-      <% @shop.shop_images.each do |image| %>
-        <%= attachment_image_tag image, :image, :fill, 400, 300 %>
+    <%= link_to shop_shop_images_path(@shop.id) do %>
+      <% if @shop.shop_images.present? %>
+        <% @shop.shop_images.each do |image| %>
+          <%= attachment_image_tag image, :image, :fill, 400, 300 %>
+        <% end %>
+      <% else %>
+        <%= image_tag 'no_image.png', size: '400x300' %>
       <% end %>
-    <% else %>
-      <%= image_tag 'no_image.png', size: '400x300' %>
     <% end %>
   </div>
   <div class="shop-info-details">
