@@ -17,6 +17,7 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+//= require jquery.jpostal
 
 /*!
  * jQuery Raty - A Star Rating Plugin
