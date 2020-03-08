@@ -104,7 +104,7 @@ class ShopsController < ApplicationController
 
   private
   def shop_params
-    params.require(:shop).permit(:name, :branch, :furigana, :station_name, :other_name, :business_hour, :head_image, :postal_code, :prefecture, :city, :street,:postcode, :prefecture_code, :address_city, :address_street, :address_building, shop_images_images: [])
+    params.require(:shop).permit(:name, :branch, :furigana, :station_name, :other_name, :business_hour, :head_image, :postcode, :prefecture_name, :address_city, :address_street, :address_building, shop_images_images: [])
   end
 
   def search_params

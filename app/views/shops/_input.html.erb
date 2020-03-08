@@ -34,7 +34,7 @@
       </div>
       <div class="field">
         <%= f.label "都道府県(必須)" %>
-        <%= f.text_field :prefecture_code, collection: JpPrefecture::Prefecture.all, :value_method => :name, include_blank: '都道府県', class:"input-form" %><br>
+        <%= f.text_field :prefecture_name, collection: JpPrefecture::Prefecture.all, :value_method => :name, include_blank: '都道府県', class:"input-form" %><br>
       </div>
       <div class="field">
         <%= f.label "市町区村(必須)" %>
