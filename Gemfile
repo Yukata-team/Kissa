@@ -83,3 +83,6 @@ gem "refile-mini_magick", github: 'refile/refile-mini_magick'
 gem 'rails-i18n'
 
 gem 'jquery-turbolinks'
+
+#　住所入力用
+gem 'jp_prefecture'

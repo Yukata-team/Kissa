@@ -104,11 +104,15 @@ class ShopsController < ApplicationController
 
   private
   def shop_params
-    params.require(:shop).permit(:name, :branch, :furigana, :station_name, :other_name, :business_hour, :head_image, shop_images_images: [])
+    params.require(:shop).permit(:name, :branch, :furigana, :station_name, :other_name, :business_hour, :head_image, :postal_code, :prefecture, :city, :street,:postcode, :prefecture_name, :address_city, :address_street, :address_building, shop_images_images: [])
   end
 
   def search_params
     params.require(:q).permit(:sorts, :station_name_or_name_or_other_name_cont)
+  end
+
+  def zipedit
+    params.require(:shop).permit(:postcode, :prefecture_name, :address_city, :address_street, :address_building)
   end
 
 end
