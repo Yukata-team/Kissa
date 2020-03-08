@@ -1,29 +1,37 @@
-<% if @user.errors.any? %>
-<div id="error_explanation">
-  <h3><%= @user.errors.count %> 個のエラー</h3>
-  <ul>
-    <% @user.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
-<h2>プロフィール編集</h2>
-<%= form_for @user do |f| %>
-  <div class="field">
-    <%= f.label :profile_image %>
-    <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+<div class="user-edit-page">
+  <% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h3><%= @user.errors.count %> 個のエラー</h3>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
   </div>
+  <% end %>
+  <div class="page-title">
+    <h1>プロフィール編集</h1>
+  </div>
+  <div class="input-form-box">
+    <div class="input-forms">
+      <%= form_for @user do |f| %>
+        <div class="field">
+          <%= f.label :name %><br />
+          <%= f.text_field :name, autofocus: true, class:"input-form" %>
+        </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, class:"input-form" %>
-  </div>
+        <div class="field">
+          <%= f.label :profile_image %>
+          <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+        </div>
 
-  <div class="actions">
-    <%= f.submit "保存", class:"btn-sticky" %>
+        <div class="actions">
+          <%= f.submit "保存", class:"btn-sticky" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="links">
+      <%= link_to "アカウント編集はこちら", edit_user_registration_path %>
+    </div>
   </div>
-<% end %>
-<div class="">
-  <%= link_to "アカウント編集はこちら", edit_user_registration_path %>
-</div>
+  </div>
