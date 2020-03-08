@@ -77,17 +77,6 @@ class ShopsController < ApplicationController
     redirect_to user_path(@shop.user.id), notice: "店舗情報を削除しました"
   end
 
-  def search
-    if params[:q].present?
-      @q = Shop.ransack(search_params)
-      @shop = @q.result
-    else
-      @q = Shop.ransack()
-      @shop = Shop.all
-    end
-    average
-  end
-
   def ensure_correct_user
     @shop = Shop.find(params[:id])
     if @shop.user.id != current_user.id
