@@ -60,7 +60,7 @@ class ShopsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@shop) do |shop, marker|
       marker.lat shop.latitude
       marker.lng shop.longitude
-      marker.infowindow shop.name
+      marker.infowindow shop.name+shop.branch
     end
   end
 
