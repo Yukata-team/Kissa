@@ -3,10 +3,14 @@
     <h1>お店を探す</h1>
   </div>
   <div class="search-box">
-      <%= link_to "店名・駅名から探す", shops_path , class:"select-circle"%>
-      <a href="" , class="select-circle">位置情報から探す</a>
+      <%= link_to "店名・駅名から探す", shops_path , class:"select-circle select-station"%>
+      <%= link_to "位置情報から探す", shops_places_path , class:"select-circle select-map"%>
   </div>
 </div>
-<div class="about-title">
-  <h2>Kissaとは</h2>
+<a href="#about">
+  <div class="about-link">
+    <h2>Kissaとは</h2>
+  </div>
+</a>
+<div class="about-page">
 </div>

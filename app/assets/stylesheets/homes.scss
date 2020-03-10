@@ -10,6 +10,7 @@
 }
 .select-circle{
     display: inline-block;
+    position: relative;
     height: 430px;
     width: 430px;
     background-color: goldenrod;
@@ -24,10 +25,39 @@
     height: 480px;
     width: 480px;
 }
-.about-title{
-    transform: translateY(-50px);
+.select-circle::after{
+    white-space: pre;
+    position: absolute;
+    line-height: 1.7;
+    top: 280px;
+    left: 100px;
+    width: 420px;
+    font-size: 15px;
+    text-align: left;
+    opacity: 0;
+    transition: 0.5s;
 }
-.about-title h2{
-    text-align: center;
-    font-size: 30px;
+.select-circle:hover::after{
+    opacity: 1;
+}
+.select-station::after{
+    content: "店名や駅名から検索し、\Aマッチするカフェをリストアップします。";
+}
+.select-map::after{
+    content: "現在地の近くにあるカフェを探し、\Aマップで表示します。";
+}
+.about-link{
+    transform: translateY(-50px);
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+    border-radius: 100px;
+    background-color: goldenrod;
+    h2{
+        text-align: center;
+        font-size: 30px;
+    }
+}
+.about-link:hover{
+
 }
