@@ -2,7 +2,47 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .review-page{
+    margin-bottom: 200px;
     .narrow-window{
         width: 500px;
     }
+    .shop-name{
+        text-align: center;
+        h2{
+            font-size: 40px;
+        }
+    }
+    .review-input-box{
+        margin: 50px 0;
+        .table-line{
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(245, 245, 220, 0.4);
+            .table-title{
+                display: inline-block;
+                width: 130px;
+            }
+            .table-left{
+                display: inline-block;
+                width: 110px;
+                padding-left: 20px;
+            }
+            .table-center{
+                display: inline-block;
+                width: 120px;
+                padding: 0 10px;
+            }
+            .table-right{
+                display: inline-block;
+                width: 100px;
+            }
+            .table-review{
+                display: inline-block;
+                width: 330px;
+                .input-area{
+                    padding: 5px;
+                }
+            }
+        }
+    }
+    
 }

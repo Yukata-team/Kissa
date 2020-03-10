@@ -2,7 +2,6 @@
   <div class="page-title">
     <h1>レビューを書く</h1>
   </div>
-  <div class="left-box">
   <div class="narrow-window">
     <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -14,12 +13,19 @@
       </ul>
     </div>
     <% end %>
-    <h3><%= @post.shop.name %><%= @post.shop.branch %></h3>
+    <div class="shop-name">
+      <h2><%= @post.shop.name %><br><%= @post.shop.branch %></h2>
+    </div>
     <%= form_for @post, url: "/#{@post.shop_id}/posts/new" do |f| %>
-    <table>
-      <tr class="">
-        <th>混み具合</th>
-        <td>
+    <div class="review-input-box">
+      <div class="table-line">
+        <div class="table-title">
+          <p>混み具合</p>
+        </div>
+        <div class="table-left">
+          <p>混んでいる</p>
+        </div>
+        <div class="table-center">
           <div class="form-group row congestion">
             <%= f.hidden_field :congestion, class: :review_star %>
           </div>
@@ -33,11 +39,19 @@
               half: true,
             });
           </script>
-        </td>
-      </tr>
-      <tr class="">
-        <th>メニュー</th>
-        <td>
+        </div>
+        <div class="table-right">
+          <p>空いている</p>
+        </div>
+      </div>
+      <div class="table-line">
+        <div class="table-title">
+          <p>メニュー</p>
+        </div>        
+        <div class="table-left">
+          <p>不満</p>
+        </div>
+        <div class="table-center">
           <div class="form-group row menu">
             <%= f.hidden_field :menu, class: :review_star %>
           </div>
@@ -51,11 +65,19 @@
               half: true,
             });
           </script>
-        </td>
-      </tr>
-      <tr class="">
-        <th>価格帯</th>
-        <td>
+        </div>
+        <div class="table-right">
+          <p>満足した</p>
+        </div>
+      </div>
+      <div class="table-line">
+        <div class="table-title">
+          <p>価格帯</p>
+        </div>
+        <div class="table-left">
+          <p>高い</p>
+        </div>
+        <div class="table-center">
           <div class="form-group row price">
             <%= f.hidden_field :price, class: :review_star %>
           </div>
@@ -69,11 +91,19 @@
               half: true,
             });
           </script>
-        </td>
-      </tr>
-      <tr class="">
-        <th>通信環境</th>
-        <td>
+        </div>
+        <div class="table-right">
+          <p>安い</p>
+        </div>
+      </div>
+      <div class="table-line">
+        <div class="table-title">
+          <p>通信環境</p>
+        </div>
+        <div class="table-left">
+          <p>Wi-Fiが弱い</p>
+        </div>
+        <div class="table-center">
           <div class="form-group row wifi">
             <%= f.hidden_field :wifi, class: :review_star %>
           </div>
@@ -87,11 +117,19 @@
               half: true,
             });
           </script>
-        </td>
-      </tr>
-      <tr class="">
-        <th>その他</th>
-        <td>
+        </div>
+        <div class="table-right">
+          <p>Wi-Fiが強い</p>
+        </div>
+      </div>
+      <div class="table-line">
+        <div class="table-title">
+          <p>その他</p>
+        </div>
+        <div class="table-left">
+          <p>不満な部分があった</p>
+        </div>
+        <div class="table-center">
           <div class="form-group row others">
             <%= f.hidden_field :others, class: :review_star %>
           </div>
@@ -105,19 +143,21 @@
               half: true,
             });
           </script>
-        </td>
-      </tr>
-      <tr class="">
-        <th>レビュー</th>
-        <td><%= f.text_area :review, class:"input-area" %></td>
-      </tr>
-      <tr class="">
-    </table>
-      <%= f.submit "投稿", class:"btn-sticky" %>
+        </div>
+        <div class="table-right">
+          <p>満足する部分があった</p>
+        </div>
+      </div>
+      <div class="table-line">
+        <div class="table-title">
+          <p>レビュー</p>
+        </div>
+        <div class="table-review">
+          <p><%= f.text_area :review, class:"input-area" %></p>
+        </div>
+      </div>
+    </div>
+    <%= f.submit "投稿", class:"btn-sticky" %>
     <% end %>
-  </div>
-  </div>
-  <div class="right-box">
-    <%= image_tag 'review.png', size: '210x250' %>
   </div>
 </div>
