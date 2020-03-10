@@ -30,19 +30,19 @@
       </div>
       <div class="field">
         <%= f.label "郵便番号(必須)" %>
-        <%= f.text_field :postcode, class:"input-form" %>
+        <%= f.text_field :postcode, class:"input-form postal_code", id: "address_zipcode" %>
       </div>
       <div class="field">
         <%= f.label "都道府県(必須)" %>
-        <%= f.text_field :prefecture_name, collection: JpPrefecture::Prefecture.all, :value_method => :name, include_blank: '都道府県', class:"input-form" %><br>
+        <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :name, :name, class: "address" %>
       </div>
       <div class="field">
         <%= f.label "市町区村(必須)" %>
-        <%= f.text_field :address_city, class:"input-form" %>
+        <%= f.text_field :address_city, class:"input-form",  id:"address_city" %>
       </div>
       <div class="field">
         <%= f.label "番地(必須)" %>
-        <%= f.text_field :address_street, class:"input-form" %>
+        <%= f.text_field :address_street, class:"input-form",  id: "address_street" %>
       </div>
       <div class="field">
         <%= f.label "建物名・階数" %>

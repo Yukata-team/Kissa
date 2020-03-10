@@ -86,3 +86,12 @@ gem 'jquery-turbolinks'
 
 #　住所入力用
 gem 'jp_prefecture'
+
+# スライドショー
+gem 'bxslider-rails'
+
+# 住所から緯度経度を取得
+gem 'geocoder'
+gem 'http'
+#　グーグルマップ
+gem 'gmaps4rails'

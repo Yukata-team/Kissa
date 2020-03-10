@@ -6,13 +6,15 @@ class Shop < ApplicationRecord
   validates :name, presence: true, length: {maximum: 30}
   validates :station_name, length: {maximum: 20}
   validates :branch, length: {maximum: 30}
-  validates :furigana, presence: true, length: {maximum: 30}
+  validates :furigana, presence: true, length: {maximum: 30}, uniqueness: true
   validates :postcode, presence: true
   validates :prefecture_code, presence: true
   validates :address_city, presence: true
   validates :address_street, presence: true
   attachment :image
   attachment :head_image
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 
   def posts
     return Post.where(shop_id: self.id)
@@ -26,6 +28,10 @@ class Shop < ApplicationRecord
     return User.find(self.user_id)
   end
 
+  # def address
+  #   [address_street, address_city, prefecture_code].compact.join(', ')
+  # end
+
   include JpPrefecture
   jp_prefecture :prefecture_code
 
@@ -37,5 +43,13 @@ class Shop < ApplicationRecord
     self.prefecture_code = JpPrefecture::Prefecture.find(name: prefecture_name).code
   end
 
+  private
+  def geocode
+    uri = URI.escape("https://maps.googleapis.com/maps/api/geocode/json?address="+self.address.gsub(" ", "")+"&key=AIzaSyD_jl5PjW9qGNH6nPpOPlU4abwO09x7hzA")
+    res = HTTP.get(uri).to_s
+    response = JSON.parse(res)
+    self.latitude = response["results"][0]["geometry"]["location"]["lat"]
+    self.longitude = response["results"][0]["geometry"]["location"]["lng"]
+  end
 
 end
