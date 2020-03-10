@@ -26,13 +26,6 @@ ActiveRecord::Schema.define(version: 2020_03_08_054820) do
     t.text "review"
   end
 
-  create_table "searches", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "shop_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "shop_images", force: :cascade do |t|
     t.integer "shop_id"
     t.string "image_id"
