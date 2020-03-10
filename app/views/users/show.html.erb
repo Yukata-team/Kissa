@@ -98,12 +98,14 @@
           <% @user.shops.order(created_at: :desc).each do |shop| %>
             <div class="registered-shop">
               <div class="registered-shop-main-info">
-                <div class="registered-shop-name">
-                  <h5><%= shop.name %><br><%= shop.branch %></h5>
-                </div>
-                <div class="registered-shop-furigana">
-                  <p><%= shop.furigana %></p>
-                </div>
+                <%= link_to shop_path(shop.id) do %>
+                  <div class="registered-shop-name">
+                    <h5><%= shop.name %><br><%= shop.branch %></h5>
+                  </div>
+                  <div class="registered-shop-furigana">
+                    <p><%= shop.furigana %></p>
+                  </div>
+                <% end %>
               </div>
               <div class="registered-shop-sub-info">
                 <div class="sub-info">
