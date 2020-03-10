@@ -1,3 +1,91 @@
+<div class="review-show-page">
+  <div class="page-title">
+    <h1>レビュー詳細</h1>
+  </div>
+  <div class="narrow-window">
+    <div class="shop-name">
+      <h2><%= @post.shop.name %><br><%= @post.shop.branch %></h2>
+    </div>
+    <div class="review-box">
+      <div class="table-line">
+        <div class="table-title">
+          <p>混み具合</p>
+        </div>
+        <div class="table-left">
+          <p>混んでいる</p>
+        </div>
+        <div class="table-center">
+        </div>
+        <div class="table-right">
+          <p>空いている</p>
+        </div>
+      </div>
+      <div class="table-line">
+        <div class="table-title">
+          <p>メニュー</p>
+        </div>        
+        <div class="table-left">
+          <p>不満</p>
+        </div>
+        <div class="table-center">
+        </div>
+        <div class="table-right">
+          <p>満足した</p>
+        </div>
+      </div>
+      <div class="table-line">
+        <div class="table-title">
+          <p>価格帯</p>
+        </div>
+        <div class="table-left">
+          <p>高い</p>
+        </div>
+        <div class="table-center">
+        </div>
+        <div class="table-right">
+          <p>安い</p>
+        </div>
+      </div>
+      <div class="table-line">
+        <div class="table-title">
+          <p>通信環境</p>
+        </div>
+        <div class="table-left">
+          <p>Wi-Fiが弱い</p>
+        </div>
+        <div class="table-center">
+        </div>
+        <div class="table-right">
+          <p>Wi-Fiが強い</p>
+        </div>
+      </div>
+      <div class="table-line">
+        <div class="table-title">
+          <p>その他</p>
+        </div>
+        <div class="table-left">
+          <p>不満な部分があった</p>
+        </div>
+        <div class="table-center">
+        </div>
+        <div class="table-right">
+          <p>満足する部分があった</p>
+        </div>
+      </div>
+      <div class="table-line">
+        <div class="table-title">
+          <p>レビュー</p>
+        </div>
+        <div class="table-review">
+          <p><%= @post.review %></p>
+        </div>
+      </div>
+      <div class="created-by">
+        <p>Created by <span class="user-name"><%= @post.user.name %></span></p>
+      </div>
+    </div>
+  </div>
+</div>
 <%= @post.user.name %>
 総合評価
 <%= @post.post_total_point %>
