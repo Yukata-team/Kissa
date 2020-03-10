@@ -30,6 +30,7 @@ class ShopsController < ApplicationController
   def create
     @shop = Shop.new(shop_params)
     @shop.user_id = current_user.id
+    set_address
     if @shop.save
       redirect_to shop_path(@shop), notice: "登録が完了しました"
     else
@@ -56,6 +57,11 @@ class ShopsController < ApplicationController
       end
     end
     session[:checked_shop_id] = @shop.id
+    @hash = Gmaps4rails.build_markers(@shop) do |shop, marker|
+      marker.lat shop.latitude
+      marker.lng shop.longitude
+      marker.infowindow shop.name
+    end
   end
 
   def edit
@@ -64,8 +70,9 @@ class ShopsController < ApplicationController
 
   def update
     @shop = Shop.find(params[:id])
+    set_address
     if @shop.update(shop_params)
-      redirect_to user_path(@shop.user.id), notice: "変更を保存しました"
+      redirect_to shop_path(@shop.id), notice: "変更を保存しました"
     else
       render :edit
     end
@@ -91,17 +98,31 @@ class ShopsController < ApplicationController
     end
   end
 
+  def places
+    @shops = Shop.all
+    @hash = Gmaps4rails.build_markers(@shops) do |shop, marker|
+      marker.lat shop.latitude
+      marker.lng shop.longitude
+      marker.infowindow shop.name+shop.branch
+      marker.picture({
+        "picture" => "/images/coffee.png",
+        "width" => 32,
+        "height" => 32
+        })
+    end
+  end
+
+  def set_address
+    @shop.address = [@shop.prefecture_code,  @shop.address_city, @shop.address_street, @shop.name].compact.join
+  end
+
   private
   def shop_params
-    params.require(:shop).permit(:name, :branch, :furigana, :station_name, :other_name, :business_hour, :head_image, :postcode, :prefecture_name, :address_city, :address_street, :address_building, shop_images_images: [])
+    params.require(:shop).permit(:name, :branch, :furigana, :station_name, :other_name, :business_hour, :head_image, :postcode, :prefecture_code, :address_city, :address_street, :address_building,  shop_images_images: [])
   end
 
   def search_params
-    params.require(:q).permit(:sorts, :station_name_or_name_or_other_name_cont)
-  end
-
-  def zipedit
-    params.require(:shop).permit(:postcode, :prefecture_code, :address_city, :address_street, :address_building)
+    params.require(:q).permit(:sorts, :station_name_or_name_or_furigana_or_other_name_cont)
   end
 
 end

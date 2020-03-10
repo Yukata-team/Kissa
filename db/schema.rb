@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_08_054820) do
+ActiveRecord::Schema.define(version: 2020_03_09_032412) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "shop_id"
@@ -52,10 +52,13 @@ ActiveRecord::Schema.define(version: 2020_03_08_054820) do
     t.text "business_hour"
     t.string "head_image_id"
     t.integer "postcode"
-    t.integer "prefecture_code"
+    t.string "prefecture_code"
     t.string "address_city"
     t.string "address_street"
     t.string "address_building"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
   end
 
   create_table "stations", force: :cascade do |t|

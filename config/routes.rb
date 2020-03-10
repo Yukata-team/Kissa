@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get '/shops/search' => 'shops#search'
   post '/shops/average' => 'shops#average'
+  get '/shops/places' => 'shops#places'
   resources :shops do
     resources :shop_images, only: [:index, :create, :destroy]
   end
@@ -14,4 +15,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users, only: [:index, :show, :edit, :update]
+
+  resources :places, only: [:index]
+
 end
