@@ -40,6 +40,7 @@ class ShopsController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
+    user_shop_post
     if @shop.posts.average(:post_total_point) != nil
       @shop.total_point = @shop.posts.average(:post_total_point).floor(2)
       @shop.ave_congestion = @shop.posts.average(:congestion).floor(2)
@@ -116,6 +117,10 @@ class ShopsController < ApplicationController
     @shop.address = [@shop.prefecture_code,  @shop.address_city, @shop.address_street, @shop.name].compact.join
   end
 
+  # def shop_post
+  #   return Post.find_by(user_id: current_user.id, shop_id: @shop.id)
+  # end
+
   private
   def shop_params
     params.require(:shop).permit(:name, :branch, :furigana, :station_name, :other_name, :business_hour, :head_image, :postcode, :prefecture_code, :address_city, :address_street, :address_building,  shop_images_images: [])
@@ -123,6 +128,10 @@ class ShopsController < ApplicationController
 
   def search_params
     params.require(:q).permit(:sorts, :station_name_or_name_or_furigana_or_other_name_cont)
+  end
+
+  def user_shop_post
+    @user_shop_post = Post.find_by(user_id: current_user.id, shop_id: @shop.id)
   end
 
 end
