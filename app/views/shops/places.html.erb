@@ -2,7 +2,6 @@
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
 <button onclick="getLocation()">取得!!!</button>
-<!-- <div id="map"></div> -->
 <script>
   //gmaps4rails
   handler = Gmaps.build('Google');
@@ -11,143 +10,15 @@
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
     handler.getMap().setZoom(17);
+    if(navigator.geolocation)
+    navigator.geolocation.getCurrentPosition(displayOnMap);
   });
+  function displayOnMap(position){
+    var marker = handler.addMarker({
+      lat: position.coords.latitude,
+      lng: position.coords.longitude
+    });
+    handler.map.centerOn(marker);
+  };
   //gmaps4rails
-
-  //ex1
-  // function handle_locations(position) {
-  //
-  //       alert("Length = " + Gmaps.map.markers.length);
-  //       var yourStartLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-  //
-  //       var marker = new google.maps.Marker({position: yourStartLatLng});
-  //       alert("Ola 2");
-  //
-  //       if(document.getElementById("map") != null)
-  //         alert("diff");
-  //
-  //       Gmaps.map.markers[0] = marker;
-  //
-  //       alert("Ola 333");
-  //       //var map = $document.filter('#map');
-  //       //var map = document.getElementById("map");
-  //       //Gmaps.map.add_marker(marker);
-  //   }
-  //
-  // navigator.geolocation.getCurrentPosition(handle_locations);
-  //
-  // lat = position.coords.latitude;
-  // lng = position.coords.longitude;
-  //
-  // Gmaps.map.callback = function() {
-  //    Gmaps.map.createMarker({
-  //       Lat: lat,
-  //       Lng: lng,
-  //       rich_marker: null,
-  //       marker_picture: ""
-  //    });
-  // }
-  //ex1
-  //ex2
-  // let success = (pos) => {
-  // // マップオブジェクトの変数を空で宣言
-  // let map;
-  // let myLocation;
-  //
-  // let nowLat = pos.coords.latitude; // 緯度
-  // let nowLng = pos.coords.longitude; // 経度
-  // // 現在地の緯度・経度を変数に格納
-  // let nowLatLng = new google.maps.LatLng(nowLat, nowLng);
-  //
-  // // マップオプションを変数に格納
-  // let mapOptions = {
-  //   zoom: 14, // 拡大率
-  //   center: nowLatLng // 中心座標を指定
-  // };
-  //
-  // // マップオブジェクト作成
-  // map = new google.maps.Map(
-  //   document.getElementById('js-map'),
-  //   mapOptions
-  // );
-  //
-  // // マップにマーカーを表示する
-  // myLocation = new google.maps.Marker({
-  //   map: map, // mapに対して指定（マップオブジェクト作成したやつ）
-  //   position: mapOptions.center, // mapOptionsから座標を指定
-  //   icon: {
-  //     url: 'https://higemura.com/wordpress/wp-content/uploads/2018/10/ic_gmap_mylocation.svg', // icon画像（png画像でも可）
-  //     scaledSize: new google.maps.Size(32, 32) // 表示するアイコンサイズ
-  //   },
-  //   title: '現在地' // アイコンにマウスホバーすると出てくる文言
-  // });
-  // }
-  //
-  // // 位置情報取得が失敗したら
-  // let error = (err) => {
-  // // エラーメッセージ
-  // msg = 'エラーが発生しました: ' + err;
-  // console.log(msg);
-  // }
-  //
-  // // getCurrentPositionのオプション
-  // let options = {
-  // enableHighAccuracy: false,
-  // timeout: 5000,
-  // maximumAge: 0
-  // };
-  //
-  // // 位置情報を取得
-  // navigator.geolocation.getCurrentPosition(success, error, options);
-  //ex2
-  //ex3
-  // var map;
-  // var marker;
-  // function initMap() {
-  //   if (!navigator.geolocation) {
-  //       alert('Geolocation APIに対応していません');
-  //       return false;
-  //   }
-  //   console.log(1);
-  //   // 現在地の取得
-  //   navigator.geolocation.getCurrentPosition(function(position) {
-  //       // 緯度経度の取得
-  //       latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-  //
-  //       // 地図の作成
-  //       map = new google.maps.Map(document.getElementById('map'), {
-  //           center: latLng,
-  //           zoom: 17
-  //       });
-  //
-  //       // マーカーの追加
-  //       marker = new google.maps.Marker({
-  //           position: latLng,
-  //           map: map
-  //       });
-  //     }, function() {
-  //         alert('位置情報取得に失敗しました');
-  //     });
-  // }
-  //ex3
-  //ex4 一応取得できた
-  function getLocation() {
-  if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-      alert("Geolocation is not supported by this browser.");
-  }
-  }
-
-  function showPosition(position) {
-
-  $.ajax({
-  type: 'GET',
-  url: `https://maps.googleapis.com/maps/api/geocode/json?latlng=${position.coords.latitude},${position.coords.longitude}&sensor=true&key=AIzaSyD_jl5PjW9qGNH6nPpOPlU4abwO09x7hzA&language=en`,
-  }).then(function(response){
-  console.log(response);
-  })
-
-  }
-  //ex4
 </script>

@@ -107,11 +107,6 @@ class ShopsController < ApplicationController
       marker.lat shop.latitude
       marker.lng shop.longitude
       marker.infowindow shop.name+shop.branch
-      marker.picture({
-        "picture" => "/images/coffee.png",
-        "width" => 32,
-        "height" => 32
-        })
     end
   end
 
