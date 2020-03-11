@@ -60,20 +60,60 @@
       <% else %>
         <div class="field">
           <%= f.label "店舗やメニューの画像(複数選択可)" %>
-          <%= f.attachment_field :shop_images_images, multiple: true %>
+          <%= f.attachment_field :shop_images_images, multiple: true, id: :shop_imgs %>
           <div class="edit-picture">
             <% shop.shop_images.each do |image| %>
-              <%= attachment_image_tag image, :image, :fill, 80, 60 %>
+              <%= attachment_image_tag image, :image, :fill, 120, 80, class: :shop_img_prev %>
             <% end %>
           </div>
+          <!-- 画像プレビュー用 -->
+          <script type="text/javascript">
+            $(function() {
+              function readURL(input) {
+                  if (input.files && input.files[0]) {
+                  var reader = new FileReader();
+                  reader.onload = function (e) {
+              $('shop_img_prev').attr('src', e.target.result);
+                  }
+                  reader.readAsDataURL(input.files[0]);
+                  }
+              }
+              $("#shop_imgs").change(function(){
+                  readURL(this);
+              });
+            });
+          </script>
+          <!-- 画像プレビュー用 -->
         </div>
       <% end %>
       <div class="field">
         <%= f.label "検索結果に表示するお店の画像(1枚)" %>
-        <%= f.attachment_field :head_image %>
+        <%= f.attachment_field :head_image, id: :head_img %>
         <div class="edit-picture">
-          <%= attachment_image_tag shop, :head_image, :fill, 80, 60 %>
+          <% if @shop.head_image.present? %>
+          <%= attachment_image_tag shop, :head_image, :fill, 120, 80, id: :head_img_prev %>
+          <% else %>
+          <%= image_tag 'no_image.png', size: '120x80', id: :head_img_prev %>
+          <% end %>
         </div>
+        <!-- 画像プレビュー用 -->
+        <script type="text/javascript">
+          $(function() {
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+            $('#head_img_prev').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#head_img").change(function(){
+                readURL(this);
+            });
+          });
+        </script>
+        <!-- 画像プレビュー用 -->
       </div>
       <div class="actions">
         <%= f.submit "登録", class:"btn-sticky" %>

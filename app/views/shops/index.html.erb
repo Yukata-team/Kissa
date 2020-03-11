@@ -16,7 +16,11 @@
       <% if request.url.match(/commit/) %>
         <% @shop.each do |shop| %>
           <%= link_to shop_path(shop), class:"candidate-list" do %>
-            <%= attachment_image_tag shop, :head_image, :fill, 120, 90,class:"list-img" %>
+            <% if shop.head_image.present? %>
+              <%= attachment_image_tag shop, :head_image, :fill, 120, 90,class:"list-img" %>
+            <% else %>
+              <%= image_tag 'no_image.png', size: '120x90', class:"list-img" %>
+            <% end %>
             <div class="shop-name">
               <p><%= shop.name %><%= shop.branch %></p>
             </div>
@@ -31,7 +35,11 @@
         <% if @checked_shop != nil %>
         最近チェックしたお店
           <%= link_to shop_path(@checked_shop.id), class:"candidate-list" do %>
-            <%= attachment_image_tag @checked_shop, :head_image, :fill, 120, 90,class:"list-img" %>
+            <% if @checked_shop.head_image.present? %>
+              <%= attachment_image_tag @checked_shop, :head_image, :fill, 120, 90,class:"list-img" %>
+            <% else %>
+              <%= image_tag 'no_image.png', size: '120x90', class:"list-img" %>
+            <% end %>
             <div class="shop-name">
               <p><%= @checked_shop.name %><%= @checked_shop.branch %></p>
             </div>
