@@ -57,6 +57,8 @@ class ShopsController < ApplicationController
         @post_count = @post_count + 1
       end
     end
+    @shop.post_count = @post_count
+    @shop.save
     session[:checked_shop_id] = @shop.id
     @hash = Gmaps4rails.build_markers(@shop) do |shop, marker|
       marker.lat shop.latitude
