@@ -22,7 +22,30 @@
 
         <div class="field">
           <%= f.label :profile_image %>
-          <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+          <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", id: :profile_img %>
+          <% if @user.profile_image.present? %>
+            <%= attachment_image_tag @user, :profile_image, :fill, 80, 80, id: :img_prev %>
+          <% else %>
+            <%= image_tag 'no_image.jpg', size: '80x80', id: :img_prev %>
+          <% end %>
+          <!-- 画像プレビュー用 -->
+          <script type="text/javascript">
+            $(function() {
+              function readURL(input) {
+                  if (input.files && input.files[0]) {
+                  var reader = new FileReader();
+                  reader.onload = function (e) {
+              $('#img_prev').attr('src', e.target.result);
+                  }
+                  reader.readAsDataURL(input.files[0]);
+                  }
+              }
+              $("#profile_img").change(function(){
+                  readURL(this);
+              });
+            });
+          </script>
+          <!-- 画像プレビュー用 -->
         </div>
 
         <div class="actions">
