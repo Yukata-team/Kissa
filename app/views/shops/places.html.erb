@@ -1,7 +1,6 @@
 <div style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
-<button onclick="getLocation()">取得!!!</button>
 <script>
   //gmaps4rails
   handler = Gmaps.build('Google');
@@ -9,7 +8,7 @@
     markers = handler.addMarkers(<%= raw @hash.to_json %>);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
-    handler.getMap().setZoom(17);
+    handler.getMap().setZoom(15);
     if(navigator.geolocation)
     navigator.geolocation.getCurrentPosition(displayOnMap);
   });
@@ -19,6 +18,13 @@
       lng: position.coords.longitude
     });
     handler.map.centerOn(marker);
+    var circles = handler.addCircles(
+       [{lat: position.coords.latitude,
+         lng: position.coords.longitude,
+         radius: 1000 }],
+       { strokeColor: '#fcba03'}
+     );
+    handler.bounds.extendWith(circles);
   };
   //gmaps4rails
 </script>
