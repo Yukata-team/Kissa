@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :shops
   validates :name, presence: true, length: {in:2..20}
   attachment :profile_image
+
 end

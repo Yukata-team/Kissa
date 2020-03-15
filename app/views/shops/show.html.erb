@@ -187,7 +187,11 @@
     <div class="reviews-list">
       <h3>レビュー</h3>
       <% if current_user != nil %>
-        <%= link_to "レビューを書く", "/#{@shop.id}/posts/new" %>
+        <% if @user_shop_post == nil %>
+          <%= link_to "レビューを書く", "/#{@shop.id}/posts/new" %>
+        <% else %>
+          <%= link_to "レビューを書く", edit_post_path(@user_shop_post.id) %>
+        <% end %>
       <% end %>
       <% @shop.posts.each do |post| %>
         <div class="review">
@@ -282,6 +286,7 @@
         markers = handler.addMarkers(<%= raw @hash.to_json %>);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
+        handler.getMap().setZoom(17);
       });
     </script>
     <!-- Googlemap -->

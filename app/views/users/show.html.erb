@@ -97,20 +97,26 @@
         <div class="registered-shops-list">
           <% @user.shops.order(created_at: :desc).each do |shop| %>
             <div class="registered-shop">
-              <div class="registered-shop-main-info">
-                <div class="registered-shop-name">
-                  <h5><%= shop.name %><br><%= shop.branch %></h5>
+              <%= link_to shop_path(shop.id) do %>
+                <div class="registered-shop-main-info">
+                    <div class="registered-shop-name">
+                      <h5><%= shop.name %><br><%= shop.branch %></h5>
+                    </div>
+                    <div class="registered-shop-furigana">
+                      <p><%= shop.furigana %></p>
+                    </div>
                 </div>
-                <div class="registered-shop-furigana">
-                  <p><%= shop.furigana %></p>
-                </div>
-              </div>
+              <% end %>
               <div class="registered-shop-sub-info">
                 <div class="sub-info">
                   <p><span class="sub-info-left">最寄駅</span><span class="sub-info-center">:</span><%= shop.station_name %></p>
                 </div>
                 <div class="sub-info">
                   <p><span class="sub-info-left">略称・別称</span><span class="sub-info-center">:</span><%= shop.other_name %></p>
+                </div>
+                <div class="sub-info">
+                  <p><span class="sub-info-left">住所</span><span class="sub-info-center">:</span>
+                  <%= shop.prefecture_code %><%= shop.address_city %><%= shop.address_street %><%= shop.address_building %></p>
                 </div>
               </div>
               <div class="registered-edit-delete">

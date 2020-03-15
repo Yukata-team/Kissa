@@ -31,7 +31,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       @post.post_total_point = (@post.congestion.to_f + @post.menu.to_f + @post.price.to_f + @post.wifi.to_f + @post.others.to_f) / 5
       @post.save
-      redirect_to user_path(@post.user.id), notice: "変更を保存しました"
+      redirect_to "/posts/#{@post.id}", notice: "変更を保存しました"
     else
       render :edit
     end
@@ -40,6 +40,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
+    session[:checked_shop_id] = nil
     redirect_to user_path(@post.user.id), notice: "レビューを削除しました"
   end
 

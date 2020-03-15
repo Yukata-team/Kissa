@@ -40,6 +40,7 @@ class ShopsController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
+    user_shop_post
     if @shop.posts.average(:post_total_point) != nil
       @shop.total_point = @shop.posts.average(:post_total_point).floor(2)
       @shop.ave_congestion = @shop.posts.average(:congestion).floor(2)
@@ -56,11 +57,13 @@ class ShopsController < ApplicationController
         @post_count = @post_count + 1
       end
     end
+    @shop.post_count = @post_count
+    @shop.save
     session[:checked_shop_id] = @shop.id
     @hash = Gmaps4rails.build_markers(@shop) do |shop, marker|
       marker.lat shop.latitude
       marker.lng shop.longitude
-      marker.infowindow shop.name
+      marker.infowindow shop.name+shop.branch
     end
   end
 
@@ -103,18 +106,22 @@ class ShopsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@shops) do |shop, marker|
       marker.lat shop.latitude
       marker.lng shop.longitude
-      marker.infowindow shop.name+shop.branch
+      marker.infowindow render_to_string(partial: "shops/infowindow", locals: { shop: shop })
       marker.picture({
-        "picture" => "/images/coffee.png",
-        "width" => 32,
-        "height" => 32
-        })
+        :url => view_context.image_path('coffee_marker_mini2.png'),
+        :width   => 48,
+        :height  => 48,
+       })
     end
   end
 
   def set_address
     @shop.address = [@shop.prefecture_code,  @shop.address_city, @shop.address_street, @shop.name].compact.join
   end
+
+  # def shop_post
+  #   return Post.find_by(user_id: current_user.id, shop_id: @shop.id)
+  # end
 
   private
   def shop_params
@@ -123,6 +130,10 @@ class ShopsController < ApplicationController
 
   def search_params
     params.require(:q).permit(:sorts, :station_name_or_name_or_furigana_or_other_name_cont)
+  end
+
+  def user_shop_post
+    @user_shop_post = Post.find_by(user_id: current_user.id, shop_id: @shop.id)
   end
 
 end
