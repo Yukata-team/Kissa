@@ -23,4 +23,8 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 # Ignore DS_store
-*/.DS_Store
+/.DS_Store
+/app/.DS_Store
+/app/assets/.DS_Store
+/app/assets/images/.DS_Store
+/db/.DS_Store
