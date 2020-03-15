@@ -1,6 +1,60 @@
 // Place all the styles related to the shops controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.shop-search-page{
+    .input-form{
+        width: 600px;
+    }
+    .search-field{
+        #q_sorts{
+            color: black;
+            padding: 2px;
+        }
+        .btn-sticky{
+            height: 38px;
+            width: 90px;
+            border: solid 1px white;
+        }
+    }
+    .candidate-lists{
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+    .candidate-list{
+        display: block;
+        height: 120px;
+        padding: 12px 10px;
+        margin-bottom: 10px;
+        border: solid 1px white;
+        .list-img{
+            border: 3px solid beige;
+            vertical-align: top;
+            :hover{
+                filter: blur(6px);
+            }
+        }
+        .shop-infos{
+            display: inline-block;
+            padding-left: 20px;
+            .shop-name{
+                margin-bottom: 10px;
+                p{
+                    font-size: 20px;
+                }
+            }
+            .list-shop-point{
+                .point::before{
+                    font-family: "Font Awesome 5 Free";
+                    content: '\f005';
+                    font-weight: 900;
+                }
+            }
+        }
+    }
+    .candidate-list:hover{
+        background-color: rgba(218, 165, 32, 0.6);
+    }    
+}
 .shops-new-page{
     .input-form-box{
         width: 500px;

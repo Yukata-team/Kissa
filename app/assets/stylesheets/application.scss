@@ -71,9 +71,6 @@ header a:hover{
 .narrow-window{
     width: 700px;
     margin: 0 auto;
-    .search-area{
-        padding: 0 100px;
-    }
 }
 .flash {
     position: fixed;
@@ -152,61 +149,6 @@ header a:hover{
     .input-forms{
         padding: 40px;
     }
-}
-.search-field{
-    #q_sorts{
-        color: black;
-        padding: 2px;
-    }
-    .input-form{
-        width: 400px;
-    }
-    .btn-sticky{
-        height: 38px;
-        margin-left: 7px;
-        border: solid 1px white;
-    }
-}
-.candidate-lists{
-    display: inline-block;
-    padding-top: 20px;
-    padding-bottom: 10px;
-}
-.candidate-list{
-    display: block;
-    width: 480px;
-    height: 120px;
-    line-height: 120px;
-    padding: 12px 10px;
-    margin-bottom: 10px;
-    border: solid 1px white;
-    .list-img{
-        border: 3px solid beige;
-        :hover{
-            filter: blur(6px);
-        }
-    }
-    .shop-name{
-        display: inline-block;
-        vertical-align: top;
-        line-height: 96px;
-        padding-left: 10px;
-        font-size: 20px;
-    }
-    .list-shop-point{
-        vertical-align: top;
-        line-height: 96px;
-        padding-right: 30px;
-        float: right;
-        .point::before{
-            font-family: "Font Awesome 5 Free";
-            content: '\f005';
-            font-weight: 900;
-        }
-    }
-}
-.candidate-list:hover{
-    background-color: rgba(218, 165, 32, 0.6);
 }
 .actions{
     margin: 10px;
