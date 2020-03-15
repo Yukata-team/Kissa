@@ -43,6 +43,15 @@ class Shop < ApplicationRecord
     self.prefecture_code = JpPrefecture::Prefecture.find(name: prefecture_name).code
   end
 
+  class << self
+      def within_box(distance, latitude, longitude)
+          distance = distance
+          center_point = [latitude, longitude]
+          box = Geocoder::Calculations.bounding_box(center_point, distance)
+          self.within_bounding_box(box)
+      end
+  end
+
   private
   def geocode
     uri = URI.escape("https://maps.googleapis.com/maps/api/geocode/json?address="+self.address.gsub(" ", "")+"&key=AIzaSyD_jl5PjW9qGNH6nPpOPlU4abwO09x7hzA")
