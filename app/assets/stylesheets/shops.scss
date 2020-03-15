@@ -119,3 +119,23 @@
         opacity: 0.7;
     }
 }
+#head_img_prev {
+  width: 100px;
+  height: 75px;
+}
+.infowindow {
+  color: black;
+}
+.infowindow-point {
+  text-align: center;
+}
+#map {
+  span {
+    color: black;
+  }
+  .point::before{
+      font-family: "Font Awesome 5 Free";
+      content: '\f005';
+      font-weight: 900;
+  }
+}
