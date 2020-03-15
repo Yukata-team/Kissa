@@ -5,38 +5,8 @@
     </div>
     <div class="search-box">
         <%= link_to "店名・駅名から探す", shops_path , class:"select-circle select-station"%>
-        <button onclick="getPosition();", class="select-circle select-map">位置情報から探す</button>
+        <%= link_to "位置情報から探す", shops_places_path , class:"select-circle select-map"%>
     </div>
-    <script>
-
-      // 現在地取得処理
-      function getPosition() {
-        // 現在地を取得
-        navigator.geolocation.getCurrentPosition(
-          // 取得成功した場合
-          function(position) {
-              window.location.href = "/shops/places?latitude="+position.coords.latitude+"&longitude="+position.coords.longitude
-          },
-          // 取得失敗した場合
-          function(error) {
-            switch(error.code) {
-              case 1: //PERMISSION_DENIED
-                alert("位置情報の利用が許可されていません");
-                break;
-              case 2: //POSITION_UNAVAILABLE
-                alert("現在位置が取得できませんでした");
-                break;
-              case 3: //TIMEOUT
-                alert("タイムアウトになりました");
-                break;
-              default:
-                alert("その他のエラー(エラーコード:"+error.code+")");
-                break;
-            }
-          }
-        );
-      }
-    </script>
     <a href="#about">
       <div class="about-link">
         <h2>Kissaとは</h2>
@@ -135,3 +105,33 @@
     </div>
   </div>
 </div>
+<script>
+
+  // 現在地取得処理
+  function getPosition() {
+    // 現在地を取得
+    navigator.geolocation.getCurrentPosition(
+      // 取得成功した場合
+      function(position) {
+          window.location.href = "/shops/places?latitude="+position.coords.latitude+"&longitude="+position.coords.longitude
+      },
+      // 取得失敗した場合
+      function(error) {
+        switch(error.code) {
+          case 1: //PERMISSION_DENIED
+            alert("位置情報の利用が許可されていません");
+            break;
+          case 2: //POSITION_UNAVAILABLE
+            alert("現在位置が取得できませんでした");
+            break;
+          case 3: //TIMEOUT
+            alert("タイムアウトになりました");
+            break;
+          default:
+            alert("その他のエラー(エラーコード:"+error.code+")");
+            break;
+        }
+      }
+    );
+  }
+</script>
