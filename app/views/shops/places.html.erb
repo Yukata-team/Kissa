@@ -1,6 +1,7 @@
 <div style='100vw;'>
   <div id="map" style='width: 100vw; height: calc(100vh - 240px);'></div>
 </div>
+<button onclick="getPosition();">近くのお店を探す</button>
 <script>
   //gmaps4rails
   handler = Gmaps.build('Google');
@@ -27,4 +28,38 @@
     handler.bounds.extendWith(circles);
   };
   //gmaps4rails
+  // 現在地取得処理
+  function getPosition() {
+    // 現在地を取得
+    navigator.geolocation.getCurrentPosition(
+      // 取得成功した場合
+      function(position) {
+          window.location.href = "/shops/places?latitude="+position.coords.latitude+"&longitude="+position.coords.longitude
+          // $.ajax({
+          //     url: "/shops/places",
+          //     type: "GET",
+          //     dataType: 'html',
+          //     data: {latitude : position.coords.latitude,
+          //           longitude : position.coords.longitude},
+          //   });
+      },
+      // 取得失敗した場合
+      function(error) {
+        switch(error.code) {
+          case 1: //PERMISSION_DENIED
+            alert("位置情報の利用が許可されていません");
+            break;
+          case 2: //POSITION_UNAVAILABLE
+            alert("現在位置が取得できませんでした");
+            break;
+          case 3: //TIMEOUT
+            alert("タイムアウトになりました");
+            break;
+          default:
+            alert("その他のエラー(エラーコード:"+error.code+")");
+            break;
+        }
+      }
+    );
+  }
 </script>
