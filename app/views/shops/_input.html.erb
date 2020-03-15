@@ -18,11 +18,11 @@
       </div>
       <div class="field">
         <%= f.label "支店名" %>
-        <%= f.text_field :branch, class:"input-form", placeholder:"例：京橋店" %>
+        <%= f.text_field :branch, class:"input-form", placeholder:"例：京橋駅前店" %>
       </div>
       <div class="field">
         <%= f.label "フリガナ(必須)" %>
-        <%= f.text_field :furigana, class:"input-form", placeholder:"例：スターバックスコーヒーキョウバシテン" %>
+        <%= f.text_field :furigana, class:"input-form", placeholder:"例：スターバックスコーヒーキョウバシエキマエテン" %>
       </div>
       <div class="field">
         <%= f.label "略称、別称" %>
@@ -30,7 +30,7 @@
       </div>
       <div class="field">
         <%= f.label "郵便番号(必須)" %>
-        <%= f.text_field :postcode, class:"input-form postal_code", id: "address_zipcode" %>
+        <%= f.text_field :postcode, class:"input-form postal_code", id: "address_zipcode", placeholder:"例：1040031" %>
       </div>
       <div class="field">
         <%= f.label "都道府県(必須)" %>
@@ -38,15 +38,15 @@
       </div>
       <div class="field">
         <%= f.label "市町区村(必須)" %>
-        <%= f.text_field :address_city, class:"input-form",  id:"address_city" %>
+        <%= f.text_field :address_city, class:"input-form",  id:"address_city", placeholder:"例：中央区" %>
       </div>
       <div class="field">
         <%= f.label "番地(必須)" %>
-        <%= f.text_field :address_street, class:"input-form",  id: "address_street" %>
+        <%= f.text_field :address_street, class:"input-form",  id: "address_street", placeholder:"京橋2-4-12" %>
       </div>
       <div class="field">
         <%= f.label "建物名・階数" %>
-        <%= f.text_field :address_building, class:"input-form" %>
+        <%= f.text_field :address_building, class:"input-form", placeholder:"例：京橋第一生命ビルディング1F" %>
       </div>
       <div class="field">
         <%= f.label "最寄駅" %>
