@@ -1,6 +1,11 @@
 <%= link_to shop_path(shop) do %>
   <p class="infowindow"><%= shop.name %><%= shop.branch %></p>
   <div class="list-shop-point infowindow infowindow-point">
-    <span class="point"></span><%= shop.total_point%>
+    <span class="point"></span>
+    <% if shop.total_point != nil %>
+      <%= shop.total_point%>
+    <% else %>
+      評価なし
+    <% end %>
   </div>
 <% end %>
