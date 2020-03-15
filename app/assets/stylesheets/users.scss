@@ -68,7 +68,6 @@
         }
         .reviewed-shops-list, .registered-shops-list{
             .reviewed-shop, .registered-shop{
-                height: 200px;
                 border-bottom: 1px solid beige;
                 padding: 30px 30px 0 30px;
             }
@@ -77,7 +76,6 @@
                 vertical-align: top;
                 border-right: 1px solid rgba(245, 245, 220, 0.329);
                 width: 300px;
-                height: calc(100% - 30px);
                 .reviewed-shop-name, .registered-shop-name{
                     h5{
                         font-size: 25px;
@@ -89,13 +87,18 @@
                 vertical-align: top;
                 padding-left: 20px;
                 .sub-info{
-                    .sub-info-left{
+                    &-left{
                         display: inline-block;
                         width: 80px;
                     }
-                    .sub-info-center{
+                    &-center{
                         display: inline-block;
                         width: 20px;
+                    }
+                    &-right{
+                        display: inline-block;
+                        width: 210px;
+                        vertical-align: top;
                     }
                 }
             }
