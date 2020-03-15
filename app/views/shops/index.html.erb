@@ -42,14 +42,16 @@
             <% else %>
               <%= image_tag 'no_image.png', size: '120x90', class:"list-img" %>
             <% end %>
-            <div class="shop-name">
-              <p><%= @checked_shop.name %><br><%= @checked_shop.branch %></p>
-            </div>
-            <% if @checked_shop.total_point %>
-              <div class="list-shop-point">
-                <span class="point"><%= @checked_shop.total_point%></span>
+            <div class="shop-infos">
+              <div class="shop-name">
+                <p><%= @checked_shop.name %><br><%= @checked_shop.branch %></p>
               </div>
-            <% end %>
+              <% if @checked_shop.total_point %>
+                <div class="list-shop-point">
+                  <span class="point"><%= @checked_shop.total_point%></span>
+                </div>
+              <% end %>
+            </div>
           <% end %>
         <% end %>
       <% end %>
