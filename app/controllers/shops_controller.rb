@@ -110,9 +110,9 @@ class ShopsController < ApplicationController
       marker.lng shop.longitude
       marker.infowindow render_to_string(partial: "shops/infowindow", locals: { shop: shop })
       marker.picture({
-        :url => view_context.image_path('coffee_marker_mini2.png'),
-        :width   => 48,
-        :height  => 48,
+        :url => view_context.image_path('coffee_pin.png'),
+        :width   => 32,
+        :height  => 32,
        })
     end
   end
