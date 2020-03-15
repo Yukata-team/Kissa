@@ -21,6 +21,9 @@
     font-family: 'TsukuARdGothic-Regular','ヒラギノ角ゴシック','Hiragino Sans',YuGothic,'Yu Gothic',sans-serif;
     font-size: 15px;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     background-color: rgb(189, 144, 112);
 }
@@ -63,7 +66,7 @@ header a:hover{
     opacity: 0.7;
 }
 .container{
-    margin: 120px 50px 0 50px;
+    margin-top: 120px;
 }
 .narrow-window{
     width: 700px;
