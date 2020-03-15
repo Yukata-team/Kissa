@@ -102,7 +102,9 @@ class ShopsController < ApplicationController
   end
 
   def places
-    @shops = Shop.all
+    latitude = params[:latitude].to_f
+    longitude = params[:longitude].to_f
+    @shops = Shop.within_box(0.621, latitude, longitude)
     @hash = Gmaps4rails.build_markers(@shops) do |shop, marker|
       marker.lat shop.latitude
       marker.lng shop.longitude
