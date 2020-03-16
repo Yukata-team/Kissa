@@ -182,7 +182,26 @@
       <% if current_user != nil %>
         <%= link_to "編集", edit_shop_path(@shop.id) %>
       <% end %>
+      <p>written by <span class="written-name"><%= @shop.user.name %></span></p>
     </div>
+    <!-- Googlemap -->
+    <div class="shop-place">
+      <h3>住所</h3>
+      <p><%= @shop.prefecture_code %><%= @shop.address_city %><%= @shop.address_street %><%= @shop.address_building %></p>
+      <div class="google-map">
+        <div id="map" style="width: inherit; height: 200px;"></div>
+        <script>
+          handler = Gmaps.build('Google');
+          handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+            markers = handler.addMarkers(<%= raw @hash.to_json %>);
+            handler.bounds.extendWith(markers);
+            handler.fitMapToBounds();
+            handler.getMap().setZoom(17);
+          });
+        </script>
+      </div>
+    </div>
+    <!-- Googlemap -->
     <!-- 投稿一覧 -->
     <div class="reviews-list">
       <h3>レビュー</h3>
@@ -277,18 +296,5 @@
       <% end %>
     </div>
     <!-- 投稿一覧 -->
-    <!-- Googlemap -->
-    <div id="map" style="width: 800px; height: 400px;"></div>
-
-    <script>
-      handler = Gmaps.build('Google');
-      handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-        markers = handler.addMarkers(<%= raw @hash.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-        handler.getMap().setZoom(17);
-      });
-    </script>
-    <!-- Googlemap -->
   </div>
 </div>
