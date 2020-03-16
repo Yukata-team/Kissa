@@ -19,15 +19,23 @@
     </script>
   </div>
   <div class="shop-imgs">
-    <%= link_to shop_shop_images_path(@shop.id) do %>
+    <div class="shop-img">
       <% if @shop.shop_images.present? %>
-        <% @shop.shop_images.each do |image| %>
-          <%= attachment_image_tag image, :image, :fill, 400, 300 %>
+        <% @shop.shop_images.each_with_index do |image, index| %>
+          <% if index===0 %>
+            <input type="radio" id="img-<%= index %>" name="img-switch" checked>
+          <% else %>
+            <input type="radio" id="img-<%= index %>" name="img-switch">
+          <% end %>
+          <label for="img-<%= index %>"><%= attachment_image_tag image, :image, :fill, 60, 45 %></label>
+          <%= link_to shop_shop_images_path(@shop.id) do %>
+            <%= attachment_image_tag image, :image, :fill, 400, 300, class:"slide-img" %>
+          <% end %>
         <% end %>
       <% else %>
         <%= image_tag 'no_image.png', size: '400x300' %>
       <% end %>
-    <% end %>
+    </div>
   </div>
   <div class="shop-info-details">
     <div class="table-line">
