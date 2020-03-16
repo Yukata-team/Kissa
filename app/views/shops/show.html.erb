@@ -205,15 +205,17 @@
     <!-- 投稿一覧 -->
     <div class="reviews-list">
       <h3>レビュー</h3>
-      <% if current_user != nil %>
-        <% if @user_shop_post == nil %>
-          <%= link_to "レビューを書く", "/#{@shop.id}/posts/new" %>
+      <div class="review-new-link">
+        <% if current_user != nil %>
+          <% if @user_shop_post == nil %>
+            <%= link_to "レビューを書く", "/#{@shop.id}/posts/new" %>
+          <% else %>
+            <%= link_to "レビューを書く", edit_post_path(@user_shop_post.id) %>
+          <% end %>
         <% else %>
-          <%= link_to "レビューを書く", edit_post_path(@user_shop_post.id) %>
+          <%= link_to "レビューを書く",  new_user_registration_path %>
         <% end %>
-      <% else %>
-        <%= link_to "レビューを書く",  new_user_registration_path %>
-      <% end %>
+      </div>
       <% @shop.posts.each do |post| %>
         <div class="review">
           <div class="review-name">
