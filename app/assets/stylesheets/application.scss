@@ -163,7 +163,7 @@ header a:hover{
 }
 .btn-sticky{
     height: 30px;
-    width: 70px;
+    min-width: 70px;
     box-shadow: 0px 2px;
     background-color: rgb(189, 144, 112);
 }
