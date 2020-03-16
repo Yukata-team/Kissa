@@ -181,3 +181,17 @@ header a:hover{
 .edit-picture{
     padding-top: 10px;
 }
+.password-new-page{
+    .input-form-box h2{
+        margin: 0 auto;
+        width: 100%;
+        font-size: 25px;
+    }
+    .error-box{
+        width: 500px;
+        margin: 0 auto;
+        li{
+            display: block;
+        }   
+    } 
+}
