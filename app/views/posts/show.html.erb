@@ -5,9 +5,6 @@
   <div class="narrow-window">
     <div class="shop-name">
       <h2><%= @post.shop.name %><br><%= @post.shop.branch %></h2>
-    </div>
-    <div class="review-box">
-      <%= @post.post_total_point %>
       <div id="star-rate-post-<%= @post.id %>-total-point"></div>
       <script>
       $('#star-rate-post-<%= @post.id %>-total-point').raty({
@@ -20,6 +17,9 @@
         score: <%= @post.post_total_point %>
       });
       </script>
+      <p><%= @post.post_total_point %></p>
+    </div>
+    <div class="review-box">
       <div class="table-line">
         <div class="table-title">
           <p>混み具合<%= @post.congestion %></p>
