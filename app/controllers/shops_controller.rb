@@ -40,7 +40,9 @@ class ShopsController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
-    user_shop_post
+    if current_user != nil
+      user_shop_post
+    end
     if @shop.posts.average(:post_total_point) != nil
       @shop.total_point = @shop.posts.average(:post_total_point).floor(2)
       @shop.ave_congestion = @shop.posts.average(:congestion).floor(2)
@@ -63,7 +65,7 @@ class ShopsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@shop) do |shop, marker|
       marker.lat shop.latitude
       marker.lng shop.longitude
-      marker.infowindow shop.name+shop.branch
+      marker.infowindow render_to_string(partial: "shops/infowindow", locals: { shop: shop })
     end
   end
 

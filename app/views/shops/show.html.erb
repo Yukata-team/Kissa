@@ -211,6 +211,8 @@
         <% else %>
           <%= link_to "レビューを書く", edit_post_path(@user_shop_post.id) %>
         <% end %>
+      <% else %>
+        <%= link_to "レビューを書く",  new_user_registration_path %>
       <% end %>
       <% @shop.posts.each do |post| %>
         <div class="review">
