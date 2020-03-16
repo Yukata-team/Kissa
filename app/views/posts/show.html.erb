@@ -8,6 +8,18 @@
     </div>
     <div class="review-box">
       <%= @post.post_total_point %>
+      <div id="star-rate-post-<%= @post.id %>-total-point"></div>
+      <script>
+      $('#star-rate-post-<%= @post.id %>-total-point').raty({
+        size: 36,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        half: true,
+        readOnly: true,
+        score: <%= @post.post_total_point %>
+      });
+      </script>
       <div class="table-line">
         <div class="table-title">
           <p>混み具合<%= @post.congestion %></p>
