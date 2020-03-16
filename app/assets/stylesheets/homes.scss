@@ -388,10 +388,6 @@
                         border: 20px solid;
                         border-radius: 10px;
                         vertical-align: middle;
-                        // &-top{
-                        //     height: 70px;
-                        //     border-bottom: 4px solid;
-                        // }
                     }
                     &-right{
                         display: inline-block;
@@ -414,8 +410,7 @@
                     padding-top: 100px;
                     text-align: center;
                     transition: .5s;
-                    p{
-                        border-right: 0px solid;
+                    span{
                         font-size: 30px;
                         transition: .5s;
                     }
@@ -425,7 +420,7 @@
                 }
                 :hover{
                     background-color: beige;
-                    p{
+                    span{
                         color: #333333;
                     }
                 }
