@@ -21,7 +21,7 @@
   <div class="shop-imgs">
     <div class="shop-img">
       <% if @shop.shop_images.present? %>
-        <% @shop.shop_images.each_with_index do |image, index| %>
+        <% @shop.shop_images.first(5).each_with_index do |image, index| %>
           <% if index===0 %>
             <input type="radio" id="img-<%= index %>" name="img-switch" checked>
           <% else %>
