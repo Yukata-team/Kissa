@@ -1,3 +1,57 @@
 // Place all the styles related to the shop_images controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.image-edit-page{
+    
+    margin: 0 80px;
+    .image-new{
+        width: 700px;
+        margin: 50px auto;
+        label{
+            display: inline-block;
+            width:150px;
+            padding: 10px 0;
+            font-size: 20px;
+            text-align: center;
+            vertical-align: bottom;
+        }
+        .image-select{
+            padding: 20px;
+            margin:0 30px;
+            border-bottom: 1px solid beige;
+        }
+        .btn-sticky{
+            margin: 20px 0;
+        }
+    }
+    .shop-images{
+        padding: 50px 0;
+        border-top: 1px solid beige;
+        .shop-image{
+            display: inline-block;
+            position: relative;
+            width: 400px;
+            height: 300px;
+            margin: 0 10px;
+            img{
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            a{
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 50px;
+                height: 30px;
+                background-color: brown;
+                text-align: center;
+                line-height: 30px;
+                &:hover{
+                    width: 55px;
+                    height: 33px;
+                }
+            }
+        }
+    }
+}
