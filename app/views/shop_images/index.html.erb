@@ -1,23 +1,34 @@
-<% if @shop_images.present? %>
-  <% @shop_images.each do |image| %>
-    <%= attachment_image_tag image, :image, :fill, 400, 300 %>
-    <%= link_to "削除", "/shops/#{image.shop_id}/shop_images/#{image.id}", method: :delete %>
+<div class="image-edit-page">
+  <div class="page-title">
+    <h1>写真一覧</h1>
+  </div>
+  <% if @new_shop_images.errors.any? %>
+  <div id="error_explanation">
+    <h3><%= @new_shop_images.errors.count %> 個のエラー</h3>
+    <ul>
+      <% @new_shop_images.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
   <% end %>
-<% else %>
-  <%= image_tag 'no_image.png', size: '400x300' %>
-<% end %>
-<% if @new_shop_images.errors.any? %>
-<div id="error_explanation">
-  <h3><%= @new_shop_images.errors.count %> 個のエラー</h3>
-  <ul>
-    <% @new_shop_images.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
+  <div class="image-new">
+    <%= form_for @new_shop_images, url: shop_shop_images_path do |f| %>
+      <%= f.label "写真を追加する" %>
+      <%= f.attachment_field :image , class:"image-select"%>
+      <%= f.submit "保存", class:"btn-sticky" %>
     <% end %>
-  </ul>
+  </div>
+  <% if @shop_images.present? %>
+    <div class="shop-images">
+      <% @shop_images.each do |image| %>
+        <div class="shop-image">
+          <%= attachment_image_tag image, :image, :fill, 400, 300 %>
+          <%= link_to "削除", "/shops/#{image.shop_id}/shop_images/#{image.id}", method: :delete %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <%= image_tag 'no_image.png', size: '400x300' %>
+  <% end %>
 </div>
-<% end %>
-<%= form_for @new_shop_images, url: shop_shop_images_path do |f| %>
-  <%= f.label "写真を追加する" %>
-  <%= f.attachment_field :image %>
-  <%= f.submit "保存" %>
-<% end %>
