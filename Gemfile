@@ -95,3 +95,9 @@ gem 'geocoder'
 gem 'http'
 #　グーグルマップ
 gem 'gmaps4rails'
+
+# デプロイ用
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
