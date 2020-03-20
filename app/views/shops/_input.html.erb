@@ -34,7 +34,7 @@
       </div>
       <div class="field">
         <%= f.label "都道府県(必須)" %>
-        <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :name, :name, class: "address" %>
+        <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :name, :name, class: "address", selected: "東京都" %>
       </div>
       <div class="field">
         <%= f.label "市町区村(必須)" %>

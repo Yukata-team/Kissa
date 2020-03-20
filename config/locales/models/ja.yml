@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       post: 投稿
+      shop: 店舗
     attributes:
       post:
         congestion: 混み具合
@@ -9,3 +10,10 @@ ja:
         price: 価格帯
         wifi: 通信環境
         others: その他
+      shop:
+        name: 店舗名
+        furigana: フリガナ
+        postcode: 郵便番号
+        prefecture_code: 県名
+        address_city: 市区町村
+        address_street: 番地
