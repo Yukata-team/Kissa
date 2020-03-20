@@ -6,7 +6,7 @@
     <div class="shop-name">
       <h2><%= @post.shop.name %><br><%= @post.shop.branch %></h2>
     </div>
-    <%= form_for @post, url: "/#{@post.shop_id}/posts/new" do |f| %>
+    <%= form_for @post do |f| %>
     <div class="review-input-box">
       <div class="table-line">
         <div class="table-title">
@@ -38,7 +38,7 @@
       <div class="table-line">
         <div class="table-title">
           <p>メニュー</p>
-        </div>        
+        </div>
         <div class="table-left">
           <p>不満</p>
         </div>
