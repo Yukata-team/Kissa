@@ -100,8 +100,14 @@ gem 'http'
 #　グーグルマップ
 gem 'gmaps4rails'
 
-# デプロイ用
+#　デプロイ用
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
+
+#　管理画面用
+gem 'rails_admin', '~> 1.3'
+
+#　管理者権限用
+gem 'cancancan', '~> 2.0'
