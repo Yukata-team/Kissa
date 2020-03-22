@@ -34,16 +34,6 @@ Rails.application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
 
-  config.action_mailer.smtp_settings = {
-    :enable_starttls_auto => true,
-    :address => "smtp.gmail.com",
-    :port => 587,
-    :domain => 'smtp.gmail.com',
-    :user_name => ENV['GOOGLE_MAIL'], #gmailアドレス
-    :password => ENV['GOOGLE_PASS'], #gmailパスワード
-    :authentication => 'login',
-  }
-
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
@@ -74,6 +64,18 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "Kissa_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
+
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => 'smtp.gmail.com',
+    :user_name => ENV['GOOGLE_MAIL'], #gmailアドレス
+    :password => ENV['GOOGLE_PASS'], #gmailパスワード
+    :authentication => 'login',
+  }
+
+  config.action_mailer.default_url_options = { :host => 'https:kissanet.com' }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
