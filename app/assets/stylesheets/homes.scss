@@ -155,10 +155,11 @@
       position: sticky;
       position: -webkit-sticky;
       top: 0;
-      height: calc(100vh + 100px);
+      height: calc(100vh + 50px);
       width: 100%;
-      background-attachment: fixed;
-      object-fit: cover;
+      @include notMobile {
+        background-attachment: fixed;
+      }
     }
     .article-space {
       position: sticky;
@@ -169,6 +170,12 @@
     .article-1 {
       .article-image {
         background-image: image-url("notebook-1280538_1920.jpg");
+        @include mobile {
+          background-image: image-url("cup-2619216_1920.jpg");
+          background-position: left bottom;
+          background-size: auto 100%;
+          -webkit-background-size: auto 100%;
+        }
       }
       .article-1-1 {
         position: sticky;
