@@ -279,6 +279,11 @@
         position: sticky;
         top: 0;
         height: 100vh;
+        &-inner {
+          position: relative;
+          height: 100%;
+          width: 100%;
+        }
       }
       &-nologin {
         display: inline-block;
