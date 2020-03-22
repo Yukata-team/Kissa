@@ -4,14 +4,15 @@ class ShopsController < ApplicationController
   before_action :checked_shop, only: [:index]
 
   def index
-    if params[:q].present?
-      @q = Shop.ransack(search_params)
-      @shop = @q.result
-    else
-      @q = Shop.ransack()
-      @shop = Shop.all
+    words = params[:q].delete(:station_name_or_name_or_furigana_or_other_name_or_address_city_cont) if params[:q].present?
+    if words.present?
+      params[:q][:groupings] = []
+      words.split(/[ 　]/).each_with_index do |word, i|
+        params[:q][:groupings][i] = { station_name_or_name_or_furigana_or_other_name_or_address_city_cont: word }
+      end
     end
-    average
+    @q = Shop.ransack(params[:q])
+    @shop = @q.result(distinct: true)
   end
 
   def average
@@ -128,9 +129,13 @@ class ShopsController < ApplicationController
     params.require(:shop).permit(:name, :branch, :furigana, :station_name, :other_name, :business_hour, :head_image, :postcode, :prefecture_code, :address_city, :address_street, :address_building,  shop_images_images: [])
   end
 
-  def search_params
-    params.require(:q).permit(:sorts, :station_name_or_name_or_furigana_or_other_name_cont)
-  end
+  # def search_params
+  #   params.require(:q).permit(:sorts, :station_name_or_name_or_furigana_or_other_name_or_address_city_cont)
+  # end
+
+  # def search_params
+  #   params.require(:q).permit(:station_name_or_name_or_furigana_or_other_name_or_address_city_cont)
+  # end
 
   def user_shop_post
     @user_shop_post = Post.find_by(user_id: current_user.id, shop_id: @shop.id)
