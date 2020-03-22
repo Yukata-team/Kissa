@@ -156,8 +156,9 @@
       position: -webkit-sticky;
       top: 0;
       height: calc(100vh + 100px);
+      width: 100%;
       background-attachment: fixed;
-      -webkit-background-size: cover;
+      object-fit: cover;
     }
     .article-space {
       position: sticky;
