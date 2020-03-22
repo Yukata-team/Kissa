@@ -28,17 +28,6 @@ class Shop < ApplicationRecord
     return User.find(self.user_id)
   end
 
-  # scope :by_any_texts, (lambda do |string|
-  #   string.split(' ').inject(self) do |scope, text|
-  #     query = search(name_or_age_or_hobby_or_posts_content_cont_any: text).result
-  #     scope.merge(query)
-  #   end
-  # end)
-  #
-  # def self.ransackable_scopes(_user = nil)
-  #   %i[by_any_texts]
-  # end
-
   include JpPrefecture
   jp_prefecture :prefecture_code
 
