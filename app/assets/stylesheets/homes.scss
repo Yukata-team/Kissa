@@ -306,10 +306,11 @@
       }
       &-nologin {
         display: inline-block;
-        position: sticky;
+        position: absolute;
         position: -webkit-sticky;
         vertical-align: top;
         top: 0;
+        left: 0;
         height: 100vh;
         width: 120px;
         background-color: rgba(0, 0, 0, 0.9);
@@ -317,7 +318,6 @@
         @include mobile {
           position: absolute;
           top: 90px;
-          left: 0;
           height: 35%;
           width: 50%;
           border-radius: 0 40px 40px 0;
@@ -339,7 +339,6 @@
           }
           p {
             font-size: 30px;
-            // font-weight: 600;
             opacity: 1;
             transition: 1s;
             @include mobile {
@@ -451,10 +450,10 @@
 
       &-login {
         display: inline-block;
-        position: sticky;
+        position: absolute;
         position: -webkit-sticky;
         top: 0;
-        float: right;
+        right: 0;
         text-align: right;
         height: 100vh;
         width: 120px;
@@ -464,7 +463,6 @@
           position: absolute;
           top: auto;
           bottom: 80px;
-          right: 0;
           height: 35%;
           width: 50%;
           border-radius: 40px 0 0 40px;
