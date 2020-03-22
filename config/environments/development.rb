@@ -41,6 +41,18 @@ Rails.application.configure do
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
+  config.action_mailer.smtp_settings = {
+  :enable_starttls_auto => true,
+  :address => "smtp.gmail.com",
+  :port => 587,
+  :domain => 'smtp.gmail.com',
+  :user_name => ENV['GOOGLE_MAIL'], #gmailアドレス
+  :password => ENV['GOOGLE_PASS'], #gmailパスワード
+  :authentication => 'login',
+}
+
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 

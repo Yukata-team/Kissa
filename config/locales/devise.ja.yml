@@ -1,0 +1,7 @@
+ja:
+  devise:
+    confirmations:
+    #中略#
+    mailer:
+      confirmation_instructions:
+        subject: 'アカウントの有効化について'

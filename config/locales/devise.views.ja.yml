@@ -36,6 +36,8 @@ ja:
     confirmations:
       new:
         resend_confirmation_instructions: "アカウント確認メール再送"
+      user:
+        confirmed: "アカウントの有効化が完了しました"
     mailer:
       confirmation_instructions:
         action: "アカウント確認"
