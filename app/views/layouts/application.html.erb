@@ -76,6 +76,8 @@
         <%= flash[:alert] %>
       </div>
       <% end %>
+      <!-- パンくずリスト -->
+      <%= breadcrumbs separator: " &rsaquo; " %>
       <%= yield %>
     </div>
   </body>
