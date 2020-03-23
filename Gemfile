@@ -79,16 +79,16 @@ gem 'ransack'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 
-#　画像投稿用
+# 画像投稿用
 gem "refile", github: 'refile/refile', require: "refile/rails"
 gem "refile-mini_magick", github: 'refile/refile-mini_magick'
 
-#　日本語化
+# 日本語化
 gem 'rails-i18n'
 
 gem 'jquery-turbolinks'
 
-#　住所入力用
+# 住所入力用
 gem 'jp_prefecture'
 
 # スライドショー
@@ -97,17 +97,20 @@ gem 'bxslider-rails'
 # 住所から緯度経度を取得
 gem 'geocoder'
 gem 'http'
-#　グーグルマップ
+# グーグルマップ
 gem 'gmaps4rails'
 
-#　デプロイ用
+# デプロイ用
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
 
-#　管理画面用
+# 管理画面用
 gem 'rails_admin', '~> 1.3'
 
-#　管理者権限用
+# 管理者権限用
 gem 'cancancan', '~> 2.0'
+
+# パンくずリスト用
+gem 'gretel'
