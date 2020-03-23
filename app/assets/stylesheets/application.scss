@@ -168,6 +168,9 @@ header a:hover {
 .error-box {
   width: 500px;
   margin: 0 auto;
+  @include mobile {
+    width: auto;
+  }
   li {
     display: block;
   }
@@ -176,6 +179,9 @@ header a:hover {
 .narrow-window {
   width: 700px;
   margin: 0 auto;
+  @include mobile {
+    width: auto;
+  }
 }
 .flash {
   position: fixed;
@@ -222,6 +228,10 @@ header a:hover {
   margin: 0 auto;
   padding: 80px 0;
   width: 358px;
+  @include mobile {
+    width: auto;
+    margin: 0 20px;
+  }
 }
 .input-form-box h2 {
   margin: 0 auto;
@@ -254,6 +264,9 @@ header a:hover {
 .account-new-page {
   .input-form-box {
     width: 500px;
+    @include mobile {
+      width: auto;
+    }
   }
   .input-forms {
     padding: 40px;

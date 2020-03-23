@@ -1,130 +1,146 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.my-page{
-    margin-bottom: 400px;
-    a{
+@import "mixin";
+.my-page {
+  margin-bottom: 400px;
+  a {
+    transition: 0.5s;
+  }
+  a:hover {
+    opacity: 0.7;
+  }
+  .my-info {
+    text-align: center;
+    margin-bottom: 100px;
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 150px;
+    }
+  }
+  .my-info-bottom {
+    margin: 0 auto;
+  }
+  .my-name {
+    h3 {
+      font-size: 80px;
+    }
+  }
+  .my-info-edit-link {
+    a {
+      float: right;
+    }
+  }
+  .reviewed-shops,
+  .registered-shops {
+    margin-bottom: 30px;
+    .reviewed-shops-title,
+    .registered-shops-title {
+      display: block;
+      height: 100px;
+      line-height: 100px;
+      border-top: 3px solid beige;
+      border-bottom: 3px solid beige;
+      text-align: center;
+      cursor: pointer;
+      h4 {
+        font-size: 30px;
         transition: 0.5s;
-    }
-    a:hover{
+      }
+      :hover {
         opacity: 0.7;
+      }
     }
-    .my-info{
-        text-align: center;
-        margin-bottom: 100px;
-        img{
-            width: 150px;
-            height: 150px;
-            border-radius: 150px;
-        }
+    input {
+      display: none;
     }
-    .my-info-bottom{
-        margin: 0 auto;
+    .reviewed-shops-list,
+    .registered-shops-list {
+      height: 0;
+      padding: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: 0.5s;
     }
-    .my-name{
-        h3{
-            font-size: 80px;
-        }
+    .reviewed-shop-checkbox:checked + .reviewed-shops-list {
+      height: auto;
+      opacity: 1;
     }
-    .my-info-edit-link{
-        a{
-            float: right;
-        }
+    .registered-shop-checkbox:checked + .registered-shops-list {
+      height: auto;
+      opacity: 1;
     }
-    .reviewed-shops, .registered-shops{
-        margin-bottom: 30px;
-        .reviewed-shops-title, .registered-shops-title{
-            display: block;
-            height: 100px;
-            line-height: 100px;
-            border-top: 3px solid beige;
-            border-bottom: 3px solid beige;
-            text-align: center;
-            cursor: pointer;
-            h4{
-                font-size: 30px;
-                transition: 0.5s;
-            }
-            :hover{
-                opacity: 0.7;
-            }
+    .reviewed-shops-list,
+    .registered-shops-list {
+      .reviewed-shop,
+      .registered-shop {
+        border-bottom: 1px solid beige;
+        padding: 30px 30px 0 30px;
+      }
+      .reviewed-shop-main-info,
+      .registered-shop-main-info {
+        display: inline-block;
+        vertical-align: top;
+        border-right: 1px solid rgba(245, 245, 220, 0.329);
+        width: 300px;
+        .reviewed-shop-name,
+        .registered-shop-name {
+          h5 {
+            font-size: 25px;
+          }
         }
-        input{
-            display: none;
+      }
+      .reviewed-shop-sub-info,
+      .registered-shop-sub-info {
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 20px;
+        .sub-info {
+          &-left {
+            display: inline-block;
+            width: 80px;
+          }
+          &-center {
+            display: inline-block;
+            width: 20px;
+          }
+          &-right {
+            display: inline-block;
+            width: 210px;
+            vertical-align: top;
+          }
         }
-        .reviewed-shops-list, .registered-shops-list{
-            height: 0;
-            padding: 0;
-            opacity: 0;
-            overflow: hidden;
-            transition: 0.5s;
-        }
-        .reviewed-shop-checkbox:checked + .reviewed-shops-list{
-            height: auto;
-            opacity: 1;
-        }
-        .registered-shop-checkbox:checked + .registered-shops-list{
-            height: auto;
-            opacity: 1;
-        }
-        .reviewed-shops-list, .registered-shops-list{
-            .reviewed-shop, .registered-shop{
-                border-bottom: 1px solid beige;
-                padding: 30px 30px 0 30px;
-            }
-            .reviewed-shop-main-info, .registered-shop-main-info{
-                display: inline-block;
-                vertical-align: top;
-                border-right: 1px solid rgba(245, 245, 220, 0.329);
-                width: 300px;
-                .reviewed-shop-name, .registered-shop-name{
-                    h5{
-                        font-size: 25px;
-                    }
-                }
-            }
-            .reviewed-shop-sub-info, .registered-shop-sub-info{
-                display: inline-block;
-                vertical-align: top;
-                padding-left: 20px;
-                .sub-info{
-                    &-left{
-                        display: inline-block;
-                        width: 80px;
-                    }
-                    &-center{
-                        display: inline-block;
-                        width: 20px;
-                    }
-                    &-right{
-                        display: inline-block;
-                        width: 210px;
-                        vertical-align: top;
-                    }
-                }
-            }
-            .reviewed-edit-delete, .registered-edit-delete{
-                height: 30px;
-                text-align: right;
-            }
-        }
+      }
+      .reviewed-edit-delete,
+      .registered-edit-delete {
+        height: 30px;
+        text-align: right;
+      }
     }
+  }
 }
-.user-edit-page{
-    .input-form-box{
-        width: 500px;
+.user-edit-page {
+  .input-form-box {
+    width: 500px;
+    @include mobile {
+      width: auto;
     }
-    .input-forms{
-        padding: 40px;
-    }
+  }
+  .input-forms {
+    padding: 40px;
+  }
 }
-.account-edit-page{
-    .input-form-box{
-        width: 500px;
+.account-edit-page {
+  .input-form-box {
+    width: 500px;
+    @include mobile {
+      width: auto;
     }
-    .input-forms{
-        padding: 40px;
-    }
+  }
+  .input-forms {
+    padding: 40px;
+  }
 }
 #img_prev {
   width: 80px;
