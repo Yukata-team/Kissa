@@ -310,3 +310,9 @@ header a:hover {
     }
   }
 }
+.breadcrumbs {
+  margin: 0 60px;
+  @include mobile {
+    margin: 0 30px;
+  }
+}
