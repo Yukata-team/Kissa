@@ -85,8 +85,15 @@
     border-top: 1px solid;
     border-bottom: 1px solid;
     text-align: center;
+    @include mobile {
+      margin: 30px 5%;
+      padding: 5px;
+    }
     h2 {
       font-size: 40px;
+      @include mobile {
+        font-size: 20px;
+      }
     }
     .star {
       display: inline;
@@ -100,12 +107,27 @@
   .shop-imgs {
     display: inline-block;
     width: 50%;
+    @include tablet {
+      display: block;
+      width: 80%;
+      margin: 0 auto;
+    }
     .shop-img {
       position: relative;
       width: 400px;
       margin: 0 auto;
       padding-top: 300px;
       text-align: center;
+      @include tablet {
+        width: 100%;
+        padding-top: 75%;
+        // label:nth-child(3) {
+        //   display: none;
+        // }
+        // label:nth-child(4) {
+        //   display: none;
+        // }
+      }
       input {
         display: none;
         &:checked + label {
@@ -141,6 +163,9 @@
         left: 0;
         box-shadow: 0px 0px 5px #333333;
         border-radius: 5px;
+        @include tablet {
+          width: 100%;
+        }
       }
     }
   }
@@ -148,6 +173,11 @@
     display: inline-block;
     vertical-align: top;
     width: 40%;
+    @include tablet {
+      display: block;
+      width: 90%;
+      margin: 0 auto;
+    }
     .table-line {
       margin: 20px;
     }
@@ -158,6 +188,9 @@
     .table-center {
       display: inline-block;
       width: 50px;
+      @include mobile {
+        width: 30px;
+      }
     }
     .table-right {
       display: inline-block;
@@ -183,6 +216,9 @@
       h3 {
         font-size: 35px;
         border-bottom: 1px solid rgba(245, 245, 220, 0.5);
+        @include mobile {
+          font-size: 25px;
+        }
       }
       p {
         padding: 0 20px;
@@ -200,6 +236,9 @@
       h3 {
         font-size: 35px;
         border-bottom: 1px solid rgba(245, 245, 220, 0.5);
+        @include mobile {
+          font-size: 25px;
+        }
       }
       .review-new-link {
         padding: 10px;
