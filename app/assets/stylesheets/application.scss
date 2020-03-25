@@ -23,6 +23,7 @@
   font-family: "TsukuARdGothic-Regular", "ヒラギノ角ゴシック", "Hiragino Sans",
     YuGothic, "Yu Gothic", sans-serif;
   font-size: 15px;
+  -webkit-appearance: none;
   @include mobile {
     font-family: "TsukuARdGothic-Regular", "M PLUS Rounded 1c",
       "ヒラギノ角ゴシック", "Hiragino Sans", YuGothic, "Yu Gothic", sans-serif;
@@ -179,8 +180,9 @@ header a:hover {
 .narrow-window {
   width: 700px;
   margin: 0 auto;
-  @include mobile {
+  @include tablet {
     width: auto;
+    margin: 0 20px;
   }
 }
 .flash {
@@ -250,6 +252,7 @@ header a:hover {
   background-color: white;
   color: black;
   border: none;
+  border-radius: 0;
 }
 .input-area {
   padding: 0 10px;
@@ -281,6 +284,9 @@ header a:hover {
   min-width: 70px;
   box-shadow: 0px 2px;
   background-color: rgb(189, 144, 112);
+  @include mobile {
+    border-radius: 0;
+  }
 }
 .btn-sticky:hover {
   box-shadow: 0px 0px;
@@ -311,8 +317,8 @@ header a:hover {
   }
 }
 .breadcrumbs {
-  margin: 0 60px;
+  margin: 60px;
   @include mobile {
-    margin: 0 30px;
+    margin: 30px;
   }
 }
