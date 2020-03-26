@@ -1,56 +1,97 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.review-page, .review-edit-page, .review-show-page{
-    margin-bottom: 200px;
-    .narrow-window{
-        width: 500px;
+@import "mixin";
+.review-page,
+.review-edit-page,
+.review-show-page {
+  margin-bottom: 200px;
+  .narrow-window {
+    width: 500px;
+    @include tablet {
+      width: 90%;
     }
-    .shop-name{
+  }
+  .shop-name {
+    text-align: center;
+    h2 {
+      font-size: 40px;
+      @include mobile {
+        font-size: 20px;
+      }
+    }
+  }
+  .review-input-box,
+  .review-box {
+    margin: 50px 0;
+    p {
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+    .table-line {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(245, 245, 220, 0.4);
+      .table-title {
+        display: inline-block;
+        width: 130px;
+        @include smobile {
+          display: block;
+          margin: 30px;
+        }
+        @include mobile {
+          width: 60px;
+        }
+      }
+      .table-bottom {
+        display: inline-block;
         text-align: center;
-        h2{
-            font-size: 40px;
+        @include mobile {
+          display: block;
+          margin: 0 auto;
         }
+      }
+      .table-left {
+        display: inline-block;
+        width: 110px;
+        padding-left: 20px;
+        @include mobile {
+          width: 80px;
+          padding-left: 0;
+        }
+      }
+      .table-center {
+        display: inline-block;
+        width: 120px;
+        padding: 0 10px;
+      }
+      .table-right {
+        display: inline-block;
+        width: 100px;
+        @include mobile {
+          width: 60px;
+        }
+      }
+      .table-review {
+        display: inline-block;
+        width: 330px;
+        @include mobile {
+          display: block;
+          width: 80%;
+          margin: 0 auto;
+        }
+        .input-area {
+          padding: 5px;
+        }
+      }
     }
-    .review-input-box, .review-box{
-        margin: 50px 0;
-        .table-line{
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(245, 245, 220, 0.4);
-            .table-title{
-                display: inline-block;
-                width: 130px;
-            }
-            .table-left{
-                display: inline-block;
-                width: 110px;
-                padding-left: 20px;
-            }
-            .table-center{
-                display: inline-block;
-                width: 120px;
-                padding: 0 10px;
-            }
-            .table-right{
-                display: inline-block;
-                width: 100px;
-            }
-            .table-review{
-                display: inline-block;
-                width: 330px;
-                .input-area{
-                    padding: 5px;
-                }
-            }
-        }
-        .created-by{
-            float: right;
-            padding: 30px 0;
-            .user-name{
-                font-size: 20px;
-                font-weight: 600;
-            }
-        }
+    .created-by {
+      float: right;
+      padding: 30px 0;
+      .user-name {
+        font-size: 20px;
+        font-weight: 600;
+      }
     }
-    
+  }
 }
