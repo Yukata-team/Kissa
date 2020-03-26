@@ -168,6 +168,7 @@
         border-radius: 5px;
         @include tablet {
           width: 100%;
+          height: auto;
         }
       }
     }
