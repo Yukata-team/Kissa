@@ -17,6 +17,10 @@
       width: 150px;
       height: 150px;
       border-radius: 150px;
+      @include mobile {
+        width: 70px;
+        height: 70px;
+      }
     }
   }
   .my-info-bottom {
@@ -25,6 +29,9 @@
   .my-name {
     h3 {
       font-size: 80px;
+      @include mobile {
+        font-size: 20px;
+      }
     }
   }
   .my-info-edit-link {
@@ -47,6 +54,9 @@
       h4 {
         font-size: 30px;
         transition: 0.5s;
+        @include mobile {
+          font-size: 20px;
+        }
       }
       :hover {
         opacity: 0.7;
@@ -77,38 +87,59 @@
       .registered-shop {
         border-bottom: 1px solid beige;
         padding: 30px 30px 0 30px;
+        &-inner {
+          display: flex;
+        }
       }
       .reviewed-shop-main-info,
       .registered-shop-main-info {
-        display: inline-block;
-        vertical-align: top;
         border-right: 1px solid rgba(245, 245, 220, 0.329);
-        width: 300px;
+        width: 100%;
         .reviewed-shop-name,
         .registered-shop-name {
           h5 {
             font-size: 25px;
+            @include tablet {
+              font-size: 15px;
+            }
           }
         }
       }
       .reviewed-shop-sub-info,
       .registered-shop-sub-info {
-        display: inline-block;
-        vertical-align: top;
+        width: 100%;
         padding-left: 20px;
+        @include mobile {
+          padding-left: 10px;
+        }
         .sub-info {
+          p {
+            @include mobile {
+              font-size: 10px;
+            }
+          }
           &-left {
             display: inline-block;
             width: 80px;
+            @include mobile {
+              width: 50px;
+              font-size: 10px;
+            }
           }
           &-center {
             display: inline-block;
             width: 20px;
+            @include mobile {
+              width: 10px;
+            }
           }
           &-right {
             display: inline-block;
-            width: 210px;
+            width: auto;
             vertical-align: top;
+            @include mobile {
+              font-size: 10px;
+            }
           }
         }
       }

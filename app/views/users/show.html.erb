@@ -32,50 +32,52 @@
         <div class="reviewed-shops-list">
           <% @user.posts.order(created_at: :desc).each do |post| %>
           <div class="reviewed-shop">
-            <div class="reviewed-shop-main-info">
-              <%= link_to shop_path(post.shop_id) do %>
-                <div class="reviewed-shop-name">
-                  <h5><%= post.shop.name %><br><%= post.shop.branch %></h5>
-                </div>
-                <div class="reviewed-shop-point">
-                  <p>総合評価</p>
-                  <p><%= post.post_total_point %></p>
-                  <div id="star-rate-post-<%= post.id %>"></div>
-                  <script>
-                  $('#star-rate-post-<%= post.id %>').raty({
-                    size: 36,
-                    starOff:  '<%= asset_path('star-off.png') %>',
-                    starOn : '<%= asset_path('star-on.png') %>',
-                    starHalf: '<%= asset_path('star-half.png') %>',
-                    half: true,
-                    readOnly: true,
-                    score: <%= post.post_total_point %>,
-                  });
-                  </script>
-                </div>
-              <% end %>
-            </div>
-            <div class="reviewed-shop-sub-info">
-              <%= link_to post_path(post.id) do %>
-                <div class="sub-info">
-                  <p><span class="sub-info-left">混み具合</span><span class="sub-info-center">:</span><%= post.congestion %></p>
-                </div>
-                <div class="sub-info">
-                  <p><span class="sub-info-left">メニュー</span><span class="sub-info-center">:</span><%= post.menu %></p>
-                </div>
-                <div class="sub-info">
-                  <p><span class="sub-info-left">価格帯</span><span class="sub-info-center">:</span><%= post.price %></p>
-                </div>
-                <div class="sub-info">
-                  <p><span class="sub-info-left">通信環境</span><span class="sub-info-center">:</span><%= post.wifi %></p>
-                </div>
-                <div class="sub-info">
-                  <p><span class="sub-info-left">その他</span><span class="sub-info-center">:</span><%= post.others %></p>
-                </div>
-                <div class="sub-info">
-                  <p><span class="sub-info-left">レビュー</span><span class="sub-info-center">:</span><%= post.review.truncate(15) %></p>
-                </div>
-              <% end %>
+            <div class="reviewed-shop-inner">
+              <div class="reviewed-shop-main-info">
+                <%= link_to shop_path(post.shop_id) do %>
+                  <div class="reviewed-shop-name">
+                    <h5><%= post.shop.name %><br><%= post.shop.branch %></h5>
+                  </div>
+                  <div class="reviewed-shop-point">
+                    <p>総合評価</p>
+                    <p><%= post.post_total_point %></p>
+                    <div id="star-rate-post-<%= post.id %>"></div>
+                    <script>
+                    $('#star-rate-post-<%= post.id %>').raty({
+                      size: 36,
+                      starOff:  '<%= asset_path('star-off.png') %>',
+                      starOn : '<%= asset_path('star-on.png') %>',
+                      starHalf: '<%= asset_path('star-half.png') %>',
+                      half: true,
+                      readOnly: true,
+                      score: <%= post.post_total_point %>,
+                    });
+                    </script>
+                  </div>
+                <% end %>
+              </div>
+              <div class="reviewed-shop-sub-info">
+                <%= link_to post_path(post.id) do %>
+                  <div class="sub-info">
+                    <p><span class="sub-info-left">混み具合</span><span class="sub-info-center">:</span><%= post.congestion %></p>
+                  </div>
+                  <div class="sub-info">
+                    <p><span class="sub-info-left">メニュー</span><span class="sub-info-center">:</span><%= post.menu %></p>
+                  </div>
+                  <div class="sub-info">
+                    <p><span class="sub-info-left">価格帯</span><span class="sub-info-center">:</span><%= post.price %></p>
+                  </div>
+                  <div class="sub-info">
+                    <p><span class="sub-info-left">通信環境</span><span class="sub-info-center">:</span><%= post.wifi %></p>
+                  </div>
+                  <div class="sub-info">
+                    <p><span class="sub-info-left">その他</span><span class="sub-info-center">:</span><%= post.others %></p>
+                  </div>
+                  <div class="sub-info">
+                    <p><span class="sub-info-left">レビュー</span><span class="sub-info-center">:</span><%= post.review.truncate(15) %></p>
+                  </div>
+                <% end %>
+              </div>
             </div>
             <div class="reviewed-edit-delete">
               <% if current_user != nil %>
@@ -98,26 +100,26 @@
         <div class="registered-shops-list">
           <% @user.shops.order(created_at: :desc).each do |shop| %>
             <div class="registered-shop">
-              <%= link_to shop_path(shop.id) do %>
-                <div class="registered-shop-main-info">
-                    <div class="registered-shop-name">
-                      <h5><%= shop.name %><br><%= shop.branch %></h5>
-                    </div>
-                    <div class="registered-shop-furigana">
-                      <p><%= shop.furigana %></p>
-                    </div>
-                </div>
-              <% end %>
-              <div class="registered-shop-sub-info">
-                <div class="sub-info">
-                  <p><span class="sub-info-left">最寄駅</span><span class="sub-info-center">:</span><%= shop.station_name %></p>
-                </div>
-                <div class="sub-info">
-                  <p><span class="sub-info-left">略称・別称</span><span class="sub-info-center">:</span><%= shop.other_name %></p>
-                </div>
-                <div class="sub-info">
-                  <p><span class="sub-info-left">住所</span><span class="sub-info-center">:</span>
-                  <span class="sub-info-right"><%= shop.prefecture_code %><%= shop.address_city %><%= shop.address_street %><%= shop.address_building %></span></p>
+              <div class="registered-shop-inner">
+                <%= link_to shop_path(shop.id), class:"registered-shop-main-info" do %>
+                  <div class="registered-shop-name">
+                    <h5><%= shop.name %><br><%= shop.branch %></h5>
+                  </div>
+                  <div class="registered-shop-furigana">
+                    <p><%= shop.furigana %></p>
+                  </div>
+                <% end %>
+                <div class="registered-shop-sub-info">
+                  <div class="sub-info">
+                    <p><span class="sub-info-left">最寄駅</span><span class="sub-info-center">:</span><%= shop.station_name %></p>
+                  </div>
+                  <div class="sub-info">
+                    <p><span class="sub-info-left">略称・別称</span><span class="sub-info-center">:</span><%= shop.other_name %></p>
+                  </div>
+                  <div class="sub-info">
+                    <p><span class="sub-info-left">住所</span><span class="sub-info-center">:</span>
+                    <span class="sub-info-right"><%= shop.prefecture_code %><%= shop.address_city %><%= shop.address_street %><%= shop.address_building %></span></p>
+                  </div>
                 </div>
               </div>
               <div class="registered-edit-delete">
