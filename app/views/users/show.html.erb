@@ -8,7 +8,7 @@
         <% if @user.profile_image.present? %>
           <%= attachment_image_tag @user, :profile_image, :fill, 80, 80 %>
         <% else %>
-          <%= image_tag 'no_image.jpg', size: '80x80' %>
+          <%= image_tag 'no_image.png', size: '80x80' %>
         <% end %>
       <div class="my-info-bottom">
         <div class="my-name">
