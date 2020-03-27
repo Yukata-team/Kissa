@@ -13,135 +13,145 @@
         <div class="table-title">
           <p>混み具合</p>
         </div>
-        <div class="table-left">
-          <p>混んでいる</p>
-        </div>
-        <div class="table-center">
-          <div class="form-group row congestion">
-            <%= f.hidden_field :congestion, class: :review_star %>
+        <div class="table-bottom">
+          <div class="table-left">
+            <p>混んでいる</p>
           </div>
-          <script>
-            $('.congestion').raty({
-              size     : 36,
-              starOff:  '<%= asset_path('star-off.png') %>',
-              starOn : '<%= asset_path('star-on.png') %>',
-              starHalf: '<%= asset_path('star-half.png') %>',
-              scoreName: 'post[congestion]',
-              half: true,
-              score: '<%= @post.congestion %>'
-            });
-          </script>
-        </div>
-        <div class="table-right">
-          <p>空いている</p>
+          <div class="table-center">
+            <div class="form-group row congestion">
+              <%= f.hidden_field :congestion, class: :review_star %>
+            </div>
+            <script>
+              $('.congestion').raty({
+                size     : 36,
+                starOff:  '<%= asset_path('star-off.png') %>',
+                starOn : '<%= asset_path('star-on.png') %>',
+                starHalf: '<%= asset_path('star-half.png') %>',
+                scoreName: 'post[congestion]',
+                half: true,
+                score: '<%= @post.congestion %>'
+              });
+            </script>
+          </div>
+          <div class="table-right">
+            <p>空いている</p>
+          </div>
         </div>
       </div>
       <div class="table-line">
         <div class="table-title">
           <p>メニュー</p>
         </div>
-        <div class="table-left">
-          <p>不満</p>
-        </div>
-        <div class="table-center">
-          <div class="form-group row menu">
-            <%= f.hidden_field :menu, class: :review_star %>
+        <div class="table-bottom">
+          <div class="table-left">
+            <p>不満</p>
           </div>
-          <script>
-            $('.menu').raty({
-              size     : 36,
-              starOff:  '<%= asset_path('star-off.png') %>',
-              starOn : '<%= asset_path('star-on.png') %>',
-              starHalf: '<%= asset_path('star-half.png') %>',
-              scoreName: 'post[menu]',
-              half: true,
-              score: '<%= @post.menu %>'
-            });
-          </script>
-        </div>
-        <div class="table-right">
-          <p>満足した</p>
+          <div class="table-center">
+            <div class="form-group row menu">
+              <%= f.hidden_field :menu, class: :review_star %>
+            </div>
+            <script>
+              $('.menu').raty({
+                size     : 36,
+                starOff:  '<%= asset_path('star-off.png') %>',
+                starOn : '<%= asset_path('star-on.png') %>',
+                starHalf: '<%= asset_path('star-half.png') %>',
+                scoreName: 'post[menu]',
+                half: true,
+                score: '<%= @post.menu %>'
+              });
+            </script>
+          </div>
+          <div class="table-right">
+            <p>満足した</p>
+          </div>
         </div>
       </div>
       <div class="table-line">
         <div class="table-title">
           <p>価格帯</p>
         </div>
-        <div class="table-left">
-          <p>高い</p>
-        </div>
-        <div class="table-center">
-          <div class="form-group row price">
-            <%= f.hidden_field :price, class: :review_star %>
+        <div class="table-bottom">
+          <div class="table-left">
+            <p>高い</p>
           </div>
-          <script>
-            $('.price').raty({
-              size     : 36,
-              starOff:  '<%= asset_path('star-off.png') %>',
-              starOn : '<%= asset_path('star-on.png') %>',
-              starHalf: '<%= asset_path('star-half.png') %>',
-              scoreName: 'post[price]',
-              half: true,
-              score: '<%= @post.price %>'
-            });
-          </script>
-        </div>
-        <div class="table-right">
-          <p>安い</p>
+          <div class="table-center">
+            <div class="form-group row price">
+              <%= f.hidden_field :price, class: :review_star %>
+            </div>
+            <script>
+              $('.price').raty({
+                size     : 36,
+                starOff:  '<%= asset_path('star-off.png') %>',
+                starOn : '<%= asset_path('star-on.png') %>',
+                starHalf: '<%= asset_path('star-half.png') %>',
+                scoreName: 'post[price]',
+                half: true,
+                score: '<%= @post.price %>'
+              });
+            </script>
+          </div>
+          <div class="table-right">
+            <p>安い</p>
+          </div>
         </div>
       </div>
       <div class="table-line">
         <div class="table-title">
           <p>通信環境</p>
         </div>
-        <div class="table-left">
-          <p>Wi-Fiが弱い</p>
-        </div>
-        <div class="table-center">
-          <div class="form-group row wifi">
-            <%= f.hidden_field :wifi, class: :review_star %>
+        <div class="table-bottom">
+          <div class="table-left">
+            <p>Wi-Fiが弱い</p>
           </div>
-          <script>
-            $('.wifi').raty({
-              size     : 36,
-              starOff:  '<%= asset_path('star-off.png') %>',
-              starOn : '<%= asset_path('star-on.png') %>',
-              starHalf: '<%= asset_path('star-half.png') %>',
-              scoreName: 'post[wifi]',
-              half: true,
-              score: '<%= @post.wifi %>'
-            });
-          </script>
-        </div>
-        <div class="table-right">
-          <p>Wi-Fiが強い</p>
+          <div class="table-center">
+            <div class="form-group row wifi">
+              <%= f.hidden_field :wifi, class: :review_star %>
+            </div>
+            <script>
+              $('.wifi').raty({
+                size     : 36,
+                starOff:  '<%= asset_path('star-off.png') %>',
+                starOn : '<%= asset_path('star-on.png') %>',
+                starHalf: '<%= asset_path('star-half.png') %>',
+                scoreName: 'post[wifi]',
+                half: true,
+                score: '<%= @post.wifi %>'
+              });
+            </script>
+          </div>
+          <div class="table-right">
+            <p>Wi-Fiが強い</p>
+          </div>
         </div>
       </div>
       <div class="table-line">
         <div class="table-title">
           <p>その他</p>
         </div>
-        <div class="table-left">
-          <p>不満な部分があった</p>
-        </div>
-        <div class="table-center">
-          <div class="form-group row others">
-            <%= f.hidden_field :others, class: :review_star %>
+        <div class="table-bottom">
+          <div class="table-left">
+            <p>不満な部分があった</p>
           </div>
-          <script>
-            $('.others').raty({
-              size     : 36,
-              starOff:  '<%= asset_path('star-off.png') %>',
-              starOn : '<%= asset_path('star-on.png') %>',
-              starHalf: '<%= asset_path('star-half.png') %>',
-              scoreName: 'post[others]',
-              half: true,
-              score: '<%= @post.others %>'
-            });
-          </script>
-        </div>
-        <div class="table-right">
-          <p>満足する部分があった</p>
+          <div class="table-center">
+            <div class="form-group row others">
+              <%= f.hidden_field :others, class: :review_star %>
+            </div>
+            <script>
+              $('.others').raty({
+                size     : 36,
+                starOff:  '<%= asset_path('star-off.png') %>',
+                starOn : '<%= asset_path('star-on.png') %>',
+                starHalf: '<%= asset_path('star-half.png') %>',
+                scoreName: 'post[others]',
+                half: true,
+                score: '<%= @post.others %>'
+              });
+            </script>
+          </div>
+          <div class="table-right">
+            <p>満足する部分があった</p>
+          </div>
         </div>
       </div>
       <div class="table-line">

@@ -37,10 +37,10 @@
         width: 130px;
         @include smobile {
           display: block;
-          margin: 30px;
         }
         @include mobile {
-          width: 60px;
+          width: 80px;
+          margin: 30px;
         }
       }
       .table-bottom {
