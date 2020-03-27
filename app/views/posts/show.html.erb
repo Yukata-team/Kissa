@@ -25,125 +25,135 @@
         <div class="table-title">
           <p>混み具合<%= @post.congestion %></p>
         </div>
-        <div class="table-left">
-          <p>混んでいる</p>
-        </div>
-        <div class="table-center">
-          <div id="star-rate-post-<%= @post.id %>-congestion"></div>
-          <script>
-          $('#star-rate-post-<%= @post.id %>-congestion').raty({
-            size: 36,
-            starOff:  '<%= asset_path('star-off.png') %>',
-            starOn : '<%= asset_path('star-on.png') %>',
-            starHalf: '<%= asset_path('star-half.png') %>',
-            half: true,
-            readOnly: true,
-            score: <%= @post.congestion %>,
-          });
-          </script>
-        </div>
-        <div class="table-right">
-          <p>空いている</p>
+        <div class="table-bottom">
+          <div class="table-left">
+            <p>混んでいる</p>
+          </div>
+          <div class="table-center">
+            <div id="star-rate-post-<%= @post.id %>-congestion"></div>
+            <script>
+            $('#star-rate-post-<%= @post.id %>-congestion').raty({
+              size: 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              half: true,
+              readOnly: true,
+              score: <%= @post.congestion %>,
+            });
+            </script>
+          </div>
+          <div class="table-right">
+            <p>空いている</p>
+          </div>
         </div>
       </div>
       <div class="table-line">
         <div class="table-title">
           <p>メニュー<%= @post.menu %></p>
         </div>
-        <div class="table-left">
-          <p>不満</p>
-        </div>
-        <div class="table-center">
-          <div id="star-rate-post-<%= @post.id %>-menu"></div>
-          <script>
-          $('#star-rate-post-<%= @post.id %>-menu').raty({
-            size: 36,
-            starOff:  '<%= asset_path('star-off.png') %>',
-            starOn : '<%= asset_path('star-on.png') %>',
-            starHalf: '<%= asset_path('star-half.png') %>',
-            half: true,
-            readOnly: true,
-            score: <%= @post.menu %>,
-          });
-          </script>
-        </div>
-        <div class="table-right">
-          <p>満足した</p>
+        <div class="table-bottom">
+          <div class="table-left">
+            <p>不満</p>
+          </div>
+          <div class="table-center">
+            <div id="star-rate-post-<%= @post.id %>-menu"></div>
+            <script>
+            $('#star-rate-post-<%= @post.id %>-menu').raty({
+              size: 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              half: true,
+              readOnly: true,
+              score: <%= @post.menu %>,
+            });
+            </script>
+          </div>
+          <div class="table-right">
+            <p>満足した</p>
+          </div>
         </div>
       </div>
       <div class="table-line">
         <div class="table-title">
           <p>価格帯<%= @post.price %></p>
         </div>
-        <div class="table-left">
-          <p>高い</p>
-        </div>
-        <div class="table-center">
-          <div id="star-rate-post-<%= @post.id %>-price"></div>
-          <script>
-          $('#star-rate-post-<%= @post.id %>-price').raty({
-            size: 36,
-            starOff:  '<%= asset_path('star-off.png') %>',
-            starOn : '<%= asset_path('star-on.png') %>',
-            starHalf: '<%= asset_path('star-half.png') %>',
-            half: true,
-            readOnly: true,
-            score: <%= @post.price %>,
-          });
-          </script>
-        </div>
-        <div class="table-right">
-          <p>安い</p>
+        <div class="table-bottom">
+          <div class="table-left">
+            <p>高い</p>
+          </div>
+          <div class="table-center">
+            <div id="star-rate-post-<%= @post.id %>-price"></div>
+            <script>
+            $('#star-rate-post-<%= @post.id %>-price').raty({
+              size: 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              half: true,
+              readOnly: true,
+              score: <%= @post.price %>,
+            });
+            </script>
+          </div>
+          <div class="table-right">
+            <p>安い</p>
+          </div>
         </div>
       </div>
       <div class="table-line">
         <div class="table-title">
           <p>通信環境<%= @post.wifi %></p>
         </div>
-        <div class="table-left">
-          <p>Wi-Fiが弱い</p>
-        </div>
-        <div class="table-center">
-          <div id="star-rate-post-<%= @post.id %>-wifi"></div>
-          <script>
-          $('#star-rate-post-<%= @post.id %>-wifi').raty({
-            size: 36,
-            starOff:  '<%= asset_path('star-off.png') %>',
-            starOn : '<%= asset_path('star-on.png') %>',
-            starHalf: '<%= asset_path('star-half.png') %>',
-            half: true,
-            readOnly: true,
-            score: <%= @post.wifi %>,
-          });
-          </script>
-        </div>
-        <div class="table-right">
-          <p>Wi-Fiが強い</p>
+        <div class="table-bottom">
+          <div class="table-left">
+            <p>Wi-Fiが弱い</p>
+          </div>
+          <div class="table-center">
+            <div id="star-rate-post-<%= @post.id %>-wifi"></div>
+            <script>
+            $('#star-rate-post-<%= @post.id %>-wifi').raty({
+              size: 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              half: true,
+              readOnly: true,
+              score: <%= @post.wifi %>,
+            });
+            </script>
+          </div>
+          <div class="table-right">
+            <p>Wi-Fiが強い</p>
+          </div>
         </div>
       </div>
       <div class="table-line">
         <div class="table-title">
           <p>その他<%= @post.others %></p>
         </div>
-        <div class="table-left">
-          <p>不満な部分があった</p>
-        </div>
-        <div class="table-center">
-          <div id="star-rate-post-<%= @post.id %>-others"></div>
-          <script>
-          $('#star-rate-post-<%= @post.id %>-others').raty({
-            size: 36,
-            starOff:  '<%= asset_path('star-off.png') %>',
-            starOn : '<%= asset_path('star-on.png') %>',
-            starHalf: '<%= asset_path('star-half.png') %>',
-            half: true,
-            readOnly: true,
-            score: <%= @post.others %>,
-          });
-          </script>
-        </div>
-        <div class="table-right">
-          <p>満足する部分があった</p>
+        <div class="table-bottom">
+          <div class="table-left">
+            <p>不満な部分があった</p>
+          </div>
+          <div class="table-center">
+            <div id="star-rate-post-<%= @post.id %>-others"></div>
+            <script>
+            $('#star-rate-post-<%= @post.id %>-others').raty({
+              size: 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              half: true,
+              readOnly: true,
+              score: <%= @post.others %>,
+            });
+            </script>
+          </div>
+          <div class="table-right">
+            <p>満足する部分があった</p>
+          </div>
         </div>
       </div>
       <div class="table-line">
