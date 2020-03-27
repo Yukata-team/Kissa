@@ -23,7 +23,7 @@
     <div class="shop-images">
       <% @shop_images.each do |image| %>
         <div class="shop-image">
-          <%= attachment_image_tag image, :image, :fill, 400, 300 %>
+          <%= attachment_image_tag image, :image %>
           <%= link_to "削除", "/shops/#{image.shop_id}/shop_images/#{image.id}", method: :delete, data: {confirm: "本当に削除しますか？"} %>
         </div>
       <% end %>
