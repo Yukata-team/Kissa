@@ -311,6 +311,8 @@ GEM
       rack (~> 2.0)
       rack-protection (= 2.0.8.1)
       tilt (~> 2.0)
+    sitemap_generator (6.1.0)
+      builder (~> 3.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -392,6 +394,7 @@ DEPENDENCIES
   refile-mini_magick!
   sass-rails (~> 5.0)
   selenium-webdriver
+  sitemap_generator
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
