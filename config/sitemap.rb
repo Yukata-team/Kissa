@@ -1,9 +1,7 @@
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "https://kissanet.com"
-SitemapGenerator::Sitemap.sitemaps_host = 'https://s3.amazonaws.com/bucket_name/'
 SitemapGenerator::Sitemap.public_path   = 'tmp/'
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
-SitemapGenerator::Sitemap.adapter = SitemapGenerator::WaveAdapter.new
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
@@ -28,6 +26,8 @@ SitemapGenerator::Sitemap.create do
   #   Article.find_each do |article|
   #     add article_path(article), :lastmod => article.updated_at
   #   end
+  add shops_path, :priority => 0.7, :changefreq => 'daily'
+
   Shop.find_each do |shop|
     add shop_path(shop), :lastmod => shop.updated_at
   end

@@ -10,9 +10,5 @@ class HomesController < ApplicationController
   def sitemap
     
   end
-
-  def support
-    
-  end
   
 end
