@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get '/contacts' => 'contacts#new'
   post '/contacts' => 'contacts#create'
 
+  get '/sitemap', to: redirect('https://s3.amazonaws.com/bucket_name/sitemaps/sitemap.xml.gz')
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   root 'homes#top'

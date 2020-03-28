@@ -114,3 +114,6 @@ gem 'cancancan', '~> 2.0'
 
 # パンくずリスト用
 gem 'gretel'
+
+#　サイトマップ用
+gem 'sitemap_generator'
