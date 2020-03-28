@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+  get '/contacts' => 'contacts#new'
+  post '/contacts' => 'contacts#create'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   root 'homes#top'
-  get '/about' => 'homes#about'
+  get '/corp' => 'homes#corp'
+  get '/privacy' => 'homes#privacy'
+  get '/sitemap' => 'homes#sitemap'
 
   get '/shops/search' => 'shops#search'
   post '/shops/average' => 'shops#average'

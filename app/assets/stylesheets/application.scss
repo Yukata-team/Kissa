@@ -164,7 +164,14 @@ header a:hover {
   }
 }
 .container {
+  position: relative;
+  // min-height: calc(100vh - 120px);
+  min-height: 110vh;
   margin-top: 120px;
+  padding-bottom: 150px;
+  @include mobile {
+    padding-bottom: 100px;
+  }
 }
 .error-box {
   width: 500px;
@@ -320,5 +327,38 @@ header a:hover {
   margin: 60px;
   @include mobile {
     margin: 30px;
+  }
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 150px;
+  width: 100%;
+  background-color: rgb(80, 80, 80);
+  @include mobile {
+    height: 100px;
+  }
+  .footer-inner {
+    margin-top: 70px;
+    padding: 0 30px;
+    @include mobile {
+      margin-top: 60px;
+      padding: 0 5px;
+    }
+    a {
+      padding: 0 10px;
+      border-left: 1px solid rgba(245, 245, 220, 0.5);
+      transition: 0.5s;
+      @include mobile {
+        font-size: 8px;
+      }
+      &:first-child {
+        border-left: none;
+      }
+      &:hover {
+        opacity: 0.5;
+      }
+    }
   }
 }
