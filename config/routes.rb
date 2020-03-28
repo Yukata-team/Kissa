@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'homes#top'
-  get '/about' => 'homes#about'
+  get '/corp' => 'homes#corp'
+  get '/privacy' => 'homes#privacy'
+  get '/sitemap' => 'homes#sitemap'
+  get '/support' => 'homes#support'
 
   get '/shops/search' => 'shops#search'
   post '/shops/average' => 'shops#average'

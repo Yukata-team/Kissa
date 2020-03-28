@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Kissa</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -19,66 +20,78 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161478987-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-      gtag('config', 'UA-161478987-1');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161478987-1');
     </script>
-  </head>
+</head>
 
-  <body data-turbolinks="false", ontouchstart="">
+<body data-turbolinks="false" , ontouchstart="">
     <!-- メニューバー -->
     <header>
-      <h1><%= link_to "Kissa", root_path, class:"title" %></h1>
-      <ul class="nav-list">
-        <% if user_signed_in? %>
-          <li class="nav-list-item"><%= link_to "店舗検索", root_path %></li>
-          <li class="nav-list-item"><%= link_to "店舗登録", new_shop_path %></li>
-          <li class="nav-list-item"><%= link_to "マイページ", user_path(current_user) %></li>
-          <li class="nav-list-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li class="nav-list-item"><%= link_to "店舗検索", root_path %></li>
-          <li class="nav-list-item"><%= link_to "ログイン", new_user_session_path %></li>
-          <li class="nav-list-item"><%= link_to "新規登録", new_user_registration_path %></li>
-        <% end %>
-      </ul>
-      <div class="nav-drawer">
-        <input class="nav-input" type="checkbox" id="nav-menu">
-        <label class="nav-open" for="nav-menu"><span></span></label>
-        <label class="nav-close-1" for="nav-menu"><span></span></label>
-        <div class="nav-content">
-          <label class="nav-close-2" for="nav-menu"><span></span></label>
-          <div class="nav-title"><p>Menu</p></div>
-          <div class="nav-items">
+        <h1><%= link_to "Kissa", root_path, class:"title" %></h1>
+        <ul class="nav-list">
             <% if user_signed_in? %>
-              <%= link_to "店舗検索", root_path %>
-              <%= link_to "店舗登録", new_shop_path %>
-              <%= link_to "マイページ", user_path(current_user) %>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            <li class="nav-list-item"><%= link_to "店舗検索", root_path %></li>
+            <li class="nav-list-item"><%= link_to "店舗登録", new_shop_path %></li>
+            <li class="nav-list-item"><%= link_to "マイページ", user_path(current_user) %></li>
+            <li class="nav-list-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
             <% else %>
-              <%= link_to "店舗検索", root_path %>
-              <%= link_to "ログイン", new_user_session_path %>
-              <%= link_to "新規登録", new_user_registration_path %>
+            <li class="nav-list-item"><%= link_to "店舗検索", root_path %></li>
+            <li class="nav-list-item"><%= link_to "ログイン", new_user_session_path %></li>
+            <li class="nav-list-item"><%= link_to "新規登録", new_user_registration_path %></li>
             <% end %>
-          </div>
+        </ul>
+        <div class="nav-drawer">
+            <input class="nav-input" type="checkbox" id="nav-menu">
+            <label class="nav-open" for="nav-menu"><span></span></label>
+            <label class="nav-close-1" for="nav-menu"><span></span></label>
+            <div class="nav-content">
+                <label class="nav-close-2" for="nav-menu"><span></span></label>
+                <div class="nav-title">
+                    <p>Menu</p>
+                </div>
+                <div class="nav-items">
+                    <% if user_signed_in? %>
+                    <%= link_to "店舗検索", root_path %>
+                    <%= link_to "店舗登録", new_shop_path %>
+                    <%= link_to "マイページ", user_path(current_user) %>
+                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                    <% else %>
+                    <%= link_to "店舗検索", root_path %>
+                    <%= link_to "ログイン", new_user_session_path %>
+                    <%= link_to "新規登録", new_user_registration_path %>
+                    <% end %>
+                </div>
+            </div>
         </div>
-      </div>
     </header>
     <div class="container">
-      <% if flash[:notice] %>
-      <div class="flash">
-        <%= flash[:notice] %>
-      </div>
-      <% end %>
-      <% if flash[:alert] %>
-      <div class="flash">
-        <%= flash[:alert] %>
-      </div>
-      <% end %>
-      <!-- パンくずリスト -->
-      <%= breadcrumbs separator: " &rsaquo; " %>
-      <%= yield %>
+        <% if flash[:notice] %>
+        <div class="flash">
+            <%= flash[:notice] %>
+        </div>
+        <% end %>
+        <% if flash[:alert] %>
+        <div class="flash">
+            <%= flash[:alert] %>
+        </div>
+        <% end %>
+        <!-- パンくずリスト -->
+        <%= breadcrumbs separator: " &rsaquo; " %>
+        <%= yield %>
+        <footer>
+            <%= link_to  "運営者情報", corp_path %>
+            <%= link_to  "プライバシーポリシー", '/privacy.pdf' %>
+            <%= link_to  "サイトマップ", sitemap_path %>
+            <%= link_to  "お問い合せ", support_path %>
+        </footer>
     </div>
-  </body>
+</body>
+
 </html>
