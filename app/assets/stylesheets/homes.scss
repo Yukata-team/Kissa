@@ -734,3 +734,40 @@
     }
   }
 }
+.corp-page {
+  width: 500px;
+  margin: 200px auto;
+  padding: 0 30px;
+  border: 1px solid beige;
+  @include mobile {
+    width: 90%;
+  }
+  .corp-title {
+    padding: 40px 0;
+    border-bottom: 1px solid rgba(245, 245, 220, 0.5);
+    text-align: center;
+    p {
+      font-size: 40px;
+      @include mobile {
+        font-size: 20px;
+      }
+    }
+  }
+  .corp-items {
+    padding: 30px 0;
+  }
+  .corp-item {
+    margin: 50px 0 50px 50px;
+    padding: 0 30px;
+    border-left: 2px solid beige;
+    @include smobile {
+      margin-left: 10px;
+    }
+    p {
+      font-size: 15px;
+      @include mobile {
+        font-size: 10px;
+      }
+    }
+  }
+}

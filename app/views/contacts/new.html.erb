@@ -1,15 +1,17 @@
-<%= form_for @contact do |f| %>
+<div class="contact-page">
+    <%= form_for @contact do |f| %>
 
-<div class="form-group">
-    <%= f.label :email, '返信先メールアドレス' %>
-    <%= f.text_field :email, class: 'input-form' %>
+    <div class="form-group">
+        <%= f.label :email, '返信先メールアドレス' %>
+        <%= f.text_field :email, class: 'input-form' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :message, 'お問い合わせ内容' %>
+        <%= f.text_area :message, class: 'input-area' %>
+    </div>
+
+    <%= f.submit '送信', class:"btn-sticky" %>
+
+    <% end %>
 </div>
-
-<div class="form-group">
-    <%= f.label :message, 'お問い合わせ内容' %>
-    <%= f.text_area :message, class: 'input-area' %>
-</div>
-
-<%= f.submit '送信' %>
-
-<% end %>
