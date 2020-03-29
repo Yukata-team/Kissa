@@ -155,7 +155,7 @@
       position: sticky;
       position: -webkit-sticky;
       top: 0;
-      height: calc(100vh + 50px);
+      height: 100vh;
       width: 100%;
       @include notMobile {
         background-attachment: fixed;
@@ -187,6 +187,10 @@
         @include mobile {
           max-width: 350px;
         }
+        &-inner {
+          border: 1px solid;
+          padding: 50px 0;
+        }
         &-title {
           display: flex;
           position: sticky;
@@ -204,7 +208,8 @@
             position: -webkit-sticky;
             top: 0;
             width: 100%;
-            margin: 50px 0;
+            // margin: 50px 0;
+            margin-bottom: 50px;
             // margin-bottom: 400px;
             // padding: 70px 40px;
             font-size: 70px;
@@ -294,9 +299,9 @@
         background-size: contain;
       }
       &-infos {
-        position: sticky;
-        position: -webkit-sticky;
-        top: 0;
+        // position: sticky;
+        // position: -webkit-sticky;
+        // top: 0;
         height: 100vh;
         &-inner {
           position: relative;
@@ -307,7 +312,7 @@
       &-nologin {
         display: inline-block;
         position: absolute;
-        position: -webkit-sticky;
+        // position: -webkit-sticky;
         vertical-align: top;
         top: 0;
         left: 0;
@@ -319,10 +324,14 @@
           position: absolute;
           top: 90px;
           height: 35%;
-          width: 50%;
+          // width: 50%;
           border-radius: 0 40px 40px 0;
           box-shadow: 5px 5px 10px black;
           transition: 0.5s;
+
+          width: 95%;
+          // height: 35%;
+          background-color: rgb(94, 102, 18);
         }
         .touch-click-back {
           display: inline-block;
@@ -333,7 +342,7 @@
           padding: 0 20px;
           line-height: 100vh;
           @include mobile {
-            display: block;
+            display: none;
             width: 100%;
             line-height: normal;
           }
@@ -360,6 +369,9 @@
           @include mobile {
             left: 0;
             height: 100%;
+
+            width: 100%;
+            padding: 5%;
           }
           &-title {
             h4 {
@@ -370,6 +382,8 @@
                 margin: 0;
                 font-size: 20px;
                 text-align: center;
+
+                opacity: 1;
               }
             }
           }
@@ -383,6 +397,8 @@
               padding-bottom: 50px;
               @include mobile {
                 padding-bottom: 0;
+
+                opacity: 1;
                 &:first-child {
                   padding-right: 10px;
                 }
@@ -407,42 +423,39 @@
           }
         }
       }
-      &-nologin:hover {
-        width: 60%;
-        height: 100vh;
-        border-top-right-radius: 500px 8000px;
-        border-bottom-right-radius: 500px 8000px;
-        background-color: rgb(94, 102, 18);
-        @include mobile {
-          width: 95%;
-          height: 35%;
-          border-radius: 0 40px 40px 0;
-        }
-        .touch-click-back {
-          p {
-            opacity: 0;
-          }
-        }
-        .article-2-nologin-info {
-          width: 43vw;
+      @include notMobile {
+        &-nologin:hover {
+          width: 60%;
+          height: 100vh;
+          border-top-right-radius: 500px 8000px;
+          border-bottom-right-radius: 500px 8000px;
+          background-color: rgb(94, 102, 18);
           @include mobile {
-            width: 100%;
-            padding: 5%;
           }
-          &-title {
-            h4 {
-              opacity: 1;
-              transition: 1s 0.7s;
+          .touch-click-back {
+            p {
+              opacity: 0;
             }
           }
-          &-list {
-            :nth-child(1) {
-              transition: 2s 1s;
-              opacity: 1;
+          .article-2-nologin-info {
+            width: 43vw;
+            @include mobile {
             }
-            :nth-child(2) {
-              transition: 2s 1.2s;
-              opacity: 1;
+            &-title {
+              h4 {
+                opacity: 1;
+                transition: 1s 0.7s;
+              }
+            }
+            &-list {
+              :nth-child(1) {
+                transition: 2s 1s;
+                opacity: 1;
+              }
+              :nth-child(2) {
+                transition: 2s 1.2s;
+                opacity: 1;
+              }
             }
           }
         }
@@ -451,7 +464,7 @@
       &-login {
         display: inline-block;
         position: absolute;
-        position: -webkit-sticky;
+        // position: -webkit-sticky;
         top: 0;
         right: 0;
         text-align: right;
@@ -464,10 +477,13 @@
           top: auto;
           bottom: 80px;
           height: 35%;
-          width: 50%;
+          // width: 50%;
           border-radius: 40px 0 0 40px;
           box-shadow: 5px 5px 10px black;
           transition: 0.5s;
+
+          width: 95%;
+          background-color: goldenrod;
         }
         .touch-click-back {
           display: inline-block;
@@ -479,7 +495,7 @@
           line-height: 100vh;
           float: right;
           @include mobile {
-            display: block;
+            display: none;
             width: 100%;
             line-height: normal;
           }
@@ -507,6 +523,9 @@
           @include mobile {
             right: 0;
             height: 100%;
+
+            width: 100%;
+            padding: 5%;
           }
           &-title {
             h4 {
@@ -517,6 +536,8 @@
                 margin: 0;
                 font-size: 20px;
                 text-align: center;
+
+                opacity: 1;
               }
             }
           }
@@ -530,6 +551,8 @@
               padding-bottom: 50px;
               @include mobile {
                 padding-bottom: 0;
+
+                opacity: 1;
                 &:first-child {
                   padding-right: 10px;
                 }
@@ -554,42 +577,44 @@
           }
         }
       }
-      &-login:hover {
-        width: 60%;
-        height: 100vh;
-        border-top-left-radius: 500px 8000px;
-        border-bottom-left-radius: 500px 8000px;
-        background-color: goldenrod;
-        @include mobile {
-          width: 95%;
-          height: 35%;
-          border-radius: 40px 0 0 40px;
-        }
-        .touch-click-back {
-          p {
-            opacity: 0;
-          }
-        }
-        .article-2-login-info {
-          width: 43vw;
+      @include notMobile {
+        &-login:hover {
+          width: 60%;
+          height: 100vh;
+          border-top-left-radius: 500px 8000px;
+          border-bottom-left-radius: 500px 8000px;
+          background-color: goldenrod;
           @include mobile {
-            width: 100%;
-            padding: 5%;
+            width: 95%;
+            height: 35%;
+            border-radius: 40px 0 0 40px;
           }
-          &-title {
-            h4 {
-              opacity: 1;
-              transition: 1s 0.7s;
+          .touch-click-back {
+            p {
+              opacity: 0;
             }
           }
-          &-list {
-            :nth-child(1) {
-              transition: 2s 1s;
-              opacity: 1;
+          .article-2-login-info {
+            width: 43vw;
+            @include mobile {
+              width: 100%;
+              padding: 5%;
             }
-            :nth-child(2) {
-              transition: 2s 1.2s;
-              opacity: 1;
+            &-title {
+              h4 {
+                opacity: 1;
+                transition: 1s 0.7s;
+              }
+            }
+            &-list {
+              :nth-child(1) {
+                transition: 2s 1s;
+                opacity: 1;
+              }
+              :nth-child(2) {
+                transition: 2s 1.2s;
+                opacity: 1;
+              }
             }
           }
         }
