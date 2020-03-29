@@ -340,6 +340,8 @@ footer {
     height: 100px;
   }
   .footer-inner {
+    position: relative;
+    height: 65px;
     margin-top: 70px;
     padding: 0 30px;
     @include mobile {
@@ -358,6 +360,26 @@ footer {
       }
       &:hover {
         opacity: 0.5;
+      }
+    }
+    .footer-link {
+      position: absolute;
+      right: 0;
+    }
+    .footer-copyright {
+      @include mobile {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 180px;
+      }
+      p {
+        font-size: 13px;
+        line-height: 23px;
+        @include mobile {
+          font-size: 8px;
+        }
       }
     }
   }

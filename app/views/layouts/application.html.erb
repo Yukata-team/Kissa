@@ -87,10 +87,14 @@
         <%= yield %>
         <footer>
             <div class="footer-inner">
+              <div class="footer-link">
                 <%= link_to  "運営者情報", corp_path %>
                 <%= link_to  "プライバシーポリシー", asset_path("privacy.pdf") %>
                 <%= link_to  "お問い合せ", contacts_path %>
-                Copyright © Kissa. All Rights Reserved.
+              </div>
+              <div class="footer-copyright">
+                <p>Copyright © Kissa. All Rights Reserved.</p>
+              </div>
             </div>
         </footer>
     </div>
